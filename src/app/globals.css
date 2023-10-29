@@ -2,11 +2,11 @@
 
 body * {
   font-family: var(--font-body);
-  font-weight: 900;
+  font-weight: 500;
 }
 
 body strong {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 h1,
