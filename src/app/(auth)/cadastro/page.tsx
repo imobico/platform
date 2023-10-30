@@ -34,7 +34,7 @@ export default function SignupPage() {
           >
             <Image
               priority
-              src="/imobi-logo.svg"
+              src="/logo-imobi-trusty.svg"
               alt="Imobi Test"
               width={0}
               height={0}
@@ -47,10 +47,10 @@ export default function SignupPage() {
             <Text mb={4} color="text.muted">
               Já tem uma conta?{' '}
               <TextLink fontWeight={700} href="/entrar">
-                Clique aqui para entrar.
+                Acesse sua conta.
               </TextLink>
             </Text>
-            <Text mb={4}>
+            <Text mb={4} fontWeight={600}>
               Digite o seu e-mail no formulário abaixo
             </Text>
           </Box>
@@ -85,7 +85,7 @@ export default function SignupPage() {
             width={100}
             height={100}
           />
-          <Text fontWeight={700} fontSize="2xl" color="trendy.11" textAlign="center" mt="8">
+          <Text fontWeight={600} fontSize="xl" color="trusty.11" textAlign="center" mt="8">
             &ldquo;A Imobi tem nos ajudado a economizar tempo e conseguir mais oportunidades de negócio. Fechamos o último mês com 15% mais vendas!&ldquo;
           </Text>
           <Text
@@ -93,7 +93,7 @@ export default function SignupPage() {
             fontSize="sm"
             color="white"
             textAlign="center"
-            background="trendy.12"
+            background="trusty.12"
             opacity="0.75"
             px="4"
             py="2"

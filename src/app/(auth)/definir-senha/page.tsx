@@ -28,7 +28,7 @@ export default function LoginPage(props: LoginPageProps) {
         email: decodeURIComponent(props.searchParams?.email),
         password: password,
         options: {
-          emailRedirectTo: `${window.location.origin}/conta-criada/`
+          emailRedirectTo: `${window.location.origin}/conta-confirmada?email=${encodeURIComponent(props.searchParams?.email)}`
         }
       }).then(res => {
         setIsSignupSuccessful(true)
