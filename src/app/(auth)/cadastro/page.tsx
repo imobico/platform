@@ -86,7 +86,7 @@ export default function SignupPage() {
             height={100}
           />
           <Text fontWeight={700} fontSize="2xl" color="trendy.11" textAlign="center" mt="8">
-            &ldquo;A Beeside tem nos ajudado muito a organizar nossa saúde financeira e aumentar nossos lucros.&ldquo;
+            &ldquo;A Imobi tem nos ajudado a economizar tempo e conseguir mais oportunidades de negócio. Fechamos o último mês com 15% mais vendas!&ldquo;
           </Text>
           <Text
             mt="4"

@@ -17,7 +17,7 @@ import {
   TextLink
 } from '@/ui'
 
-import bg from '@/public/cool-pattern-alt.svg'
+import bg from '@/public/cool-pattern-trusty.svg'
 import dynamic from 'next/dynamic'
 
 const DynamicForm = dynamic(() => import('../components/LoginForm'), {
@@ -49,7 +49,7 @@ export default function LoginPage() {
           >
             <Image
               priority
-              src="/imobi-logo.svg"
+              src="/logo-imobi-trusty.svg"
               alt="Imobi Test"
               width={0}
               height={0}
@@ -115,15 +115,15 @@ export default function LoginPage() {
             width={100}
             height={100}
           />
-          <Text fontWeight={700} fontSize="2xl" color="trendy.11" textAlign="center" mt="8">
-            &ldquo;A Beeside tem nos ajudado muito a organizar nossa saúde financeira e aumentar nossos lucros.&ldquo;
+          <Text fontWeight={600} fontSize="xl" color="trusty.11" textAlign="center" mt="8">
+            &ldquo;A Imobi tem nos ajudado a economizar tempo e conseguir mais oportunidades de negócio. Fechamos o último mês com 15% mais vendas!&ldquo;
           </Text>
           <Text
             mt="4"
             fontSize="sm"
             color="white"
             textAlign="center"
-            background="trendy.12"
+            background="trusty.12"
             opacity="0.75"
             px="4"
             py="2"

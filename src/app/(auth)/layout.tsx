@@ -13,7 +13,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
     <Center
       // style={{ backgroundImage: `url("${bg.src}")`, backgroundRepeat: 'repeat' }}
-      bg="mauve.2"
+      bg="slate.2"
       height="100vh"
       width="100vw"
       // bg="slate.50"

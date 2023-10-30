@@ -84,11 +84,10 @@ export default function LoginPage(props: LoginPageProps) {
           <Box>
             <H1 fontSize="3xl">Defina sua {!props.searchParams?.email && 'nova '}senha</H1>
             <Text color="text.muted" mb={8}>
-              Defina uma senha segura e de fácil memorização
               {props.searchParams?.email &&
-                " que você utilizará com o seu e-mail "}
+                "Defina uma senha segura que você utilizará com o seu e-mail "}
               {props.searchParams?.email && (<strong>{decodeURIComponent(props.searchParams?.email)}</strong>)}
-              .
+              &nbsp;para acessar sua conta.
             </Text>
           </Box>
           <VStack>
