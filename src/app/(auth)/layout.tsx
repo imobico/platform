@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 
 import { Center } from '@/ui'
 
-import bg from '@/public/cool-pattern.svg'
+// import bg from '@/public/cool-pattern.svg'
 
 export const metadata: Metadata = {
   title: 'Login | Platforms Starter Kit'
@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
     <Center
-      style={{ backgroundImage: `url("${bg.src}")`, backgroundRepeat: 'repeat' }}
+      // style={{ backgroundImage: `url("${bg.src}")`, backgroundRepeat: 'repeat' }}
+      bg="mauve.2"
       height="100vh"
       width="100vw"
       // bg="slate.50"

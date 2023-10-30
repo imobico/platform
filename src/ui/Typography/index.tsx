@@ -5,7 +5,7 @@ import { cva } from '@/styled/css'
 
 const textLinkStyle = cva({
   base: {
-    color: 'enterprise',
+    color: 'var(--color-trendy-5',
     fontFamily: 'var(--font-body)',
     fontSize: '1rem',
     fontWeight: 500
@@ -16,7 +16,6 @@ const h1Style = cva({
   base: {
     color: '#FF0',
     fontFamily: 'var(--font-heading)',
-    fontSize: '3xl'
   },
   variants: {
     size: {
@@ -27,13 +26,13 @@ const h1Style = cva({
         fontSize: 'xl'
       },
       md: {
-        fontSize: '3xl'
+        fontSize: '2xl'
       },
       lg: {
-        fontSize: '4xl'
+        fontSize: '3xl'
       },
       xl: {
-        fontSize: '5xl'
+        fontSize: '4xl'
       }
     }
   }

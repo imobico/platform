@@ -10,32 +10,32 @@ export const theme = {
   },
   semanticTokens: {
     // Example: Set primary color to another value
-    shadows: {
-      accent: {
-        value: '0 0 0px 3px {colors.violet.4}'
-      }
-    },
     colors: {
       text: {
         // Global body text default color
-        default: { value: { base: '{colors.slate.12}', _dark: '{colors.slate.2}' } },
+        default: { value: { base: '{colors.mauve.12}', _dark: '{colors.mauve.2}' } },
         // Alternative low contrast text color
-        muted: { value: { base: '{colors.slate.11}', _dark: '{colors.slate.3}' } },
+        muted: { value: { base: '{colors.mauve.11}', _dark: '{colors.mauve.3}' } },
       },
       fg: {
         // Global body text default color
-        default: { value: { base: '{colors.text.12}', _dark: '{colors.slate.2}' } },
+        default: { value: { base: '{colors.text.12}', _dark: '{colors.mauve.2}' } },
       },
         // Global bg colors
       accent: {
-        default: { value: { base: '{colors.violet.10}', _dark: '{colors.violet.6}' } },
-        emphasized: { value: { base: '{colors.violet.9}', _dark: '{colors.violet.7}' } },
+        default: { value: { base: '{colors.trendy.10}', _dark: '{colors.trendy.6}' } },
+        emphasized: { value: { base: '{colors.trendy.9}', _dark: '{colors.trendy.7}' } },
         fg: { value: { base: '{colors.white}', _dark: '{colors.white}' } },
       },
         // Global border colors
       border: {
-        accent: { value: { base: '{colors.violet.8}', _dark: '{colors.violet.3}' } },
+        accent: { value: { base: '{colors.mauve.9}', _dark: '{colors.trendy.3}' } },
       },
+    },
+    shadows: {
+      accent: {
+        value: '0 0 0px 4px {colors.trendy.2}'
+      }
     },
   },
 }

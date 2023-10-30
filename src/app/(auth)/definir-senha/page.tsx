@@ -7,7 +7,7 @@ import { icon } from '@/styled/recipes'
 
 import { Box, Button, Center, Flex, H1, H3, Input, Text, VStack, Label, H2 } from '@/ui'
 
-import bg from '@/public/cool-pattern-dark.svg'
+import bg from '@/public/cool-pattern-alt.svg'
 import { useEffect, useState } from 'react'
 import { browserClient } from '@/supabase'
 
@@ -73,7 +73,7 @@ export default function LoginPage(props: LoginPageProps) {
           >
             <Image
               priority
-              src="/logo-beeside-fundo-claro.svg"
+              src="/imobi-logo.svg"
               alt="Imobi Test"
               width={0}
               height={0}
@@ -82,7 +82,7 @@ export default function LoginPage(props: LoginPageProps) {
             />
           </Box>
           <Box>
-            <H1 size="lg">Defina sua {!props.searchParams?.email && 'nova '}senha</H1>
+            <H1 fontSize="3xl">Defina sua {!props.searchParams?.email && 'nova '}senha</H1>
             <Text color="text.muted" mb={8}>
               Defina uma senha segura e de fácil memorização
               {props.searchParams?.email &&
@@ -130,13 +130,13 @@ export default function LoginPage(props: LoginPageProps) {
         flexDirection="column"
       >
         <Center zIndex={20} flex={1} p="24" flexDirection="column" justifyContent="flex-end">
-          <Center bg="enterprise" borderRadius="full" width="100px" height="100px">
-            <Lock color="white" width="40px" height="40px" />
+          <Center color="tomato.2" bg="trendy.9" borderRadius="full" width="100px" height="100px">
+            <Lock width="40px" height="40px" />
           </Center>
-          <H3 size="xl" mt="4" color="enterprise.800">
+          <H3 size="xl" mt="4" color="trendy.11">
             Dicas de segurança
           </H3>
-          <Text mt="4" color="enterprise.900" textAlign="center" px="4" py="2">
+          <Text mt="4" color="trendy.12" textAlign="center" px="4" py="2">
             &#8226; Sua senha deve conter pelo menos 8 caracteres
             <br />
             &#8226; Utilize pelo menos 1 letra maiúscula e 1 minúscula

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import { H1, Box, Center, Flex, Text, TextLink } from '@/ui'
 
-import bg from '@/public/cool-pattern-dark.svg'
+import bg from '@/public/cool-pattern-alt.svg'
 
 const DynamicForm = dynamic(() => import('../components/SignUpForm'), {
   loading: () => <p>Loading...</p>
@@ -34,7 +34,7 @@ export default function SignupPage() {
           >
             <Image
               priority
-              src="/logo-beeside-fundo-claro.svg"
+              src="/imobi-logo.svg"
               alt="Imobi Test"
               width={0}
               height={0}
@@ -46,7 +46,7 @@ export default function SignupPage() {
             <H1 fontSize="3xl">Vamos começar?</H1>
             <Text mb={4} color="text.muted">
               Já tem uma conta?{' '}
-              <TextLink fontWeight={700} color="enterprise" href="/entrar">
+              <TextLink fontWeight={700} href="/entrar">
                 Clique aqui para entrar.
               </TextLink>
             </Text>
@@ -85,7 +85,7 @@ export default function SignupPage() {
             width={100}
             height={100}
           />
-          <Text fontSize="lg" color="enterprise.800" textAlign="center" mt="8">
+          <Text fontWeight={700} fontSize="2xl" color="trendy.11" textAlign="center" mt="8">
             &ldquo;A Beeside tem nos ajudado muito a organizar nossa saúde financeira e aumentar nossos lucros.&ldquo;
           </Text>
           <Text
@@ -93,8 +93,8 @@ export default function SignupPage() {
             fontSize="sm"
             color="white"
             textAlign="center"
-            background="black"
-            opacity="0.6"
+            background="trendy.12"
+            opacity="0.75"
             px="4"
             py="2"
             borderRadius="full"
