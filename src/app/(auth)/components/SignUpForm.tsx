@@ -15,11 +15,12 @@ export const SignUpForm = () => {
   return (
     <VStack alignItems="flex-end">
       <Box width="100%">
-        <Label htmlFor="user-email" fontSize="md">
+        <Label htmlFor="user-email" size="xl">
           <Text color="black" py={2}>
             Email
           </Text>
           <Input
+            size="xl"
             id="user-email"
             placeholder="Exemplo: joao@meuemail.com"
             type="email"
@@ -29,7 +30,7 @@ export const SignUpForm = () => {
         </Label>
       </Box>
       <Button
-        size="lg"
+        size="xl"
         mt={4}
         onClick={() => {
           goToSetPassword()

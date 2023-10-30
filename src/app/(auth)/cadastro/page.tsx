@@ -26,7 +26,7 @@ export default function SignupPage() {
       <Center width="50%" p={6}>
         <Box width="100%" maxWidth="480px">
         <Box
-            width="160px"
+            width="140px"
             position={{ base: 'relative', xl: 'absolute' }}
             mb={{ base: 6 }}
             left={{ base: 'unset', xl: 8 }}
@@ -117,6 +117,7 @@ export default function SignupPage() {
           position="absolute"
           top={0}
           left={0}
+          opacity={0.6}
           style={{ backgroundImage: `url("${bg.src}")`, backgroundRepeat: 'repeat' }}
         />
       </Flex>

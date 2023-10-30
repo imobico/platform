@@ -41,7 +41,7 @@ export default function LoginPage() {
       <Center width={{ base: '100%', lg: '50%' }} p={6}>
         <Box width="100%" maxWidth="480px">
           <Box
-            width="160px"
+            width="140px"
             position={{ base: 'relative', xl: 'absolute' }}
             mb={{ base: 6 }}
             left={{ base: 'unset', xl: 8 }}
@@ -77,7 +77,7 @@ export default function LoginPage() {
             gap={{ base: '0', lg: '4' }}
             flexDirection={{ base: 'column', lg: 'row' }}
           >
-            <Button width="100%" size="lg" variant="outline">
+            <Button width="100%" size="xl" variant="outline">
               <Image
                 alt="Entrar usando minha conta Google"
                 src="/google-logo.svg"
@@ -87,7 +87,7 @@ export default function LoginPage() {
               Entrar com Google
             </Button>
 
-            <Button width="100%" size="lg" variant="outline">
+            <Button width="100%" size="xl" variant="outline">
               <Image
                 alt="Usar minha conta Apple para entrar"
                 src="/apple-logo.svg"
@@ -147,6 +147,7 @@ export default function LoginPage() {
           position="absolute"
           top={0}
           left={0}
+          opacity={0.6}
           style={{ backgroundImage: `url("${bg.src}")`, backgroundRepeat: 'repeat' }}
         />
       </Flex>

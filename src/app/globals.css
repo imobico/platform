@@ -1,5 +1,11 @@
 @layer reset, base, tokens, recipes, utilities;
 
+:root {
+  --radii-l1: var(--radii-md);
+  --radii-l2: var(--radii-lg);
+  --radii-l3: var(--radii-xl);
+}
+
 body * {
   font-family: var(--font-body);
 }
