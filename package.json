@@ -6,7 +6,7 @@
     "prepare": "npx panda codegen --clean && pnpm db:gen_types_prod",
     "db:diff_migration": "npx supabase db diff --use-migra -f $FILE",
     "db:gen_types": "npx supabase gen types typescript --project-id mgvilberimnmyblptmij > ./types/db.ts",
-    "db:gen_types_prod": "touch ./types/db.ts && npx supabase gen types typescript --project-id gneezsmdwxiorddkusnu > ./types/db.ts",
+    "db:gen_types_prod": "mkdir types && npx supabase gen types typescript --project-id gneezsmdwxiorddkusnu > ./types/db.ts",
     "db:start": "npx supabase start",
     "db:stop": "npx supabase stop",
     "dev": "next dev",
