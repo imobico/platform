@@ -1,16 +1,16 @@
 import { defineConfig } from "@pandacss/dev"
 
-// import beesideTheme from '@/theme'
+import imobiTheme from '@/theme'
 
 export default defineConfig({
     // Whether to use css reset
     preflight: true,
 
-    // theme: {
-    //   extend: {
-    //     ...beesideTheme
-    //   },
-    // },
+    theme: {
+      extend: {
+        ...imobiTheme
+      },
+    },
 
     presets: ['@pandacss/preset-base', '@park-ui/panda-preset'],
     
