@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prepare": "npx panda codegen --clean && pnpm db:gen_types_prod",
+    "prepare": "npx panda codegen --clean",
     "db:diff_migration": "npx supabase db diff --use-migra -f $FILE",
-    "db:gen_types": "npx supabase gen types typescript --project-id mgvilberimnmyblptmij > ./types/db.ts",
-    "db:gen_types_prod": "mkdir types && npx supabase gen types typescript --project-id gneezsmdwxiorddkusnu > ./types/db.ts",
+    "db:gen_types": "npx supabase gen types typescript --project-id mgvilberimnmyblptmij > ./src/types/db.ts",
     "db:start": "npx supabase start",
     "db:stop": "npx supabase stop",
     "dev": "next dev",

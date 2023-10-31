@@ -20,7 +20,6 @@
     ],
     "paths": {
       "@/public/*": ["./public/*"],
-      "@/types/*": ["./types/*"],
       "@/styled": ["./styled-system/jsx"],
       "@/styled/*": ["./styled-system/*"],
       "@/*": ["./src/*"]
