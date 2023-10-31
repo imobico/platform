@@ -1,5 +1,6 @@
-import Image from "next/image";
-import { Box, Flex, H3, Input } from "@/ui";
+import Image from 'next/image'
+
+import { Box, Flex, H3, Input } from '@/ui'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -17,7 +18,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         </Box>
         {/* <Input opacity={0.8} placeholder="Buscar imóveis ou leads..." width="100%" /> */}
-        
       </Box>
       <Box borderRadius="3xl" bg="white" m="2" flex="1">
         <Box px="12" py="8">

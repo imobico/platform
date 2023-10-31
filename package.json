@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "prepare": "npx panda codegen --clean",
-    "db:diff_migration": "npx supabase db diff --use-migra -f $FILE",
+    "db:migration": "npx supabase db diff -f",
     "db:gen_types": "npx supabase gen types typescript --project-id mgvilberimnmyblptmij > ./src/types/db.ts",
     "db:start": "npx supabase start",
     "db:stop": "npx supabase stop",
