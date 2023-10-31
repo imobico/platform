@@ -11,7 +11,7 @@ export const trusty = {
   9: { value: '#1855D1' },
   10: { value: '#0F42A9' },
   11: { value: '#082868' },
-  12: { value: '#04183F' }
+  12: { value: '#011030' }
 }
 
 export const trendy = {
