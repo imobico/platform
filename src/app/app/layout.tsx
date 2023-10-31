@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Box, Flex, H3 } from '@/ui'
+import { Box, Flex } from '@/ui'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
