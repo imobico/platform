@@ -31,7 +31,7 @@ export default function LoginPage(props: LoginPageProps) {
             )}`
           }
         })
-        .then((res) => {
+        .then(() => {
           setIsSignupSuccessful(true)
         })
     }

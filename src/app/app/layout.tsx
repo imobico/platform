@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </Box>
       <Box borderRadius="3xl" bg="white" m="2" flex="1">
         <Box px="12" py="8">
-          <H3 fontSize="4xl">Bom dia, Kaue!</H3>
+          {children}
         </Box>
       </Box>
     </Flex>

@@ -2,15 +2,6 @@ import { type HTMLStyledProps, styled } from '@/styled'
 
 type As = 'p' | 'span' | 'div' | 'label'
 
-const textStyle = {
-  base: {
-    color: 'red.12',
-    fontFamily: 'var(--font-body)',
-    fontSize: '1rem',
-    fontWeight: 500
-  }
-}
-
 export type TextProps = {
   as?: As
 } & HTMLStyledProps<As>
