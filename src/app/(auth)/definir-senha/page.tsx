@@ -7,7 +7,7 @@ import { icon } from '@/styled/recipes'
 
 import { Box, Button, Center, Flex, H1, H3, Input, Text, VStack, Label, H2 } from '@/ui'
 
-import bg from '@/public/cool-pattern-alt.svg'
+import bg from '@/public/cool-pattern-trusty.svg'
 import { useEffect, useState } from 'react'
 import { browserClient } from '@/supabase'
 
@@ -73,7 +73,7 @@ export default function LoginPage(props: LoginPageProps) {
           >
             <Image
               priority
-              src="/imobi-logo.svg"
+              src="/logo-imobi-trusty.svg"
               alt="Imobi Test"
               width={0}
               height={0}
@@ -92,9 +92,10 @@ export default function LoginPage(props: LoginPageProps) {
           </Box>
           <VStack>
             <Box width="100%">
-              <Label htmlFor="user-password">
+              <Label size="xl" htmlFor="user-password">
                 <Text py={2}>Senha</Text>
                 <Input
+                  size="xl"
                   id="user-password"
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Digite sua senha"
@@ -104,9 +105,10 @@ export default function LoginPage(props: LoginPageProps) {
               </Label>
             </Box>
             <Box width="100%">
-              <Label htmlFor="user-confirm-password">
+              <Label size="xl" htmlFor="user-confirm-password">
                 <Text py={2}>Repita a senha</Text>
                 <Input
+                  size="xl"
                   id="user-confirm-password"
                   onChange={(e) => setPasswordConfirmation(e.target.value)}
                   placeholder="Repita a mesma senha"
@@ -114,7 +116,7 @@ export default function LoginPage(props: LoginPageProps) {
                 />
               </Label>
             </Box>
-            <Button size="lg" width="100%" mt={4} onClick={handleSignup}>
+            <Button size="xl" width="100%" mt={4} onClick={handleSignup}>
               Confirmar e criar minha conta
             </Button>
           </VStack>
@@ -129,13 +131,13 @@ export default function LoginPage(props: LoginPageProps) {
         flexDirection="column"
       >
         <Center zIndex={20} flex={1} p="24" flexDirection="column" justifyContent="flex-end">
-          <Center color="tomato.2" bg="trendy.9" borderRadius="full" width="100px" height="100px">
+          <Center color="tomato.2" bg="trusty.9" borderRadius="full" width="100px" height="100px">
             <Lock width="40px" height="40px" />
           </Center>
-          <H3 size="xl" mt="4" color="trendy.11">
+          <H3 size="xl" mt="4" color="trusty.11">
             Dicas de segurança
           </H3>
-          <Text mt="4" color="trendy.12" textAlign="center" px="4" py="2">
+          <Text mt="4" color="trusty.12" textAlign="center" px="4" py="2">
             &#8226; Sua senha deve conter pelo menos 8 caracteres
             <br />
             &#8226; Utilize pelo menos 1 letra maiúscula e 1 minúscula
