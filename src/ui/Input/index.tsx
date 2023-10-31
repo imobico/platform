@@ -1,4 +1,4 @@
-import { styled, type HTMLStyledProps } from '@/styled'
+import { type HTMLStyledProps, styled } from '@/styled'
 import { input } from '@/styled/recipes'
 
 export const Input = styled('input', input)

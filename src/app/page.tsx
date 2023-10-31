@@ -1,7 +1,8 @@
-import { Box, Button, Center } from '@/ui';
-import Image from 'next/image';
-import Link from 'next/link';
- 
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { Box, Button, Center } from '@/ui'
+
 export default function Home() {
   return (
     <Center width="100vw" height="100vh" flexDirection="column">
@@ -17,9 +18,7 @@ export default function Home() {
         />
       </Box>
       <Link href="/entrar">
-        <Button size="xl">
-          Fazer login
-        </Button>
+        <Button size="xl">Fazer login</Button>
       </Link>
     </Center>
   )

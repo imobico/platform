@@ -1,4 +1,4 @@
-import { styled, type HTMLStyledProps } from '@/styled/jsx'
+import { type HTMLStyledProps, styled } from '@/styled/jsx'
 import { label } from '@/styled/recipes'
 
 export const Label = styled('label', label)

@@ -1,7 +1,7 @@
 // import { css } from '@/styled/css'
+import { Center } from '@/styled'
 
-import { Center } from "@/styled";
-import { H1 } from "@/ui";
+import { H1 } from '@/ui'
 
 // import { Button } from '@/components/Button'
 // import { Input } from '@/components/Input'

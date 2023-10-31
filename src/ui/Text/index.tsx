@@ -1,4 +1,4 @@
-import { styled, type HTMLStyledProps } from '@/styled'
+import { type HTMLStyledProps, styled } from '@/styled'
 
 type As = 'p' | 'span' | 'div' | 'label'
 

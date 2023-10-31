@@ -1,16 +1,9 @@
-"use client"
+'use client'
 
 import { CheckCircle } from 'lucide-react'
-import Image from 'next/image'
-
-import { icon } from '@/styled/recipes'
-
-import { Box, Button, Center, Flex, H1, H3, Input, Text, VStack, Label, H2 } from '@/ui'
-
-import bg from '@/public/cool-pattern-dark.svg'
-import { useEffect, useState } from 'react'
-import { browserClient } from '@/supabase'
 import Link from 'next/link'
+
+import { Button, Center, Flex, H2, Text } from '@/ui'
 
 interface LoginPageProps {
   searchParams: Record<string, string>
@@ -30,20 +23,31 @@ export default function LoginPage(props: LoginPageProps) {
       position="relative"
       overflow="hidden"
     >
-      <Center width="100%" p={6} position="absolute" height="100%" bg="white" zIndex={100} flexDirection="column">
+      <Center
+        width="100%"
+        p={6}
+        position="absolute"
+        height="100%"
+        bg="white"
+        zIndex={100}
+        flexDirection="column"
+      >
         <Center width="120px" height="120px" bg="green.3" color="green.9" borderRadius="full">
-          <CheckCircle width="60px" height="80px"/>
+          <CheckCircle width="60px" height="80px" />
         </Center>
         <H2 size="lg" mt={8} mb={4}>
           Conta confirmada
         </H2>
         <Text color="text.muted" textAlign="center">
-          Sua conta com o e-mail <strong>{decodeURIComponent(props.searchParams?.email)}</strong> está confirmada e pronta para uso.
-          <br/>
+          Sua conta com o e-mail <strong>{decodeURIComponent(props.searchParams?.email)}</strong>{' '}
+          está confirmada e pronta para uso.
+          <br />
           Você já pode fazer login com a sua conta.
         </Text>
         <Link href="/entrar">
-          <Button mt={8} size="xl">Acessar minha conta</Button>
+          <Button mt={8} size="xl">
+            Acessar minha conta
+          </Button>
         </Link>
       </Center>
     </Flex>

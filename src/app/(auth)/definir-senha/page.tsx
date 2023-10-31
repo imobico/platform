@@ -1,15 +1,12 @@
-"use client"
+'use client'
 
-import { ArrowRight, MailCheck, Lock } from 'lucide-react'
+import { Lock, MailCheck } from 'lucide-react'
 import Image from 'next/image'
-
-import { icon } from '@/styled/recipes'
-
-import { Box, Button, Center, Flex, H1, H3, Input, Text, VStack, Label, H2 } from '@/ui'
+import { useState } from 'react'
 
 import bg from '@/public/cool-pattern-trusty.svg'
-import { useEffect, useState } from 'react'
 import { browserClient } from '@/supabase'
+import { Box, Button, Center, Flex, H1, H2, H3, Input, Label, Text, VStack } from '@/ui'
 
 interface LoginPageProps {
   searchParams: Record<string, string>
@@ -21,18 +18,22 @@ export default function LoginPage(props: LoginPageProps) {
   const [isSignupSuccessful, setIsSignupSuccessful] = useState(false)
 
   const handleSignup = async () => {
-    if(password !== passwordConfirmation) {
+    if (password !== passwordConfirmation) {
       return alert('A senha ou confirmação de senha é inválida')
     } else {
-      await browserClient.auth.signUp({
-        email: decodeURIComponent(props.searchParams?.email),
-        password: password,
-        options: {
-          emailRedirectTo: `${window.location.origin}/conta-confirmada?email=${encodeURIComponent(props.searchParams?.email)}`
-        }
-      }).then(res => {
-        setIsSignupSuccessful(true)
-      })
+      await browserClient.auth
+        .signUp({
+          email: decodeURIComponent(props.searchParams?.email),
+          password: password,
+          options: {
+            emailRedirectTo: `${window.location.origin}/conta-confirmada?email=${encodeURIComponent(
+              props.searchParams?.email
+            )}`
+          }
+        })
+        .then((res) => {
+          setIsSignupSuccessful(true)
+        })
     }
   }
 
@@ -50,15 +51,24 @@ export default function LoginPage(props: LoginPageProps) {
       overflow="hidden"
     >
       {isSignupSuccessful && (
-        <Center width="100%" p={6} position="absolute" height="100%" bg="white" zIndex={100} flexDirection="column">
+        <Center
+          width="100%"
+          p={6}
+          position="absolute"
+          height="100%"
+          bg="white"
+          zIndex={100}
+          flexDirection="column"
+        >
           <Center width="120px" height="120px" bg="green.3" color="green.9" borderRadius="full">
-            <MailCheck width="60px" height="80px"/>
+            <MailCheck width="60px" height="80px" />
           </Center>
           <H2 size="lg" mt={8} mb={4}>
             Confirme sua conta
           </H2>
           <Text color="text.muted" maxWidth="30vw" textAlign="center">
-            Sua conta foi criada e agora é só clicar no link que enviamos para o seu e-mail (<strong>{props.searchParams?.email}</strong>) para confirmar a sua conta
+            Sua conta foi criada e agora é só clicar no link que enviamos para o seu e-mail (
+            <strong>{props.searchParams?.email}</strong>) para confirmar a sua conta
           </Text>
         </Center>
       )}
@@ -85,8 +95,10 @@ export default function LoginPage(props: LoginPageProps) {
             <H1 fontSize="3xl">Defina sua {!props.searchParams?.email && 'nova '}senha</H1>
             <Text color="text.muted" mb={8}>
               {props.searchParams?.email &&
-                "Defina uma senha segura que você utilizará com o seu e-mail "}
-              {props.searchParams?.email && (<strong>{decodeURIComponent(props.searchParams?.email)}</strong>)}
+                'Defina uma senha segura que você utilizará com o seu e-mail '}
+              {props.searchParams?.email && (
+                <strong>{decodeURIComponent(props.searchParams?.email)}</strong>
+              )}
               &nbsp;para acessar sua conta.
             </Text>
           </Box>
@@ -143,7 +155,8 @@ export default function LoginPage(props: LoginPageProps) {
             &#8226; Utilize pelo menos 1 letra maiúscula e 1 minúscula
             <br />
             &#8226; Opcional: Utilize números e caracteres especiais
-            <br />&#8226; Não utilize senhas fáceis de adivinhar, como datas de aniversário ou nomes de
+            <br />
+            &#8226; Não utilize senhas fáceis de adivinhar, como datas de aniversário ou nomes de
             familiares
           </Text>
         </Center>

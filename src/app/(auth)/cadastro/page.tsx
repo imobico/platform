@@ -1,9 +1,8 @@
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 
-import { H1, Box, Center, Flex, Text, TextLink } from '@/ui'
-
 import bg from '@/public/cool-pattern-alt.svg'
+import { Box, Center, Flex, H1, Text, TextLink } from '@/ui'
 
 const DynamicForm = dynamic(() => import('../components/SignUpForm'), {
   loading: () => <p>Loading...</p>
@@ -25,7 +24,7 @@ export default function SignupPage() {
     >
       <Center width="50%" p={6}>
         <Box width="100%" maxWidth="480px">
-        <Box
+          <Box
             width="140px"
             position={{ base: 'relative', xl: 'absolute' }}
             mb={{ base: 6 }}
@@ -86,7 +85,8 @@ export default function SignupPage() {
             height={100}
           />
           <Text fontWeight={600} fontSize="xl" color="trusty.11" textAlign="center" mt="8">
-            &ldquo;A Imobi tem nos ajudado a economizar tempo e conseguir mais oportunidades de negócio. Fechamos o último mês com 15% mais vendas!&ldquo;
+            &ldquo;A Imobi tem nos ajudado a economizar tempo e conseguir mais oportunidades de
+            negócio. Fechamos o último mês com 15% mais vendas!&ldquo;
           </Text>
           <Text
             mt="4"

@@ -1,5 +1,5 @@
 export const trusty = {
-  DEFAULT: { value: '#2268F5'},
+  DEFAULT: { value: '#2268F5' },
   1: { value: '#F0F5FF' },
   2: { value: '#EAF1FF' },
   3: { value: '#D4E3FF' },
@@ -15,7 +15,7 @@ export const trusty = {
 }
 
 export const trendy = {
-  DEFAULT: { value: '#5922D1'},
+  DEFAULT: { value: '#5922D1' },
   1: { value: '#F8F5FF' },
   2: { value: '#F3EEFF' },
   3: { value: '#E4D9FD' },
@@ -31,7 +31,7 @@ export const trendy = {
 }
 
 export const pine = {
-  DEFAULT: { value: '#38AF97'},
+  DEFAULT: { value: '#38AF97' },
   1: { value: '#F2FCFA' },
   2: { value: '#E8FCF8' },
   3: { value: '#D7F9F2' },
@@ -47,9 +47,9 @@ export const pine = {
 }
 
 export const colors = {
-  trusty: {...trusty},
-  trendy: {...trendy},
-  pine: {...pine},
+  trusty: { ...trusty },
+  trendy: { ...trendy },
+  pine: { ...pine }
 }
 
 export default colors

@@ -1,24 +1,8 @@
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 
-import { icon } from '@/styled/recipes'
-
-import {
-  Box,
-  Button,
-  Center,
-  Divider,
-  Flex,
-  H1,
-  Label,
-  HStack,
-  Input,
-  Text,
-  VStack,
-  TextLink
-} from '@/ui'
-
 import bg from '@/public/cool-pattern-trusty.svg'
-import dynamic from 'next/dynamic'
+import { Box, Button, Center, Divider, Flex, H1, HStack, Text, TextLink } from '@/ui'
 
 const DynamicForm = dynamic(() => import('../components/LoginForm'), {
   loading: () => <p>Loading...</p>
@@ -58,9 +42,7 @@ export default function LoginPage() {
             />
           </Box>
           <Box>
-            <H1 fontSize="3xl">
-              Bem-vindo de volta!
-            </H1>
+            <H1 fontSize="3xl">Bem-vindo de volta!</H1>
             <Text color="text.muted" mb={8}>
               Ainda não tem uma conta?{' '}
               <TextLink fontWeight={700} href="/cadastro">
@@ -68,7 +50,7 @@ export default function LoginPage() {
               </TextLink>
             </Text>
           </Box>
-          
+
           <DynamicForm />
 
           <Divider my="6" />
@@ -116,7 +98,8 @@ export default function LoginPage() {
             height={100}
           />
           <Text fontWeight={600} fontSize="xl" color="trusty.11" textAlign="center" mt="8">
-            &ldquo;A Imobi tem nos ajudado a economizar tempo e conseguir mais oportunidades de negócio. Fechamos o último mês com 15% mais vendas!&ldquo;
+            &ldquo;A Imobi tem nos ajudado a economizar tempo e conseguir mais oportunidades de
+            negócio. Fechamos o último mês com 15% mais vendas!&ldquo;
           </Text>
           <Text
             mt="4"

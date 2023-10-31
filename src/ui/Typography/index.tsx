@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { styled, type HTMLStyledProps } from '@/styled'
+import { styled } from '@/styled'
 import { cva } from '@/styled/css'
 
 const textLinkStyle = cva({
@@ -15,7 +15,7 @@ const textLinkStyle = cva({
 const h1Style = cva({
   base: {
     color: '#FF0',
-    fontFamily: 'var(--font-heading)',
+    fontFamily: 'var(--font-heading)'
   },
   variants: {
     size: {
