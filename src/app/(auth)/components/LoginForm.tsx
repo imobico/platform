@@ -13,12 +13,18 @@ export const LoginForm = () => {
     if (password.length === 0 || email.length === 0) {
       return alert('Email e senha não podem estar em branco')
     } else {
-      await browserClient.auth.signInWithPassword({
-        email,
-        password
-      })
-
-      window.location.href = '/app'
+      await browserClient.auth
+        .signInWithPassword({
+          email,
+          password
+        })
+        .then((res) => {
+          if (res.error) {
+            console.error('falha: ', res.error)
+          } else {
+            window.location.href = '/app'
+          }
+        })
     }
   }
 
