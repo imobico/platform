@@ -4,6 +4,7 @@ import { Session } from '@supabase/supabase-js'
 import { useEffect, useState } from 'react'
 
 import { browserClient } from '@/supabase'
+import { Text } from '@/ui'
 
 export default function Account() {
   const [session, setSession] = useState<Session | null>(null)
@@ -67,6 +68,7 @@ export default function Account() {
 
   return (
     <form onSubmit={updateProfile} className="form-widget">
+      <Text>sdfsdfs</Text>
       <div>
         <label htmlFor="email">Email</label>
         <input id="email" type="text" value={session?.user.email} disabled />

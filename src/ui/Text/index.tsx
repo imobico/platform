@@ -7,8 +7,8 @@ export type TextProps = {
 } & HTMLStyledProps<As>
 
 export const Text = (props: TextProps) => {
-  const { as = 'p', ...rest } = props
+  const { color = 'red', as = 'p', ...rest } = props
   const Component = styled(as)
 
-  return <Component color="#FF0" {...rest} />
+  return <Component color={color} {...rest} />
 }
