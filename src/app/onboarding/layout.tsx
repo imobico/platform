@@ -19,13 +19,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               style={{ width: '100%', height: 'auto' }}
             />
           </Box>
-          <H2 fontSize="4xl" color="trusty.1" mb="4" fontWeight="bolder">
+          <H2 fontSize="3xl" color="trusty.1" mb="4" fontWeight="bolder">
             Bem-vindo à imobi!
           </H2>
-          <Text fontSize="xl" color="trusty.2" mb="6" textAlign="center" letterSpacing="-0.5px">
+          <Text fontSize="lg" color="trusty.2" mb="6" textAlign="center" letterSpacing="-0.5px">
             Já está tudo certo com a sua conta, agora só precisamos saber um pouco mais sobre você e
-            o seu negócio.
+            sobre o seu negócio.
           </Text>
+          <Box bg="trusty.10" p="6" borderRadius="xl" mt="12">
+            <Text fontSize="sm" color="trusty.3" textAlign="center">
+              Caso precise, você poderá alterar suas informações a qualquer momento nas
+              configurações da sua conta.
+            </Text>
+          </Box>
         </Center>
         <Center
           borderTopLeftRadius="3xl"
@@ -35,9 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           boxShadow="0 0 60px 6px token(colors.trusty.10), 0 0 8px 4px token(colors.trusty.10)"
           flexDirection="column"
         >
-          <Box px="12" py="8">
-            {children}
-          </Box>
+          {children}
         </Center>
       </Flex>
     </ProvidersWrapper>

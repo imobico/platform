@@ -1,10 +1,13 @@
 'use client'
 
+import * as yup from 'yup'
+import { yupResolver } from '@hookform/resolvers/yup'
 import { Session } from '@supabase/supabase-js'
 import { useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form'
 
 import { browserClient } from '@/supabase'
-import { Text } from '@/ui'
+import { Box, Button, Center, Divider, H1, HStack, Input, Label, Text } from '@/ui'
 
 export default function Account() {
   const [session, setSession] = useState<Session | null>(null)
@@ -12,6 +15,21 @@ export default function Account() {
   const [username, setUsername] = useState(null)
   const [website, setWebsite] = useState(null)
   const [avatar_url, setAvatarUrl] = useState(null)
+
+  const schema = yup.object().shape({
+    first_name: yup.string().required('O campo "Nome" é obrigatório'),
+    last_name: yup.string().required('O campo "Sobrenome" é obrigatório'),
+    // email: yup.string().required('O campo "Email" é obrigatório'),
+    // username: yup.string().required('O campo "Nome de usuário" é obrigatório'),
+    photo_url: yup.string()
+  })
+
+  const {
+    handleSubmit,
+    register,
+    formState: { errors, isSubmitting },
+    reset
+  } = useForm({ resolver: yupResolver(schema) })
 
   useEffect(() => {
     async function getProfile() {
@@ -67,43 +85,58 @@ export default function Account() {
   }
 
   return (
-    <form onSubmit={updateProfile} className="form-widget">
-      <Text>sdfsdfs</Text>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input id="email" type="text" value={session?.user.email} disabled />
-      </div>
-      <div>
-        <label htmlFor="username">Name</label>
-        <input
-          id="username"
-          type="text"
-          required
-          value={username || ''}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="website">Website</label>
-        <input
-          id="website"
-          type="url"
-          value={website || ''}
-          onChange={(e) => setWebsite(e.target.value)}
-        />
-      </div>
+    <Box width="600px" maxWidth="90%" flexDirection="column">
+      <H1 fontSize="4xl">Sobre você</H1>
+      <Text color="text.muted" mb="12">
+        Suas informações pessoais básicas.
+        <br />
+        (Nenhuma dessas informações será divulgada)
+      </Text>
+      <form onSubmit={handleSubmit(updateProfile)}>
+        <Box width="100%">
+          <HStack width="100%" gap="4">
+            <Box flex="1">
+              <Label size="xl" htmlFor="first_name">
+                Nome
+              </Label>
+              <Input
+                mt="2"
+                size="xl"
+                autoFocus={true}
+                id="first_name"
+                placeholder="Digite seu nome"
+                {...register('first_name')}
+              />
+            </Box>
 
-      <div>
-        <button className="button block primary" type="submit" disabled={loading}>
-          {loading ? 'Loading ...' : 'Update'}
-        </button>
-      </div>
+            <Box flex="1">
+              <Label size="xl" htmlFor="last_name">
+                Sobrenome
+              </Label>
+              <Input
+                mt="2"
+                size="xl"
+                autoFocus={true}
+                id="last_name"
+                placeholder="Digite seu sobrenome"
+                {...register('last_name')}
+              />
+            </Box>
+          </HStack>
 
-      <div>
-        <button className="button block" type="button" onClick={() => browserClient.auth.signOut()}>
-          Sign Out
-        </button>
-      </div>
-    </form>
+          <Button
+            mt={8}
+            colorScheme="black"
+            type="submit"
+            size="xl"
+            width="100%"
+            // isLoading={isProfileUpdating}
+            // loadingText="Salvando..."
+          >
+            Continuar
+          </Button>
+        </Box>
+      </form>
+    </Box>
   )
 }
