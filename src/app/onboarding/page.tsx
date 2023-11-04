@@ -6,15 +6,18 @@ import { Session } from '@supabase/supabase-js'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
+import { useCurrentUser } from '@/hooks'
+import { useUpdateUser } from '@/mutations'
 import { browserClient } from '@/supabase'
+import { User } from '@/types'
 import { Box, Button, Center, Divider, H1, HStack, Input, Label, Text } from '@/ui'
 
 export default function Account() {
-  const [session, setSession] = useState<Session | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [username, setUsername] = useState(null)
-  const [website, setWebsite] = useState(null)
-  const [avatar_url, setAvatarUrl] = useState(null)
+  const {
+    data: currentUserData,
+    isLoading: isCurrentUserLoading,
+    error: currentUserError
+  } = useCurrentUser()
 
   const schema = yup.object().shape({
     first_name: yup.string().required('O campo "Nome" é obrigatório'),
@@ -60,33 +63,24 @@ export default function Account() {
     getProfile()
   }, [])
 
-  async function updateProfile(event, avatarUrl) {
-    event.preventDefault()
+  const updateUser = useUpdateUser()
 
-    setLoading(true)
-    const user = session?.user
-
-    const updates = {
-      id: user?.id,
-      username,
-      website,
-      avatarUrl,
-      updated_at: new Date()
-    }
-
-    const { error } = await browserClient.from('profiles').upsert(updates)
-
-    if (error) {
-      alert(error.message)
-    } else {
-      setAvatarUrl(avatarUrl)
-    }
-    setLoading(false)
+  async function updateProfile(formData: User) {
+    updateUser.mutate({ ...formData, id: currentUserData?.id })
   }
+
+  useEffect(() => {
+    if (currentUserData) {
+      reset({
+        first_name: currentUserData.first_name,
+        last_name: currentUserData.last_name
+      })
+    }
+  }, [currentUserData])
 
   return (
     <Box width="600px" maxWidth="90%" flexDirection="column">
-      <H1 fontSize="4xl">Sobre você</H1>
+      <H1 fontSize="4xl">Seu perfil</H1>
       <Text color="text.muted" mb="12">
         Suas informações pessoais básicas.
         <br />
@@ -104,7 +98,7 @@ export default function Account() {
                 size="xl"
                 autoFocus={true}
                 id="first_name"
-                placeholder="Digite seu nome"
+                placeholder="Exemplo: Regina"
                 {...register('first_name')}
               />
             </Box>
@@ -118,7 +112,7 @@ export default function Account() {
                 size="xl"
                 autoFocus={true}
                 id="last_name"
-                placeholder="Digite seu sobrenome"
+                placeholder="Exemplo: Fagundes"
                 {...register('last_name')}
               />
             </Box>
