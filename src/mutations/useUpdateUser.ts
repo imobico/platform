@@ -4,14 +4,14 @@ import { browserClient } from '@/supabase'
 import { User } from '@/types'
 
 const handleUpdateUser = async (newUserData: User): Promise<User> => {
+  console.log(newUserData)
   const { data, error } = await browserClient
     .from('users')
-    .upsert({
-      id: newUserData.id,
+    .update({
       updated_at: new Date().toISOString(),
       ...newUserData
     })
-    .single()
+    .eq('id', newUserData.id)
 
   if (error) {
     return Promise.reject(error)

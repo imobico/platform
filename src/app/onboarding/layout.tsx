@@ -40,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           flex="1"
           boxShadow="0 0 60px 6px token(colors.trusty.10), 0 0 8px 4px token(colors.trusty.10)"
           flexDirection="column"
+          position="relative"
         >
           {children}
         </Center>
