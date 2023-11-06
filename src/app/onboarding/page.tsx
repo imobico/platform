@@ -2,14 +2,14 @@
 
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
-import Lottie from 'lottie-react'
 import { createElement, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { BarLoader } from 'react-spinners'
 
 import { useCurrentUser } from '@/hooks'
 import { useUpdateUser } from '@/mutations'
-import loadingAnimation from '@/public/lottie-loading.json'
 import { browserClient } from '@/supabase'
+import colors, { trusty } from '@/theme/colors'
 import { User } from '@/types'
 import { Box, Button, Center, H1, HStack, Input, Label, Text } from '@/ui'
 
@@ -48,14 +48,22 @@ export default function Onboarding() {
   return (
     <>
       <Box width="600px" maxWidth="90%" flexDirection="column">
-        <CurrentStepComponent
-          currentStep={currentStep}
-          currentUser={currentUserData}
-          onComplete={() => {
-            if (currentStep < Object.keys(stepComponents).length)
-              setCurrentStep((currentStep + 1) as Steps)
-          }}
-        />
+        {!currentUserData ? (
+          <Center width="100%" height="100%">
+            <Box bg={trusty[4].value} borderRadius="300px" overflow="hidden" color="blue">
+              <BarLoader color={trusty[8].value} width="200px" height="10px" speedMultiplier={2} />
+            </Box>
+          </Center>
+        ) : (
+          <CurrentStepComponent
+            currentStep={currentStep}
+            currentUser={currentUserData}
+            onComplete={() => {
+              if (currentStep < Object.keys(stepComponents).length)
+                setCurrentStep((currentStep + 1) as Steps)
+            }}
+          />
+        )}
       </Box>
     </>
   )
