@@ -30,14 +30,13 @@ export default function PersonalProfile({ currentUser, onComplete }: StepCompone
   const updateUser = useUpdateUser()
 
   async function updateProfile(formData: User) {
-    console.log(currentUser)
-    updateUser.mutate({ ...formData, id: currentUser?.id })
+    await updateUser.mutate({ ...formData, id: currentUser?.id })
+
+    onComplete()
   }
 
   useEffect(() => {
-    console.log(currentUser)
     if (currentUser) {
-      console.log(currentUser)
       reset({
         first_name: currentUser.first_name,
         last_name: currentUser.last_name
@@ -47,8 +46,8 @@ export default function PersonalProfile({ currentUser, onComplete }: StepCompone
 
   return (
     <Box>
-      <H1 fontSize="4xl">Seu perfil</H1>
-      <Text color="text.muted" mb="12">
+      <H1 fontSize="4xl">Sobre você</H1>
+      <Text color="text.muted" mb="12" pr="24">
         Suas informações pessoais básicas.
         <br />
         (Nenhuma dessas informações será divulgada)

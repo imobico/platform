@@ -17,7 +17,7 @@ const handleUpdateUser = async (newUserData: User): Promise<User> => {
     return Promise.reject(error)
   }
 
-  return data || newUserData
+  return Promise.resolve(newUserData)
 }
 
 export const useUpdateUser = () => {

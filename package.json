@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@pandacss/dev": "^0.17.5",
-    "@park-ui/panda-preset": "^0.21.0-0",
+    "@park-ui/panda-preset": "^0.21.0",
     "@tanstack/eslint-plugin-query": "^5.0.5",
     "@tanstack/react-query-devtools": "^5.4.3",
     "@trivago/prettier-plugin-sort-imports": "^4.2.1",

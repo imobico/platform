@@ -1,18 +1,14 @@
 'use client'
 
-import * as yup from 'yup'
-import { yupResolver } from '@hookform/resolvers/yup'
-import { createElement, useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { createElement, useState } from 'react'
 import { BarLoader } from 'react-spinners'
 
 import { useCurrentUser } from '@/hooks'
-import { useUpdateUser } from '@/mutations'
-import { browserClient } from '@/supabase'
-import colors, { trusty } from '@/theme/colors'
+import { trusty } from '@/theme/colors'
 import { User } from '@/types'
-import { Box, Button, Center, H1, HStack, Input, Label, Text } from '@/ui'
+import { Box, Center } from '@/ui'
 
+import BusinessTypeComponent from './steps/BusinessType'
 import PersonalProfileComponent from './steps/PersonalProfile'
 
 export type Steps = 1 | 2
@@ -25,7 +21,7 @@ export type StepComponentProps = {
 
 const stepComponents = {
   1: PersonalProfileComponent,
-  2: PersonalProfileComponent
+  2: BusinessTypeComponent
 }
 
 const CurrentStepComponent = ({ currentStep, currentUser, onComplete }: StepComponentProps) => {
@@ -59,8 +55,13 @@ export default function Onboarding() {
             currentStep={currentStep}
             currentUser={currentUserData}
             onComplete={() => {
-              if (currentStep < Object.keys(stepComponents).length)
+              console.log('oncomplete')
+              if (currentStep < Object.keys(stepComponents).length) {
+                console.log('increasing step to ', currentStep + 1)
                 setCurrentStep((currentStep + 1) as Steps)
+
+                console.log(currentStep)
+              }
             }}
           />
         )}
