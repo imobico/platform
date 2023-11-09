@@ -1,5 +1,5 @@
 export const trusty = {
-  DEFAULT: { value: '#2268F5' },
+  DEFAULT: { value: '#1855D1' },
   1: { value: '#F0F5FF' },
   2: { value: '#EAF1FF' },
   3: { value: '#D4E3FF' },
