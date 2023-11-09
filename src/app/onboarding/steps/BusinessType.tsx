@@ -10,11 +10,14 @@ import {
   Apple,
   CreditCard
 } from 'lucide-react'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { useCurrentUser } from '@/hooks'
 import { useUpdateUser } from '@/mutations'
+import BriefcaseIcon from '@/public/icons/Briefcase-05.svg'
+import BuildingIcon from '@/public/icons/Building-03.svg'
+import UserIcon from '@/public/icons/User.svg'
 import { browserClient } from '@/supabase'
 import { User } from '@/types'
 import {
@@ -35,7 +38,32 @@ import {
 
 import { StepComponentProps } from '../page'
 
+const businessTypes = [
+  {
+    value: 'agent',
+    label: 'Corretor',
+    description:
+      'Você trabalha de forma individual e independente, gerenciando uma quantidade menor de imóveis.',
+    icon: BriefcaseIcon
+  },
+  {
+    value: 'agency',
+    label: 'Imobiliária',
+    description:
+      'Negócios com equipes de dois ou mais corretores, que gerencia números maiores de imóveis.',
+    icon: BuildingIcon
+  },
+  {
+    value: 'owner',
+    label: 'Proprietário',
+    description: 'Você possuí e auto gerencia seus próprios imóveis',
+    icon: UserIcon
+  }
+]
+
 export default function BusinessType({ currentUser, onComplete }: StepComponentProps) {
+  const [selectedBusinessType, setSelectedBusinessType] = useState(0)
+
   const schema = yup.object().shape({
     first_name: yup.string().required('O campo "Nome" é obrigatório'),
     last_name: yup.string().required('O campo "Sobrenome" é obrigatório')
@@ -54,38 +82,29 @@ export default function BusinessType({ currentUser, onComplete }: StepComponentP
     updateUser.mutate({ ...formData, id: currentUser?.id })
   }
 
-  const options = [{ value: 'S' }, { value: 'M' }, { value: 'L', disabled: true }, { value: 'XL' }]
-
-  useEffect(() => {
-    if (currentUser) {
-      reset({
-        first_name: currentUser.first_name,
-        last_name: currentUser.last_name
-      })
-    }
-  }, [currentUser])
-
   return (
     <Box>
       <H1 fontSize="4xl">Tipo de negócio</H1>
       <Text color="text.muted" mb="12" pr="32">
-        O seu perfil de negócio irá nos ajudar personalizar o seu painel com as informações mais
+        O seu perfil de negócio nos ajudará a personalizar o seu painel com as informações mais
         relevantes possíveis.
       </Text>
       <form onSubmit={handleSubmit(updateProfile)}>
         <Box width="100%">
           <RadioButtonGroup
-            defaultValue="card"
+            defaultValue="agent"
             variant="outline"
             display="grid"
             gridTemplateColumns="repeat(3, 1fr)"
           >
-            {[
-              { value: 'agent', label: 'Corretor', icon: CreditCard },
-              { value: 'agency', label: 'Imobiliária', icon: AlignRightIcon },
-              { value: 'owner', label: 'Proprietário', icon: Apple }
-            ].map((option, id) => (
-              <Radio key={id} value={option.value} height="unset" py="4">
+            {businessTypes.map((option, id) => (
+              <Radio
+                key={id}
+                value={option.value}
+                height="unset"
+                py="4"
+                onClick={() => setSelectedBusinessType(id)}
+              >
                 <RadioControl />
                 <RadioLabel flexDirection="column">
                   <option.icon style={{ width: '1.5rem', height: '1.5rem' }} />
@@ -94,6 +113,11 @@ export default function BusinessType({ currentUser, onComplete }: StepComponentP
               </Radio>
             ))}
           </RadioButtonGroup>
+
+          <Text mt="4" color="text.muted">
+            <strong>{businessTypes[selectedBusinessType].label}: &nbsp;</strong>
+            {businessTypes[selectedBusinessType].description}
+          </Text>
 
           <Button
             mt={8}
