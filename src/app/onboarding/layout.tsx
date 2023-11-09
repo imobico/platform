@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             sobre o seu negócio.
           </Text>
           <Box bg="trusty.10" p="6" borderRadius="xl" mt="12">
-            <Text fontSize="sm" color="trusty.3" textAlign="center">
+            <Text fontSize="sm" color="trusty.1" textAlign="center">
               Caso precise, você poderá alterar suas informações a qualquer momento nas
               configurações da sua conta.
             </Text>

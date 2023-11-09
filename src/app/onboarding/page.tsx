@@ -8,6 +8,7 @@ import { trusty } from '@/theme/colors'
 import { User } from '@/types'
 import { Box, Center } from '@/ui'
 
+import BusinessProfileComponent from './steps/BusinessProfile'
 import BusinessTypeComponent from './steps/BusinessType'
 import PersonalProfileComponent from './steps/PersonalProfile'
 
@@ -21,7 +22,8 @@ export type StepComponentProps = {
 
 const stepComponents = {
   1: PersonalProfileComponent,
-  2: BusinessTypeComponent
+  2: BusinessTypeComponent,
+  3: BusinessProfileComponent
 }
 
 const CurrentStepComponent = ({ currentStep, currentUser, onComplete }: StepComponentProps) => {
@@ -55,12 +57,8 @@ export default function Onboarding() {
             currentStep={currentStep}
             currentUser={currentUserData}
             onComplete={() => {
-              console.log('oncomplete')
               if (currentStep < Object.keys(stepComponents).length) {
-                console.log('increasing step to ', currentStep + 1)
                 setCurrentStep((currentStep + 1) as Steps)
-
-                console.log(currentStep)
               }
             }}
           />

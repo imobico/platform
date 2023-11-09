@@ -2,6 +2,7 @@
 
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
@@ -38,23 +39,12 @@ const businessTypes = [
 
 export default function BusinessType({ currentUser, onComplete }: StepComponentProps) {
   const [selectedBusinessType, setSelectedBusinessType] = useState(0)
+  const { push } = useRouter()
+  const searchParams = useSearchParams()
 
-  const schema = yup.object().shape({
-    first_name: yup.string().required('O campo "Nome" é obrigatório'),
-    last_name: yup.string().required('O campo "Sobrenome" é obrigatório')
-  })
-
-  const {
-    handleSubmit,
-    register,
-    formState: { errors, isSubmitting },
-    reset
-  } = useForm({ resolver: yupResolver(schema) })
-
-  const updateUser = useUpdateUser()
-
-  async function updateProfile(formData: User) {
-    updateUser.mutate({ ...formData, id: currentUser?.id })
+  async function submitBusinessType() {
+    push(`?businessType=${businessTypes[selectedBusinessType].value}`)
+    onComplete()
   }
 
   return (
@@ -64,59 +54,59 @@ export default function BusinessType({ currentUser, onComplete }: StepComponentP
         O seu perfil de negócio nos ajudará a personalizar o seu painel com as informações mais
         relevantes para você.
       </Text>
-      <form onSubmit={handleSubmit(updateProfile)}>
-        <Box width="100%">
-          <RadioButtonGroup.Root
-            defaultValue="agent"
-            variant="outline"
-            display="grid"
-            gridTemplateColumns="repeat(3, 1fr)"
-          >
-            {businessTypes.map((option, id) => (
-              <RadioButtonGroup.Item
-                key={id}
-                value={option.value}
-                height="8vw"
-                onClick={() => setSelectedBusinessType(id)}
-              >
-                <RadioButtonGroup.ItemControl />
-                <RadioButtonGroup.Label pointerEvents="none">
-                  <Center flexDirection="column">
-                    <option.icon
-                      size="10"
-                      color={id === selectedBusinessType ? 'trusty' : 'slate.12'}
-                    />
-                    <Text
-                      fontSize="md"
-                      color={id === selectedBusinessType ? 'trusty' : 'slate.12'}
-                      mt="3"
-                    >
-                      {option.label}
-                    </Text>
-                  </Center>
-                </RadioButtonGroup.Label>
-              </RadioButtonGroup.Item>
-            ))}
-          </RadioButtonGroup.Root>
+      <Box width="100%">
+        <RadioButtonGroup.Root
+          defaultValue="agent"
+          variant="outline"
+          display="grid"
+          gridTemplateColumns="repeat(3, 1fr)"
+        >
+          {businessTypes.map((option, id) => (
+            <RadioButtonGroup.Item
+              key={id}
+              value={option.value}
+              height="8vw"
+              onClick={() => setSelectedBusinessType(id)}
+            >
+              <RadioButtonGroup.ItemControl />
+              <RadioButtonGroup.Label pointerEvents="none">
+                <Center flexDirection="column">
+                  <option.icon
+                    size="10"
+                    color={id === selectedBusinessType ? 'trusty' : 'slate.12'}
+                  />
+                  <Text
+                    fontSize="md"
+                    color={id === selectedBusinessType ? 'trusty' : 'slate.12'}
+                    mt="3"
+                  >
+                    {option.label}
+                  </Text>
+                </Center>
+              </RadioButtonGroup.Label>
+            </RadioButtonGroup.Item>
+          ))}
+        </RadioButtonGroup.Root>
 
-          <Text mt="4" color="trusty">
-            <strong>{businessTypes[selectedBusinessType].label}: &nbsp;</strong>
-            {businessTypes[selectedBusinessType].description}
-          </Text>
+        <Text mt="4" color="trusty.8">
+          <strong>{businessTypes[selectedBusinessType].label}: &nbsp;</strong>
+          {businessTypes[selectedBusinessType].description}
+        </Text>
 
-          <Button
-            mt={8}
-            colorScheme="black"
-            type="submit"
-            size="xl"
-            width="100%"
-            // isLoading={isProfileUpdating}
-            // loadingText="Salvando..."
-          >
-            Continuar
-          </Button>
-        </Box>
-      </form>
+        <Button
+          mt={8}
+          colorScheme="black"
+          size="xl"
+          width="100%"
+          onClick={() => {
+            submitBusinessType()
+          }}
+          // isLoading={isProfileUpdating}
+          // loadingText="Salvando..."
+        >
+          Continuar
+        </Button>
+      </Box>
     </Box>
   )
 }
