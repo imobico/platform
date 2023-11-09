@@ -13,6 +13,8 @@ import {
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
+import { token } from '@/styled/tokens/index.mjs'
+
 import { useCurrentUser } from '@/hooks'
 import { useUpdateUser } from '@/mutations'
 import BriefcaseIcon from '@/public/icons/Briefcase-05.svg'
@@ -101,13 +103,18 @@ export default function BusinessType({ currentUser, onComplete }: StepComponentP
               <Radio
                 key={id}
                 value={option.value}
-                height="unset"
-                py="4"
+                height="120px"
                 onClick={() => setSelectedBusinessType(id)}
               >
                 <RadioControl />
-                <RadioLabel flexDirection="column">
-                  <option.icon style={{ width: '1.5rem', height: '1.5rem' }} />
+                <RadioLabel
+                  flexDirection="column"
+                  color={id === selectedBusinessType ? 'trusty' : 'unset'}
+                >
+                  <option.icon
+                    style={{ width: '1.5rem', height: '1.5rem' }}
+                    fill={id === selectedBusinessType ? token('colors.trusty.4') : 'white'}
+                  />
                   {option.label}
                 </RadioLabel>
               </Radio>
