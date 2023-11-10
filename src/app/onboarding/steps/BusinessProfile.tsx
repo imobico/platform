@@ -16,10 +16,15 @@ import { StepComponentProps } from '../page'
 
 type BusinessTypes = 'agent' | 'agency' | 'owner'
 
+const schema = yup.object().shape({
+  name: yup.string().required('O campo "Nome" é obrigatório')
+})
+
 export default function BusinessProfile({ currentUser, onComplete }: StepComponentProps) {
   const [isCreateBusinessLoading, setIsCreateBusinessLoading] = useState(false)
-
+  const createOrganization = useCreateOrganization()
   const params = useSearchParams()
+
   const businessType = params.get('businessType')
 
   const inputPlaceholders = {
@@ -28,18 +33,12 @@ export default function BusinessProfile({ currentUser, onComplete }: StepCompone
     owner: 'Praia do Futuro Casas'
   }
 
-  const schema = yup.object().shape({
-    name: yup.string().required('O campo "Nome" é obrigatório')
-  })
-
   const {
     handleSubmit,
     register,
     formState: { errors, isSubmitting },
     reset
   } = useForm({ resolver: yupResolver(schema) })
-
-  const createOrganization = useCreateOrganization()
 
   async function createBusiness(formData: { name: string }) {
     setIsCreateBusinessLoading(true)
@@ -81,7 +80,7 @@ export default function BusinessProfile({ currentUser, onComplete }: StepCompone
           </HStack>
 
           <Button
-            isLoading={isCreateBusinessLoading}
+            isLoading={createOrganization.isPending}
             mt={8}
             colorScheme="black"
             type="submit"
