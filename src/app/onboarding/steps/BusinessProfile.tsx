@@ -73,6 +73,7 @@ export default function BusinessProfile({ currentUser, onComplete }: StepCompone
           </HStack>
 
           <Button
+            isLoading
             mt={8}
             colorScheme="black"
             type="submit"
