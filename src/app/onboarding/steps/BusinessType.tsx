@@ -3,49 +3,57 @@
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { Briefcase, Building, User as UserIcon } from '@/icons'
 import { useUpdateUser } from '@/mutations'
-import { User } from '@/types'
+import { OrganizationType, User } from '@/types'
 import { Box, Button, Center, H1, RadioButtonGroup, Text } from '@/ui'
 
 import { StepComponentProps } from '../page'
 
-const businessTypes = [
-  {
+const businessTypes = {
+  agent: {
     value: 'agent',
     label: 'Corretor',
     description:
       'Você trabalha de forma individual e independente, gerenciando uma quantidade menor de imóveis.',
     icon: Briefcase
   },
-  {
+  agency: {
     value: 'agency',
     label: 'Imobiliária',
     description:
       'Negócios com equipes de dois ou mais corretores, que gerencia números maiores de imóveis.',
     icon: Building
   },
-  {
+  owner: {
     value: 'owner',
     label: 'Proprietário',
     description:
       'Você possuí um ou mais imóveis e quer gerenciar suas locações anuais e por temporada.',
     icon: UserIcon
   }
-]
+}
 
 export default function BusinessType({ currentUser, onComplete }: StepComponentProps) {
-  const [selectedBusinessType, setSelectedBusinessType] = useState(0)
+  const [selectedBusinessType, setSelectedBusinessType] = useState<OrganizationType>('agency')
   const { push } = useRouter()
+
   const searchParams = useSearchParams()
+  const businessTypeParam = searchParams.get('businessType')
 
   async function submitBusinessType() {
-    push(`?businessType=${businessTypes[selectedBusinessType].value}`)
+    push(`?businessType=${businessTypes[selectedBusinessType as OrganizationType].value}`)
     onComplete()
   }
+
+  useEffect(() => {
+    if (businessTypeParam !== null) {
+      setSelectedBusinessType(businessTypeParam as OrganizationType)
+    }
+  }, [businessTypeParam])
 
   return (
     <Box>
@@ -56,28 +64,26 @@ export default function BusinessType({ currentUser, onComplete }: StepComponentP
       </Text>
       <Box width="100%">
         <RadioButtonGroup.Root
-          defaultValue="agent"
+          value={selectedBusinessType}
           variant="outline"
           display="grid"
           gridTemplateColumns="repeat(3, 1fr)"
+          onValueChange={(businessType) => {
+            setSelectedBusinessType(businessType.value as OrganizationType)
+          }}
         >
-          {businessTypes.map((option, id) => (
-            <RadioButtonGroup.Item
-              key={id}
-              value={option.value}
-              height="8vw"
-              onClick={() => setSelectedBusinessType(id)}
-            >
+          {Object.values(businessTypes).map((option, id) => (
+            <RadioButtonGroup.Item key={id} value={option.value} height="8vw">
               <RadioButtonGroup.ItemControl />
               <RadioButtonGroup.Label pointerEvents="none">
                 <Center flexDirection="column">
                   <option.icon
                     size="10"
-                    color={id === selectedBusinessType ? 'trusty' : 'slate.12'}
+                    color={option.value === selectedBusinessType ? 'trusty' : 'slate.12'}
                   />
                   <Text
                     fontSize="md"
-                    color={id === selectedBusinessType ? 'trusty' : 'slate.12'}
+                    color={option.value === selectedBusinessType ? 'trusty' : 'slate.12'}
                     mt="3"
                   >
                     {option.label}

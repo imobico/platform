@@ -3,7 +3,7 @@
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useParams, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { useCurrentUser } from '@/hooks'
@@ -17,6 +17,8 @@ import { StepComponentProps } from '../page'
 type BusinessTypes = 'agent' | 'agency' | 'owner'
 
 export default function BusinessProfile({ currentUser, onComplete }: StepComponentProps) {
+  const [isCreateBusinessLoading, setIsCreateBusinessLoading] = useState(false)
+
   const params = useSearchParams()
   const businessType = params.get('businessType')
 
@@ -40,8 +42,14 @@ export default function BusinessProfile({ currentUser, onComplete }: StepCompone
   const createOrganization = useCreateOrganization()
 
   async function createBusiness(formData: { name: string }) {
-    if (!businessType) return
-    await createOrganization.mutate({ ...formData, type: businessType as OrganizationType })
+    setIsCreateBusinessLoading(true)
+
+    await createOrganization.mutate({
+      ...formData,
+      type: (businessType || 'agency') as OrganizationType
+    })
+
+    setIsCreateBusinessLoading(false)
 
     onComplete()
   }
@@ -73,7 +81,7 @@ export default function BusinessProfile({ currentUser, onComplete }: StepCompone
           </HStack>
 
           <Button
-            isLoading
+            isLoading={isCreateBusinessLoading}
             mt={8}
             colorScheme="black"
             type="submit"

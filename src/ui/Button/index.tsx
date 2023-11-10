@@ -34,7 +34,7 @@ export const Button = ({ isLoading, children, ...rest }: ButtonProps) => {
             justifyContent: 'center'
           }}
         >
-          <PropagateLoader color={trusty[4].value} height />
+          <PropagateLoader color="rgba(255,255,255,0.4)" />
         </Center>
       ) : (
         children
