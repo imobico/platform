@@ -7,9 +7,9 @@ import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { useCurrentUser } from '@/hooks'
-import { useUpdateUser } from '@/mutations'
+import { useCreateOrganization, useUpdateUser } from '@/mutations'
 import { browserClient } from '@/supabase'
-import { User } from '@/types'
+import { OrganizationType, User } from '@/types'
 import { Box, Button, H1, HStack, Input, Label, Text } from '@/ui'
 
 import { StepComponentProps } from '../page'
@@ -37,10 +37,11 @@ export default function BusinessProfile({ currentUser, onComplete }: StepCompone
     reset
   } = useForm({ resolver: yupResolver(schema) })
 
-  const updateUser = useUpdateUser()
+  const createOrganization = useCreateOrganization()
 
   async function createBusiness(formData: { name: string }) {
-    await updateUser.mutate({ ...formData, id: currentUser?.id })
+    if (!businessType) return
+    await createOrganization.mutate({ ...formData, type: businessType as OrganizationType })
 
     onComplete()
   }
