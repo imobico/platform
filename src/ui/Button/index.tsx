@@ -1,13 +1,10 @@
 import { ark } from '@ark-ui/react'
-import { defineRecipe } from '@pandacss/dev'
-import { Children, ReactNode } from 'react'
-import { BarLoader, FadeLoader, PropagateLoader } from 'react-spinners'
+import { ReactNode } from 'react'
+import { PropagateLoader } from 'react-spinners'
 
-import { Box, Center, styled } from '@/styled'
+import { Center, styled } from '@/styled'
 import { button } from '@/styled/recipes'
-
-import { User } from '@/icons'
-import { trusty } from '@/theme/colors'
+import { FontSizeToken } from '@/styled/tokens'
 
 export type BaseButtonProps = typeof BaseButton
 export interface ButtonProps extends BaseButtonProps {

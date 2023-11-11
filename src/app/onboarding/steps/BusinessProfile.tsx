@@ -42,15 +42,17 @@ export default function BusinessProfile({ currentUser, onComplete }: StepCompone
 
   async function createBusiness(formData: { name: string }) {
     setIsCreateBusinessLoading(true)
-
-    await createOrganization.mutate({
-      ...formData,
-      type: (businessType || 'agency') as OrganizationType
-    })
-
-    setIsCreateBusinessLoading(false)
-
-    onComplete()
+    try {
+      const organization = await createOrganization.mutateAsync({
+        ...formData,
+        type: (businessType || 'agency') as OrganizationType
+      })
+    } catch (error) {
+      console.error(error)
+    } finally {
+      setIsCreateBusinessLoading(false)
+      onComplete()
+    }
   }
 
   return (

@@ -10,9 +10,10 @@ import { Box, Center } from '@/ui'
 
 import BusinessProfileComponent from './steps/BusinessProfile'
 import BusinessTypeComponent from './steps/BusinessType'
+import OnboardingSuccessComponent from './steps/OnboardingSuccess'
 import PersonalProfileComponent from './steps/PersonalProfile'
 
-export type Steps = 1 | 2
+export type Steps = 1 | 2 | 3 | 4
 
 export type StepComponentProps = {
   currentStep: Steps
@@ -23,7 +24,8 @@ export type StepComponentProps = {
 const stepComponents = {
   1: PersonalProfileComponent,
   2: BusinessTypeComponent,
-  3: BusinessProfileComponent
+  3: BusinessProfileComponent,
+  4: OnboardingSuccessComponent
 }
 
 const CurrentStepComponent = ({ currentStep, currentUser, onComplete }: StepComponentProps) => {
@@ -41,7 +43,7 @@ export default function Onboarding() {
     error: currentUserError
   } = useCurrentUser()
 
-  const [currentStep, setCurrentStep] = useState<Steps>(1) // Changed from 0 to 1
+  const [currentStep, setCurrentStep] = useState<Steps>(4) // Changed from 0 to 1
 
   return (
     <>

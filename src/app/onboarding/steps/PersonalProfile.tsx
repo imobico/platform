@@ -76,7 +76,6 @@ export default function PersonalProfile({ currentUser, onComplete }: StepCompone
               <Input
                 mt="2"
                 size="xl"
-                autoFocus={true}
                 id="last_name"
                 placeholder="Exemplo: Fagundes"
                 {...register('last_name')}

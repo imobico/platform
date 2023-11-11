@@ -1,4 +1,3 @@
-import { PostgrestSingleResponse } from '@supabase/supabase-js'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 import { browserClient } from '@/supabase'
