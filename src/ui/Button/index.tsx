@@ -3,12 +3,11 @@ import { ReactNode } from 'react'
 import { PropagateLoader } from 'react-spinners'
 
 import { Center, styled } from '@/styled'
-import { button } from '@/styled/recipes'
-import { FontSizeToken } from '@/styled/tokens'
+import { ButtonVariantProps, button } from '@/styled/recipes'
 
 export type BaseButtonProps = typeof BaseButton
-export interface ButtonProps extends BaseButtonProps {
-  isLoading: boolean
+export interface ButtonProps extends ButtonVariantProps {
+  isLoading?: boolean
   children: ReactNode
 }
 
