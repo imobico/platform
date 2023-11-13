@@ -2,14 +2,12 @@
 
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useParams, useSearchParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
-import { useCurrentUser } from '@/hooks'
-import { useCreateOrganization, useUpdateUser } from '@/mutations'
-import { browserClient } from '@/supabase'
-import { OrganizationType, User } from '@/types'
+import { useCreateOrganization } from '@/mutations'
+import { OrganizationType } from '@/types'
 import { Box, Button, H1, HStack, Input, Label, Text } from '@/ui'
 
 import { StepComponentProps } from '../page'
@@ -65,7 +63,7 @@ export default function BusinessProfile({ currentUser, onComplete }: StepCompone
       </Text>
       <form onSubmit={handleSubmit(createBusiness)}>
         <Box width="100%">
-          <HStack width="100%" gap="4">
+          <HStack width="100%" gap="4" mb="8">
             <Box flex="1">
               <Label size="xl" htmlFor="name">
                 Nome
@@ -83,8 +81,6 @@ export default function BusinessProfile({ currentUser, onComplete }: StepCompone
 
           <Button
             isLoading={createOrganization.isPending}
-            mt={8}
-            colorScheme="black"
             type="submit"
             size="xl"
             width="100%"

@@ -1,12 +1,15 @@
-import { ark } from '@ark-ui/react'
-import { ReactNode } from 'react'
+import { HTMLArkProps, ark } from '@ark-ui/react'
+import { ButtonHTMLAttributes, ReactNode } from 'react'
 import { PropagateLoader } from 'react-spinners'
 
 import { Center, styled } from '@/styled'
 import { ButtonVariantProps, button } from '@/styled/recipes'
 
 export type BaseButtonProps = typeof BaseButton
-export interface ButtonProps extends ButtonVariantProps {
+export interface ButtonProps
+  extends BaseButtonProps,
+    ButtonVariantProps,
+    ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean
   children: ReactNode
 }
