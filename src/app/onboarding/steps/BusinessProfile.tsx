@@ -79,12 +79,8 @@ export default function BusinessProfile({ currentUser, onComplete }: StepCompone
             </Box>
           </HStack>
 
-          <Button
-            // isLoading={createOrganization.isPending}
-            type="submit"
-            size="xl"
-          >
-            Continuar
+          <Button type="submit" size="xl">
+            {createOrganization.isPending ? 'Salvando...' : 'Continuar'}
           </Button>
         </Box>
       </form>
