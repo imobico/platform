@@ -21,7 +21,7 @@ export default function OnboardingSuccess({ currentUser }: StepComponentProps) {
       </H1>
       <Text color="text.muted" mb="12" textAlign="center">
         Nós já preparamos o seu painel onde você poderá{' '}
-        <strong>adicionar os seus primeiros imóveis</strong>,<strong>configurar seu site</strong> e{' '}
+        <strong>adicionar os seus primeiros imóveis</strong>, <strong>configurar seu site</strong> e{' '}
         <strong>gerenciar seu negócio</strong>.
       </Text>
 

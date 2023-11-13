@@ -43,7 +43,7 @@ export default function Onboarding() {
     error: currentUserError
   } = useCurrentUser()
 
-  const [currentStep, setCurrentStep] = useState<Steps>(4) // Changed from 0 to 1
+  const [currentStep, setCurrentStep] = useState<Steps>(1) // Changed from 0 to 1
 
   return (
     <>
