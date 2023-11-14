@@ -48,6 +48,8 @@ export default function Onboarding() {
   return (
     <>
       {currentUserError ? (
+        <Box>Algo deu errado</Box>
+      ) : (
         <Box width="600px" maxWidth="90%" flexDirection="column">
           {isCurrentUserLoading || !currentUserData ? (
             <Center width="100%" height="100%">
@@ -72,8 +74,6 @@ export default function Onboarding() {
             />
           )}
         </Box>
-      ) : (
-        <Box>Algo deu errado</Box>
       )}
     </>
   )
