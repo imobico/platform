@@ -3,21 +3,14 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { browserClient } from '@/supabase'
 import { User } from '@/types'
 
-const handleUpdateUser = async (newUserData: User): Promise<User> => {
-  console.log(newUserData)
-  const { data, error } = await browserClient
+const handleUpdateUser = async (newUserData: User) => {
+  return (await browserClient
     .from('users')
     .update({
       updated_at: new Date().toISOString(),
       ...newUserData
     })
-    .eq('id', newUserData.id)
-
-  if (error) {
-    return Promise.reject(error)
-  }
-
-  return Promise.resolve(newUserData)
+    .eq('id', newUserData.id)) as User
 }
 
 export const useUpdateUser = () => {

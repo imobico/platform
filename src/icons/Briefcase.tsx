@@ -1,4 +1,3 @@
-import { styled } from '@/styled'
 import { token } from '@/styled/tokens'
 
 import { IconProps, IconWrapper } from './IconWrapper'

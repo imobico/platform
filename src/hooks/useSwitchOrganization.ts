@@ -3,10 +3,11 @@ import useLocalStorageState from 'use-local-storage-state'
 
 export const useSwitchOrganization = () => {
   const router = useRouter()
-  const [currentOrgId, setOrgId] = useLocalStorageState('currentOrganizationId')
+  const [currentOrgId, setCurrentOrgId] = useLocalStorageState('currentOrganizationId')
 
   const switchOrganization = (newOrgId: string | undefined) => {
-    setOrgId(newOrgId)
+    setCurrentOrgId(newOrgId)
+    console.log(`Switched to organization ${currentOrgId}`)
     router.replace(`/painel`)
   }
 

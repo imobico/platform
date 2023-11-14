@@ -3,17 +3,14 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { browserClient } from '@/supabase'
 import { Tournament } from '@/types'
 
-const handleCreateTournament = async (newTournamentData: { name: string }): Promise<Tournament> => {
+const handleCreateTournament = async (newTournamentData: { name: string }) => {
   const organizationId = window.localStorage.getItem('currentOrganizationId')
-  const { data, error: err } = await browserClient
+  return browserClient
     .from('tournaments')
-    .insert({ name: newTournamentData.name, organization: organizationId })
-
-  return data || newTournamentData
+    .insert({ name: newTournamentData.name, organization: organizationId }) as Tournament
 }
 
 export const useCreateTournament = () => {
-  const currentOrganizationId = window.localStorage.getItem('currentOrganizationId')
   const queryClient = useQueryClient()
 
   const mutation = useMutation({

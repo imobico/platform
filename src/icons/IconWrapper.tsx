@@ -10,7 +10,7 @@ export type IconProps = {
 
 const SVG = styled.svg
 
-export const IconWrapper = ({ color, secondaryColor, size, children, ...rest }: IconProps) => {
+export const IconWrapper = ({ size, children, ...rest }: IconProps) => {
   return (
     <SVG
       style={{ width: token(`sizes.${size}`), height: token(`sizes.${size}`), fill: 'transparent' }}
