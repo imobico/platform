@@ -5,9 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
-import { useCurrentUser } from '@/hooks'
 import { useUpdateUser } from '@/mutations'
-import { browserClient } from '@/supabase'
 import { User } from '@/types'
 import { Box, Button, H1, HStack, Input, Label, Text } from '@/ui'
 
@@ -23,7 +21,7 @@ export default function PersonalProfile({ currentUser, onComplete }: StepCompone
   const {
     handleSubmit,
     register,
-    formState: { errors, isSubmitting },
+    // formState: { errors, isSubmitting },
     reset
   } = useForm({ resolver: yupResolver(schema) })
 
@@ -42,7 +40,7 @@ export default function PersonalProfile({ currentUser, onComplete }: StepCompone
         last_name: currentUser.last_name
       })
     }
-  }, [currentUser])
+  }, [currentUser, reset])
 
   return (
     <Box>
