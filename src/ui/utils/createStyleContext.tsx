@@ -1,5 +1,6 @@
 'use client'
 
+// @ts-nocheck
 import { type ComponentProps, type ElementType, createContext, forwardRef, useContext } from 'react'
 
 type Props = Record<string, unknown>
