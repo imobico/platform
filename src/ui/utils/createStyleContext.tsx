@@ -5,8 +5,7 @@ import { type ComponentProps, type ElementType, createContext, forwardRef, useCo
 type Props = Record<string, unknown>
 type Recipe = {
   (props?: Props): Record<string, string>
-  // @ts-ignore
-  splitVariantProps: (props: Props) => any
+  splitVariantProps: (props: Props) => any // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 type Slot<R extends Recipe> = keyof ReturnType<R>
 type SlotRecipe<R extends Recipe> = Record<Slot<R>, string>
@@ -46,7 +45,7 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
     const Comp = forwardRef((props: ComponentProps<T>, ref) => {
       const slotRecipe = useContext(StyleContext)
       return (
-        // @ts-expect-error
+        // @ts-expect-error 3rdd party park-ui code
         <Component ref={ref} {...props} className={cx(slotRecipe?.[slot ?? ''], props.className)} />
       )
     })
