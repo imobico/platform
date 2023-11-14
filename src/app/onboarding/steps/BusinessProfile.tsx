@@ -3,7 +3,6 @@
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useSearchParams } from 'next/navigation'
-import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { useCreateOrganization } from '@/mutations'
@@ -19,7 +18,6 @@ const schema = yup.object().shape({
 })
 
 export default function BusinessProfile({ currentUser, onComplete }: StepComponentProps) {
-  const [isCreateBusinessLoading, setIsCreateBusinessLoading] = useState(false)
   const createOrganization = useCreateOrganization()
   const params = useSearchParams()
 
@@ -39,16 +37,14 @@ export default function BusinessProfile({ currentUser, onComplete }: StepCompone
   } = useForm({ resolver: yupResolver(schema) })
 
   async function createBusiness(formData: { name: string }) {
-    setIsCreateBusinessLoading(true)
     try {
-      const organization = await createOrganization.mutateAsync({
+      await createOrganization.mutateAsync({
         ...formData,
         type: (businessType || 'agency') as OrganizationType
       })
     } catch (error) {
       console.error(error)
     } finally {
-      setIsCreateBusinessLoading(false)
       onComplete()
     }
   }
