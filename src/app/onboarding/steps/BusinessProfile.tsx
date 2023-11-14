@@ -31,9 +31,9 @@ export default function BusinessProfile({ currentUser, onComplete }: StepCompone
 
   const {
     handleSubmit,
-    register,
-    formState: { errors, isSubmitting },
-    reset
+    register
+    // formState: { errors, isSubmitting }
+    // reset
   } = useForm({ resolver: yupResolver(schema) })
 
   async function createBusiness(formData: { name: string }) {

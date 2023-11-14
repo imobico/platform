@@ -1,14 +1,10 @@
 'use client'
 
-import * as yup from 'yup'
-import { yupResolver } from '@hookform/resolvers/yup'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
 
 import { Briefcase, Building, User as UserIcon } from '@/icons'
-import { useUpdateUser } from '@/mutations'
-import { OrganizationType, User } from '@/types'
+import { OrganizationType } from '@/types'
 import { Box, Button, Center, H1, RadioButtonGroup, Text } from '@/ui'
 
 import { StepComponentProps } from '../page'
@@ -37,7 +33,7 @@ const businessTypes = {
   }
 }
 
-export default function BusinessType({ currentUser, onComplete }: StepComponentProps) {
+export default function BusinessType({ onComplete }: StepComponentProps) {
   const [selectedBusinessType, setSelectedBusinessType] = useState<OrganizationType>('agency')
   const { push } = useRouter()
 
