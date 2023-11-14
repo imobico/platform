@@ -1,11 +1,11 @@
 'use client'
 
-// @ts-nocheck
 import { type ComponentProps, type ElementType, createContext, forwardRef, useContext } from 'react'
 
 type Props = Record<string, unknown>
 type Recipe = {
   (props?: Props): Record<string, string>
+  // @ts-ignore
   splitVariantProps: (props: Props) => any
 }
 type Slot<R extends Recipe> = keyof ReturnType<R>
