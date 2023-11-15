@@ -1,4 +1,4 @@
-export const trusty = {
+export const trustyOld = {
   DEFAULT: { value: '#1855D1' },
   1: { value: '#F0F5FF' },
   2: { value: '#EAF1FF' },
@@ -12,6 +12,22 @@ export const trusty = {
   10: { value: '#0F42A9' },
   11: { value: '#082868' },
   12: { value: '#011030' }
+}
+
+export const trusty = {
+  DEFAULT: { value: '#0050DC' },
+  1: { value: '#F0F5FF' },
+  2: { value: '#E7F0FF' },
+  3: { value: '#D1E2FF' },
+  4: { value: '#AAC9FF' },
+  5: { value: '#5B96FF' },
+  6: { value: '#3880FF' },
+  7: { value: '#0D61F4' },
+  8: { value: '#0050DC' },
+  9: { value: '#0042B5' },
+  10: { value: '#002F81' },
+  11: { value: '#001F55' },
+  12: { value: '#001436' }
 }
 
 export const trendy = {

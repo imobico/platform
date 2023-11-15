@@ -1,7 +1,6 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
-import { Box, Button, Center } from '@/ui'
+import { Box, Center } from '@/ui'
 
 export default function Home() {
   return (
@@ -17,9 +16,6 @@ export default function Home() {
           style={{ width: '100%', height: 'auto' }}
         />
       </Box>
-      <Link href="/entrar">
-        <Button size="xl">Fazer login</Button>
-      </Link>
     </Center>
   )
 }
