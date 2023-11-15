@@ -1,4 +1,5 @@
-import { type HTMLStyledProps, styled } from '@/styled'
+import { type HTMLStyledProps, styled } from '@/styled/jsx'
+import { Token, token } from '@/styled/tokens'
 
 type As = 'p' | 'span' | 'div' | 'label'
 
@@ -7,8 +8,15 @@ export type TextProps = {
 } & HTMLStyledProps<As>
 
 export const Text = (props: TextProps) => {
-  const { color = 'red', as = 'p', ...rest } = props
+  const { as = 'p', ...rest } = props
   const Component = styled(as)
 
-  return <Component color={color} {...rest} />
+  return <Component {...rest} />
+}
+
+export const Strong = (props: TextProps) => {
+  const { ...rest } = props
+  const Component = styled('strong')
+
+  return <Component fontWeight="700" {...rest} />
 }

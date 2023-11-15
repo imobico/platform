@@ -23,24 +23,16 @@ export const MarketingHeader = () => {
           </Box>
           <HStack ml="12" gap="8">
             <Box>
-              <Text fontSize="lg" fontWeight="semibold">
-                Funcionalidades
-              </Text>
+              <Text fontWeight="semibold">Funcionalidades</Text>
             </Box>
             <Box>
-              <Text fontSize="lg" fontWeight="semibold">
-                Integrações
-              </Text>
+              <Text fontWeight="semibold">Integrações</Text>
             </Box>
             <Box>
-              <Text fontSize="lg" fontWeight="semibold">
-                Sobre
-              </Text>
+              <Text fontWeight="semibold">Sobre</Text>
             </Box>
             <Box>
-              <Text fontSize="lg" fontWeight="semibold">
-                Planos
-              </Text>
+              <Text fontWeight="semibold">Planos</Text>
             </Box>
           </HStack>
         </Flex>
