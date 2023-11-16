@@ -1,5 +1,4 @@
 import { type HTMLStyledProps, styled } from '@/styled/jsx'
-import { Token, token } from '@/styled/tokens'
 
 type As = 'p' | 'span' | 'div' | 'label'
 
