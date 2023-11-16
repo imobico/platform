@@ -16,12 +16,6 @@ export const Body = Plus_Jakarta_Sans({
   variable: '--font-body'
 })
 
-// export const Body = Roboto_Flex({
-//   display: 'swap',
-//   subsets: ['latin'],
-//   variable: '--font-body'
-// })
-
 export const metadata: Metadata = {
   title: 'Imobi: O melhor software para imobiliárias e corretores.',
   description: 'Imobi: O melhor software para imobiliárias e corretores.'
