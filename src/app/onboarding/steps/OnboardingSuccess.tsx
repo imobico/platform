@@ -2,7 +2,6 @@
 
 import { ArrowRight } from 'lucide-react'
 
-import successAnimation from '@/public/successAnimation.json'
 import { Button, Center, H1, Text } from '@/ui'
 
 import { StepComponentProps } from '../page'
