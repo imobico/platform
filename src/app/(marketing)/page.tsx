@@ -32,7 +32,29 @@ export default function Home() {
           >
             eficiência
           </Strong>{' '}
-          para imobiliárias e corretores.
+          para{' '}
+          <Strong
+            style={{
+              paddingLeft: '10px',
+              paddingRight: '10px',
+              background:
+                'linear-gradient(360deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 30%, rgba(209,226,255,0) 30%, rgba(255,255,255,0) 100%)'
+            }}
+          >
+            imobiliárias
+          </Strong>{' '}
+          e{' '}
+          <Strong
+            style={{
+              paddingLeft: '10px',
+              paddingRight: '10px',
+              background:
+                'linear-gradient(360deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 30%, rgba(209,226,255,0) 30%, rgba(255,255,255,0) 100%)'
+            }}
+          >
+            corretores
+          </Strong>
+          .
         </H1>
         <Text textAlign="center" fontSize="xl" color="slate.11" maxWidth="780px" mb="8">
           Através das mais recentes tecnologias automatizamos tarefas e aumentamos a eficiência de
