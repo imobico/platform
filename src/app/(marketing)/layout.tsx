@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
 
-// import { Box } from '@/ui'
+import { Box } from '@/ui'
+
 import { MarketingHeader } from './components/MarketingHeader'
 
 export const metadata: Metadata = {
@@ -10,13 +11,9 @@ export const metadata: Metadata = {
 
 export default function MarketingLayout({ children }: { children: ReactNode }) {
   return (
-    <div>
+    <Box minWidth="100vw" minHeight="100vh">
       <MarketingHeader />
       {children}
-    </div>
-    // <Box minWidth="100vw" minHeight="100vh">
-    //   <MarketingHeader />
-    //   {children}
-    // </Box>
+    </Box>
   )
 }
