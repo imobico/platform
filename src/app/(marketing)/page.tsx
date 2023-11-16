@@ -76,7 +76,6 @@ export default function Home() {
 
         <Box boxShadow="xl" borderRadius="3xl" overflow="hidden" mt="24" width="880px">
           <Image
-            priority
             src="/floating-ui-center.png"
             alt="Imobi Test"
             width={0}
@@ -95,7 +94,6 @@ export default function Home() {
           ml="-920px"
         >
           <Image
-            priority
             src="/floating-ui-left.png"
             alt="Imobi Test"
             width={0}
@@ -114,7 +112,6 @@ export default function Home() {
           mr="-920px"
         >
           <Image
-            priority
             src="/floating-ui-right.png"
             alt="Imobi Test"
             width={0}
