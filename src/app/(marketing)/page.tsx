@@ -73,11 +73,11 @@ export default function Home() {
           <HStack gap="6">
             <Link href="/cadastro">
               <Button borderRadius="full" size="2xl" fontWeight="500">
-                Faça um<strong style={{ fontWeight: 700, marginLeft: '-6px' }}>Teste grátis</strong>
+                Faça um<strong style={{ fontWeight: 700, marginLeft: '-6px' }}>teste grátis</strong>
               </Button>
             </Link>
             <Link href="/entrar">
-              <Button borderRadius="full" size="2xl" fontWeight="700" variant="outline">
+              <Button borderRadius="full" size="2xl" variant="outline">
                 Agende uma apresentação
               </Button>
             </Link>
