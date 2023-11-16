@@ -1,6 +1,5 @@
 'use client'
 
-import Lottie from 'lottie-react'
 import { ArrowRight } from 'lucide-react'
 
 import successAnimation from '@/public/successAnimation.json'
@@ -11,11 +10,6 @@ import { StepComponentProps } from '../page'
 export default function OnboardingSuccess({ currentUser }: StepComponentProps) {
   return (
     <Center flexDirection="column">
-      <Lottie
-        loop={false}
-        style={{ width: '30%', height: '30%' }}
-        animationData={successAnimation}
-      />
       <H1 color="pine.7" fontSize="4xl" mb="6">
         Tudo certo, {currentUser?.first_name}!
       </H1>

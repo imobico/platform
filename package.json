@@ -18,6 +18,7 @@
   "dependencies": {
     "@ark-ui/react": "^1.0.1",
     "@hookform/resolvers": "^3.3.2",
+    "@next/bundle-analyzer": "^14.0.2",
     "@supabase/auth-helpers-nextjs": "^0.8.3",
     "@supabase/supabase-js": "^2.38.4",
     "@svgr/webpack": "^8.1.0",

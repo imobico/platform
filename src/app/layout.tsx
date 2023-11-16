@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Roboto_Flex } from 'next/font/google'
+import { Plus_Jakarta_Sans, Roboto_Flex } from 'next/font/google'
 import localFont from 'next/font/local'
 
 import './globals.css'
@@ -10,17 +10,17 @@ export const Heading = localFont({
   variable: '--font-heading'
 })
 
-// export const Heading = Plus_Jakarta_Sans({
-//   display: 'swap',
-//   subsets: ['latin'],
-//   variable: '--font-heading'
-// })
-
-export const Body = Roboto_Flex({
+export const Body = Plus_Jakarta_Sans({
   display: 'swap',
   subsets: ['latin'],
   variable: '--font-body'
 })
+
+// export const Body = Roboto_Flex({
+//   display: 'swap',
+//   subsets: ['latin'],
+//   variable: '--font-body'
+// })
 
 export const metadata: Metadata = {
   title: 'Imobi: O melhor software para imobiliárias e corretores.',
