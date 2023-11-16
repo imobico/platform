@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
 
-import { Box } from '@/ui'
+import { Box } from '@/styled'
 
 import { MarketingHeader } from './components/MarketingHeader'
 
