@@ -21,7 +21,7 @@ export const MarketingHeader = () => {
               style={{ width: '100%', height: 'auto' }}
             />
           </Box>
-          <HStack ml="12" gap="8">
+          <HStack ml="12" gap="6">
             <Box>
               <Text fontWeight="semibold">Funcionalidades</Text>
             </Box>
