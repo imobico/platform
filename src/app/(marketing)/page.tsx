@@ -1,12 +1,13 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
-import { Box, Center, H1, Strong, Text } from '@/ui'
+import { Box, Button, Center, H1, HStack, Strong, Text } from '@/ui'
 
 export default function Home() {
   return (
     <Center width="100vw" flexDirection="column">
       <Center mt="12" flexDirection="column" px="12">
-        <H1 fontSize="6xl" textAlign="center" lineHeight="1.2" mb="8" maxWidth="780px">
+        <H1 fontSize="5xl" textAlign="center" lineHeight="1.2" mb="4" maxWidth="880px">
           Tecnologia com{' '}
           <Strong
             style={{
@@ -31,14 +32,75 @@ export default function Home() {
           >
             eficiência
           </Strong>{' '}
-          para
-          <br />
-          imobiliárias e corretores.
+          para imobiliárias e corretores.
         </H1>
-        <Text textAlign="center" fontSize="xl" color="slate.11" maxWidth="540px">
+        <Text textAlign="center" fontSize="xl" color="slate.11" maxWidth="780px" mb="8">
           Através das mais recentes tecnologias automatizamos tarefas e aumentamos a eficiência de
           imobiliárias e corretores <Strong>em até 180%</Strong>.
         </Text>
+
+        <HStack gap="8">
+          <Link href="/cadastro">
+            <Button borderRadius="full" size="2xl" fontWeight="500">
+              Faça um<strong style={{ fontWeight: 700, marginLeft: '-6px' }}>Teste grátis</strong>
+            </Button>
+          </Link>
+          <Link href="/entrar">
+            <Button borderRadius="full" size="2xl" fontWeight="700" variant="outline">
+              Agende uma apresentação
+            </Button>
+          </Link>
+        </HStack>
+
+        <Box boxShadow="xl" borderRadius="3xl" overflow="hidden" mt="24" width="880px">
+          <Image
+            priority
+            src="/floating-ui-center.png"
+            alt="Imobi Test"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </Box>
+        <Box
+          boxShadow="xl"
+          borderRadius="3xl"
+          overflow="hidden"
+          mb="-380px"
+          position="absolute"
+          width="300px"
+          ml="-920px"
+        >
+          <Image
+            priority
+            src="/floating-ui-left.png"
+            alt="Imobi Test"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </Box>
+        <Box
+          boxShadow="xl"
+          borderRadius="3xl"
+          overflow="hidden"
+          mb="-180px"
+          position="absolute"
+          width="280px"
+          mr="-920px"
+        >
+          <Image
+            priority
+            src="/floating-ui-right.png"
+            alt="Imobi Test"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: '100%', height: 'auto' }}
+          />
+        </Box>
       </Center>
     </Center>
   )
