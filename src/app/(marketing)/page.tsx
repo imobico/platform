@@ -11,7 +11,7 @@ const Highlights = dynamic(() => import('./components/Highlights'), {
 export default function Home() {
   return (
     <>
-      <Center width="100vw" flexDirection="column" minHeight="320px">
+      <Center width="100vw" flexDirection="column">
         <Center mt="12" flexDirection="column" px="12">
           <H1 fontSize="5xl" textAlign="center" lineHeight="1.2" mb="8" maxWidth="880px">
             Tecnologia com{' '}
@@ -86,6 +86,7 @@ export default function Home() {
             overflow="hidden"
             mt="24"
             width="800px"
+            height="664px"
           >
             <Image
               src="/floating-ui-center.jpg"
@@ -103,6 +104,7 @@ export default function Home() {
             mb="-420px"
             position="absolute"
             width="300px"
+            height="456px"
             ml="-860px"
           >
             <Image
@@ -121,6 +123,7 @@ export default function Home() {
             mb="-180px"
             position="absolute"
             width="240px"
+            height="332px"
             mr="-920px"
           >
             <Image
