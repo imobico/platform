@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Center width="100vw" flexDirection="column">
         <Center mt="12" flexDirection="column" px="12">
-          <H1 fontSize="5xl" textAlign="center" lineHeight="1.2" mb="4" maxWidth="880px">
+          <H1 fontSize="5xl" textAlign="center" lineHeight="1.2" mb="8" maxWidth="880px">
             Tecnologia com{' '}
             <Strong
               style={{
@@ -59,15 +59,9 @@ export default function Home() {
             </Strong>
             .
           </H1>
-          <Text
-            textAlign="center"
-            fontSize="10px 10px 10px 10px red"
-            color="slate.11"
-            maxWidth="780px"
-            mb="8"
-          >
-            Através das mais recentes tecnologias automatizamos tarefas e aumentamos a eficiência de
-            imobiliárias e corretores <Strong>em até 180%</Strong>.
+          <Text textAlign="center" fontSize="xl" color="slate.11" maxWidth="780px" mb="12">
+            Crie seu site, gerencie seus imóveis, clientes/leads, marketing e muito mais através de
+            um único produto e um único plano. <Strong>Menos complicação. Mais resultados.</Strong>
           </Text>
 
           <HStack gap="6">
