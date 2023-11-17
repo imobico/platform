@@ -23,36 +23,28 @@ export const MarketingHeader = () => {
           </Box>
           <HStack ml="12" gap="8">
             <Box>
-              <Text fontSize="lg" fontWeight="semibold">
-                Funcionalidades
-              </Text>
+              <Text fontWeight="bold">Funcionalidades</Text>
             </Box>
             <Box>
-              <Text fontSize="lg" fontWeight="semibold">
-                Integrações
-              </Text>
+              <Text fontWeight="bold">Integrações</Text>
             </Box>
             <Box>
-              <Text fontSize="lg" fontWeight="semibold">
-                Sobre
-              </Text>
+              <Text fontWeight="bold">Sobre</Text>
             </Box>
             <Box>
-              <Text fontSize="lg" fontWeight="semibold">
-                Planos
-              </Text>
+              <Text fontWeight="bold">Planos</Text>
             </Box>
           </HStack>
         </Flex>
         <Flex>
           <HStack>
             <Link href="/entrar">
-              <Button borderRadius="full" size="lg" fontWeight="700" variant="outline">
+              <Button borderRadius="full" fontWeight="700" variant="outline">
                 Meu painel
               </Button>
             </Link>
             <Link href="/cadastro">
-              <Button borderRadius="full" size="lg" fontWeight="500">
+              <Button borderRadius="full" fontWeight="500">
                 Faça um<strong style={{ fontWeight: 700, marginLeft: '-6px' }}>Teste grátis</strong>
               </Button>
             </Link>
