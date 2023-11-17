@@ -7,7 +7,11 @@
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-body); 
+}
+
+html {
+  color: var(--colors-trusty-11);
 }
 
 strong {

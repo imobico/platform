@@ -84,7 +84,7 @@ export default function Home() {
           </HStack>
 
           <Box
-            boxShadow="0 10px 24px 0 rgba(0,0,0,0.3)"
+            boxShadow="0 12px 36px 0 rgba(0,0,0,0.2)"
             borderRadius="3xl"
             overflow="hidden"
             mt="24"
@@ -100,7 +100,7 @@ export default function Home() {
             />
           </Box>
           <Box
-            boxShadow="-10px 10px 24px 0 rgba(0,0,0,0.3)"
+            boxShadow="-12px 12px 36px 0 rgba(0,0,0,0.2)"
             borderRadius="3xl"
             overflow="hidden"
             mb="-420px"
@@ -118,7 +118,7 @@ export default function Home() {
             />
           </Box>
           <Box
-            boxShadow="10px 10px 24px 0 rgba(0,0,0,0.3)"
+            boxShadow="12px 12px 36px 0 rgba(0,0,0,0.2)"
             borderRadius="3xl"
             overflow="hidden"
             mb="-180px"
