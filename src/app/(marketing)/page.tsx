@@ -1,14 +1,17 @@
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import { Box, Button, Center, H1, HStack, Strong, Text } from '@/ui'
 
-import { Highlights } from './components/Highlights'
+const Highlights = dynamic(() => import('./components/Highlights'), {
+  loading: () => <p>Carregando...</p>
+})
 
 export default function Home() {
   return (
     <>
-      <Center width="100vw" flexDirection="column">
+      <Center width="100vw" flexDirection="column" minHeight="320px">
         <Center mt="12" flexDirection="column" px="12">
           <H1 fontSize="5xl" textAlign="center" lineHeight="1.2" mb="8" maxWidth="880px">
             Tecnologia com{' '}
