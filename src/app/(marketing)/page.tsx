@@ -85,7 +85,7 @@ export default function Home() {
             width="800px"
           >
             <Image
-              src="/floating-ui-center.png"
+              src="/floating-ui-center.jpg"
               alt="Imobi Test"
               width={0}
               height={0}
@@ -103,7 +103,7 @@ export default function Home() {
             ml="-860px"
           >
             <Image
-              src="/floating-ui-left.png"
+              src="/floating-ui-left.jpg"
               alt="Imobi Test"
               width={0}
               height={0}
@@ -121,7 +121,7 @@ export default function Home() {
             mr="-920px"
           >
             <Image
-              src="/floating-ui-right.png"
+              src="/floating-ui-right.jpg"
               alt="Imobi Test"
               width={0}
               height={0}
