@@ -1,11 +1,20 @@
-import { Center, Flex } from '@/styled'
+'use client'
 
-import { Strong, Text } from '@/ui'
+import { Box, Center, Flex } from '@/styled'
+
+import { Strong, Tabs, Text } from '@/ui'
+
+const options = [
+  { id: 'aio', label: 'Tudo em um único produto' },
+  { id: 'solid', label: 'Solid' },
+  { id: 'svelte', label: 'Svelte', disabled: true },
+  { id: 'vue', label: 'Vue' }
+]
 
 export const Highlights = () => {
   return (
     <>
-      <Center pt="580px" pb="480px" bg="trusty" mt="-500px">
+      <Center pt="580px" pb="480px" bg="trusty" mt="-500px" flexDirection="column">
         <Flex width="100%" maxWidth="1220px" alignItems="center" justifyContent="center">
           <Text color="white" fontSize="4xl" maxWidth="840px" textAlign="center">
             Concentre-se no seu negócio e clientes.
@@ -18,6 +27,23 @@ export const Highlights = () => {
             </Strong>
           </Text>
         </Flex>
+
+        <Box bg="white" borderRadius="30px" width="100%" maxWidth="1220px" p="16" mt="16">
+          <Tabs.Root defaultValue="aio" size="lg">
+            <Tabs.List>
+              {options.map((option) => (
+                <Tabs.Trigger key={option.id} value={option.id} disabled={option.disabled} flex="1">
+                  {option.label}
+                </Tabs.Trigger>
+              ))}
+              <Tabs.Indicator />
+            </Tabs.List>
+            <Tabs.Content value="aio">&nbsp;</Tabs.Content>
+            <Tabs.Content value="solid">&nbsp;</Tabs.Content>
+            <Tabs.Content value="svelte">&nbsp;</Tabs.Content>
+            <Tabs.Content value="vue">&nbsp;</Tabs.Content>
+          </Tabs.Root>
+        </Box>
       </Center>
     </>
   )

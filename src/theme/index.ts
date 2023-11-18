@@ -23,18 +23,18 @@ export const theme = {
       },
       // Global bg colors
       accent: {
-        default: { value: { base: '{colors.trusty.8}', _dark: '{colors.trusty.1}' } },
-        emphasized: { value: { base: '{colors.trusty.9}', _dark: '{colors.trusty.2}' } },
+        default: { value: { base: '{colors.trusty.7}', _dark: '{colors.trusty.1}' } },
+        emphasized: { value: { base: '{colors.trusty.8}', _dark: '{colors.trusty.2}' } },
         fg: { value: { base: '{colors.white}', _dark: '{colors.white}' } }
       },
       // Global border colors
       border: {
-        accent: { value: { base: '{colors.trusty.10}', _dark: '{colors.trusty.3}' } }
+        accent: { value: { base: '{colors.trusty.9}', _dark: '{colors.trusty.3}' } }
       }
     },
     shadows: {
       accent: {
-        value: '0 0 0px 5px {colors.trusty.2}'
+        value: '0 0 0px 5px {colors.trusty.3}'
       }
     }
   }
