@@ -14,7 +14,7 @@ const options = [
 export const Highlights = () => {
   return (
     <>
-      <Center pt="580px" pb="480px" bg="trusty" mt="-500px" flexDirection="column">
+      <Center pt="580px" bg="trusty" mt="-500px" flexDirection="column">
         <Flex width="100%" maxWidth="1220px" alignItems="center" justifyContent="center">
           <Text color="white" fontSize="4xl" maxWidth="840px" textAlign="center">
             Concentre-se no seu negócio e clientes.
@@ -28,7 +28,16 @@ export const Highlights = () => {
           </Text>
         </Flex>
 
-        <Box bg="white" borderRadius="30px" width="100%" maxWidth="1220px" p="16" mt="16">
+        <Box
+          bg="slate.1"
+          mb="-480px"
+          borderRadius="30px"
+          width="100%"
+          maxWidth="1220px"
+          p="16"
+          mt="16"
+          minHeight="800px"
+        >
           <Tabs.Root defaultValue="aio" size="lg">
             <Tabs.List>
               {options.map((option) => (
