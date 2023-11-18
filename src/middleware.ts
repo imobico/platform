@@ -11,6 +11,7 @@ export const config = {
 }
 
 export default async function middleware(req: NextRequest) {
+  console.log(req)
   // const res = NextResponse.next()
   // // Check current session
   // const supabase = createMiddlewareClient<Database>({ req, res })
