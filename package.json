@@ -25,7 +25,7 @@
     "@tanstack/react-query": "^5.4.3",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.290.0",
-    "next": "^14.0.1",
+    "next": "^14.0.3",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.47.0",
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@pandacss/dev": "^0.18.3",
-    "@park-ui/panda-preset": "^0.22.0",
+    "@park-ui/panda-preset": "^0.23.0",
     "@tanstack/eslint-plugin-query": "^5.0.5",
     "@tanstack/react-query-devtools": "^5.4.3",
     "@trivago/prettier-plugin-sort-imports": "^4.2.1",
