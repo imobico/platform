@@ -6,7 +6,7 @@ import { Box } from '@/styled'
 import { MarketingHeader } from './components/MarketingHeader'
 
 export const metadata: Metadata = {
-  title: 'Login | Platforms Starter Kit'
+  title: 'Imobi: O sistema mais moderno para imobiliárias e corretores'
 }
 
 export default function MarketingLayout({ children }: { children: ReactNode }) {

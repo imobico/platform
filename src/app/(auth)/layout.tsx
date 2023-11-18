@@ -6,7 +6,7 @@ import { Center } from '@/ui'
 // import bg from '@/public/cool-pattern.svg'
 
 export const metadata: Metadata = {
-  title: 'Login | Platforms Starter Kit'
+  title: 'Entrar | Imobi'
 }
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
