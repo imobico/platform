@@ -13,7 +13,7 @@ import {
 type GenericProps = Record<string, unknown>
 type StyleRecipe = {
   (props?: GenericProps): Record<string, string>
-  splitVariantProps: (props: GenericProps) => any
+  splitVariantProps: (props: GenericProps) => any // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 type StyleSlot<R extends StyleRecipe> = keyof ReturnType<R>
 type StyleSlotRecipe<R extends StyleRecipe> = Record<StyleSlot<R>, string>
@@ -46,6 +46,10 @@ export const createStyleContext = <R extends StyleRecipe>(recipe: R) => {
         </StyleContext.Provider>
       )
     })
+
+    // @ts-expect-error JSX.IntrinsicElements do not have a displayName but Function and Class components do
+    StyledComponent.displayName = Component.displayName || Component.name || 'Component'
+
     return StyledComponent as unknown as ComponentVariants<T, R>
   }
 
@@ -59,6 +63,10 @@ export const createStyleContext = <R extends StyleRecipe>(recipe: R) => {
         ref
       })
     })
+
+    // @ts-expect-error JSX.IntrinsicElements do not have a displayName but Function and Class components do
+    StyledComponent.displayName = Component.displayName || Component.name || 'Component'
+
     return StyledComponent as unknown as T
   }
 
