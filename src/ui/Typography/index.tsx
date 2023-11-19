@@ -40,7 +40,7 @@ const h1Style = cva({
 
 const h2Style = cva({
   base: {
-    color: 'black',
+    color: 'trusty.12',
     fontFamily: 'var(--font-heading)',
     fontSize: '2.4rem'
   },
@@ -67,7 +67,7 @@ const h2Style = cva({
 
 const h3Style = cva({
   base: {
-    color: 'black',
+    color: 'trusty.12',
     fontFamily: 'var(--font-heading)',
     fontSize: '2rem'
   },
@@ -94,7 +94,7 @@ const h3Style = cva({
 
 const smallHeadingStyle = cva({
   base: {
-    color: 'black',
+    color: 'trusty.12',
     fontFamily: 'var(--font-heading)',
     fontSize: '1.8rem'
   },

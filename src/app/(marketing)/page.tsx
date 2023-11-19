@@ -8,6 +8,10 @@ const Highlights = dynamic(() => import('./components/Highlights'), {
   loading: () => <p>Carregando...</p>
 })
 
+const Pricing = dynamic(() => import('./components/Pricing'), {
+  loading: () => <p>Carregando...</p>
+})
+
 export default function Home() {
   return (
     <>
@@ -137,6 +141,7 @@ export default function Home() {
         </Center>
       </Center>
       <Highlights />
+      <Pricing />
     </>
   )
 }
