@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Center width="100vw" flexDirection="column">
-        <Center mt="24" flexDirection="column" px="12">
+        <Center mt="20" flexDirection="column" px="12">
           <H1 fontSize="5xl" textAlign="center" lineHeight="1.2" mb="8" maxWidth="880px">
             Tecnologia com{' '}
             <Strong
@@ -67,7 +67,7 @@ export default function Home() {
             um único produto e um único plano. <Strong>Menos complicação. Mais resultados.</Strong>
           </Text>
 
-          <HStack gap="6" mb="32">
+          <HStack gap="6" mb="24">
             <Link href="/cadastro">
               <Button borderRadius="full" size="2xl" fontWeight="500">
                 Faça um<strong style={{ fontWeight: 700, marginLeft: '-6px' }}>teste grátis</strong>
