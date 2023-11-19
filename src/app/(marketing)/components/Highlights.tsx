@@ -30,7 +30,7 @@ export const Highlights = () => {
         </Flex>
 
         <Box
-          bg="slate.1"
+          bg="white"
           mb="-480px"
           borderRadius="30px"
           width="100%"
