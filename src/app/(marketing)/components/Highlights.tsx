@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import { Box, Center, Flex } from '@/styled'
 
-import { Strong, Text } from '@/ui'
+import { H1, Strong, Text } from '@/ui'
 
 const options = [
   { id: 'aio', label: 'Tudo em um único produto' },
@@ -15,14 +15,14 @@ const options = [
 export const Highlights = () => {
   return (
     <>
-      <Center pt="580px" bg="trusty" mt="-500px" flexDirection="column">
+      <Center pt="580px" bg="slate.3" mt="-500px" flexDirection="column">
         <Flex width="100%" maxWidth="1220px" alignItems="center" justifyContent="center">
-          <Text color="white" fontSize="4xl" maxWidth="840px" textAlign="center">
+          <Text fontSize="4xl" maxWidth="840px" textAlign="center">
             Concentre-se no seu negócio e clientes.
             <br />
             <Strong
               px="2"
-              bg="linear-gradient(360deg, token(colors.trusty.6) 0%, token(colors.trusty.6) 30%, rgba(209,226,255,0) 30%, rgba(255,255,255,0) 100%)"
+              bg="linear-gradient(360deg, token(colors.trusty.4) 0%, token(colors.trusty.4) 30%, rgba(209,226,255,0) 30%, rgba(255,255,255,0) 100%)"
             >
               Deixe o resto com a gente!
             </Strong>
