@@ -1,14 +1,15 @@
 'use client'
 
+import Image from 'next/image'
+
 import { Box, Center, Flex } from '@/styled'
 
-import { Strong, Tabs, Text } from '@/ui'
+import { Strong, Text } from '@/ui'
 
 const options = [
   { id: 'aio', label: 'Tudo em um único produto' },
-  { id: 'solid', label: 'Solid' },
-  { id: 'svelte', label: 'Svelte', disabled: true },
-  { id: 'vue', label: 'Vue' }
+  { id: 'automatize', label: 'Automatize seu trabalho' },
+  { id: 'onde', label: 'Onde você estiver' }
 ]
 
 export const Highlights = () => {
@@ -38,20 +39,20 @@ export const Highlights = () => {
           mt="16"
           minHeight="800px"
         >
-          <Tabs.Root defaultValue="aio" size="lg">
-            <Tabs.List>
-              {options.map((option) => (
-                <Tabs.Trigger key={option.id} value={option.id} disabled={option.disabled} flex="1">
-                  {option.label}
-                </Tabs.Trigger>
-              ))}
-              <Tabs.Indicator />
-            </Tabs.List>
-            <Tabs.Content value="aio">&nbsp;</Tabs.Content>
-            <Tabs.Content value="solid">&nbsp;</Tabs.Content>
-            <Tabs.Content value="svelte">&nbsp;</Tabs.Content>
-            <Tabs.Content value="vue">&nbsp;</Tabs.Content>
-          </Tabs.Root>
+          <Center>
+            <Box width="40%" p="4%">
+              <Image
+                priority
+                src="/bro-aio.svg"
+                alt="Imobi Test"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </Box>
+            <Box flex="1">sdgfspdls</Box>
+          </Center>
         </Box>
       </Center>
     </>
