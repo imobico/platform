@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 
-import { Box, Center, Flex, HStack } from '@/styled'
+import { Box, Center, Flex, VStack } from '@/styled'
 
 import { H1, H3, H4, Strong, Text } from '@/ui'
 
@@ -39,7 +39,7 @@ export const Highlights = () => {
           pb="600px"
           mt="16"
         >
-          <HStack width="100%" gap="16" alignItems="flex-start">
+          <VStack width="100%" gap="16" alignItems="flex-start">
             <Center flex="1" flexDirection="column">
               <Image src="/feature-icon-website.svg" alt="Imobi Test" width={120} height={120} />
               <H3 fontSize="xl" textAlign="center" lineHeight={1.2} my="6">
@@ -104,7 +104,7 @@ export const Highlights = () => {
                 Android.
               </Text>
             </Center>
-          </HStack>
+          </VStack>
         </Box>
       </Center>
     </>

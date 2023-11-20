@@ -17,5 +17,5 @@ export const Strong = (props: TextProps) => {
   const { ...rest } = props
   const Component = styled('strong')
 
-  return <Component fontWeight="700" {...rest} />
+  return <Component fontWeight={props.fontWeight || '700'} {...rest} />
 }
