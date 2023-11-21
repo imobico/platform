@@ -7,15 +7,8 @@
 }
 
 body {
-  font-family: var(--font-body); 
-}
-
-html {
   color: var(--colors-trusty-11);
-}
-
-strong {
-  font-weight: 700;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
 }
 
 a {
