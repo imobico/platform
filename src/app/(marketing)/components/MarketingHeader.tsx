@@ -23,16 +23,19 @@ export const MarketingHeader = () => {
           </Box>
           <HStack ml="12" gap="8">
             <Box>
-              <Text fontWeight="bold">Funcionalidades</Text>
+              <a href="#funcionalidades">
+                <Text fontWeight="bold">Funcionalidades</Text>
+              </a>
             </Box>
             <Box>
-              <Text fontWeight="bold">Integrações</Text>
+              <a href="#integracoes">
+                <Text fontWeight="bold">Integrações</Text>
+              </a>
             </Box>
             <Box>
-              <Text fontWeight="bold">Sobre</Text>
-            </Box>
-            <Box>
-              <Text fontWeight="bold">Planos</Text>
+              <a href="#planos">
+                <Text fontWeight="bold">Planos</Text>
+              </a>
             </Box>
           </HStack>
         </Flex>
@@ -45,7 +48,7 @@ export const MarketingHeader = () => {
             </Link>
             <Link href="/cadastro">
               <Button borderRadius="full" fontWeight="500">
-                Faça um<strong style={{ fontWeight: 700, marginLeft: '-6px' }}>Teste grátis</strong>
+                Faça um<strong style={{ fontWeight: 700, marginLeft: '-4px' }}>teste grátis</strong>
               </Button>
             </Link>
           </HStack>

@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import localFont from 'next/font/local'
 
+import { DynamicCrispChat } from '@/components'
+
 import './globals.css'
 
 export const Heading = localFont({
@@ -24,6 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <DynamicCrispChat />
       <body className={`${Heading.variable} ${Body.variable}`}>{children}</body>
     </html>
   )

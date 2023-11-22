@@ -12,6 +12,10 @@ const Pricing = dynamic(() => import('./components/Pricing'), {
   loading: () => <p>Carregando...</p>
 })
 
+const Integrations = dynamic(() => import('./components/Integrations'), {
+  loading: () => <p>Carregando...</p>
+})
+
 export default function Home() {
   return (
     <>
@@ -72,11 +76,24 @@ export default function Home() {
           </Text>
 
           <HStack gap="6" mb="24">
-            <Link href="/cadastro">
-              <Button borderRadius="full" size="2xl" fontWeight="500">
-                Faça um<strong style={{ fontWeight: 700, marginLeft: '-6px' }}>teste grátis</strong>
-              </Button>
-            </Link>
+            <Box position="relative">
+              <Link href="/cadastro">
+                <Button borderRadius="full" size="2xl" fontWeight="500">
+                  Faça um
+                  <strong style={{ fontWeight: 700, marginLeft: '-6px' }}>teste grátis</strong>
+                </Button>
+              </Link>
+              <Box position="absolute" left="-260px" bottom="-60px" width="260px">
+                <Image
+                  src="/no-card-required.svg"
+                  alt="Imobi Test"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </Box>
+            </Box>
             <Link href="/entrar">
               <Button borderRadius="full" size="2xl" variant="outline">
                 Agende uma apresentação
@@ -141,6 +158,7 @@ export default function Home() {
         </Center>
       </Center>
       <Highlights />
+      <Integrations />
       <Pricing />
     </>
   )

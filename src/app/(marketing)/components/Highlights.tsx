@@ -15,8 +15,14 @@ const options = [
 export const Highlights = () => {
   return (
     <>
-      <Center pt="580px" pb="200px" bg="slate.3" mt="-500px" flexDirection="column">
-        <Flex width="100%" maxWidth="1220px" alignItems="center" justifyContent="center">
+      <Center pt="580px" pb="140px" bg="slate.3" mt="-500px" flexDirection="column">
+        <Flex
+          width="100%"
+          maxWidth="1220px"
+          alignItems="center"
+          justifyContent="center"
+          id="funcionalidades"
+        >
           <Text fontSize="4xl" maxWidth="840px" textAlign="center">
             Concentre-se no seu negócio e clientes.
             <br />
@@ -31,12 +37,12 @@ export const Highlights = () => {
 
         <Box
           bg="white"
-          mb="-600px"
+          mb="-540px"
           borderRadius="30px"
           width="100%"
           maxWidth="1220px"
           p="16"
-          pb="600px"
+          pb="120px"
           mt="16"
         >
           <HStack width="100%" gap="16" alignItems="flex-start">
