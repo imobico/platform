@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import { Box, Center, Divider, Flex, HStack } from '@/styled'
 
-import { H1, H2, H3, H4, Strong, Text } from '@/ui'
+import { H1, H2, Strong, Text } from '@/ui'
 
 const pricingOptions = [
   {
