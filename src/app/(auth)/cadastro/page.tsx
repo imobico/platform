@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 
-import bg from '@/public/cool-pattern-alt.svg'
+import bg from '@/public/auth-bg.jpg'
 import { Box, Center, Flex, H1, Text, TextLink } from '@/ui'
 
 const DynamicForm = dynamic(() => import('../components/SignUpForm'), {
@@ -11,7 +11,6 @@ const DynamicForm = dynamic(() => import('../components/SignUpForm'), {
 export default function SignupPage() {
   return (
     <Flex
-      bg="white"
       boxShadow="xl"
       border="base"
       borderRadius="xl"
@@ -54,23 +53,11 @@ export default function SignupPage() {
             </Text>
           </Box>
           <DynamicForm />
-          {/* <Divider my="8" color="slate.200" />
-          <VStack width="100%">
-            <Button width="100%" size="lg" variant="outline">
-              <Image alt="Entrar com Google" src="/google-logo.svg" width={18} height={18} />
-              Usar minha conta <strong>Google</strong>
-            </Button>
-
-            <Button width="100%" size="lg" variant="outline">
-              <Image alt="Entrar com Apple" src="/apple-logo.svg" width={18} height={18} />
-              Usar minha conta <strong>Apple</strong>
-            </Button>
-          </VStack> */}
         </Box>
       </Center>
       <Flex
         display={{ base: 'none', lg: 'flex' }}
-        bg="gray.900"
+        bg="black"
         width="50%"
         position="relative"
         overflow="hidden"
@@ -84,7 +71,7 @@ export default function SignupPage() {
             width={100}
             height={100}
           />
-          <Text fontWeight={600} fontSize="xl" color="trusty.11" textAlign="center" mt="8">
+          <Text fontWeight={600} fontSize="xl" color="white" textAlign="center" mt="8">
             &ldquo;A Imobi tem nos ajudado a economizar tempo e conseguir mais oportunidades de
             negócio. Fechamos o último mês com 15% mais vendas!&ldquo;
           </Text>
@@ -117,8 +104,13 @@ export default function SignupPage() {
           position="absolute"
           top={0}
           left={0}
-          opacity={0.6}
-          style={{ backgroundImage: `url("${bg.src}")`, backgroundRepeat: 'repeat' }}
+          opacity={0.5}
+          style={{
+            backgroundImage: `url("${bg.src}")`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'fixed',
+            backgroundSize: 'cover'
+          }}
         />
       </Flex>
     </Flex>

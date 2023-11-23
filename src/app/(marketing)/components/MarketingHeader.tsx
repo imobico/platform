@@ -13,7 +13,7 @@ export const MarketingHeader = () => {
           <Box width="140px">
             <Image
               priority
-              src="/logo-imobi-trusty.svg"
+              src="/logo-imoblr-light-bg.svg"
               alt="Imobi Test"
               width={0}
               height={0}

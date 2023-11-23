@@ -31,8 +31,8 @@ export const theme = {
       },
       // Global bg colors
       accent: {
-        default: { value: { base: '{colors.trusty.7}', _dark: '{colors.trusty.1}' } },
-        emphasized: { value: { base: '{colors.trusty.8}', _dark: '{colors.trusty.2}' } },
+        default: { value: { base: '{colors.trusty.8}', _dark: '{colors.trusty.1}' } },
+        emphasized: { value: { base: '{colors.trusty.9}', _dark: '{colors.trusty.2}' } },
         fg: { value: { base: '{colors.white}', _dark: '{colors.white}' } }
       },
       // Global border colors

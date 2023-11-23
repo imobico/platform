@@ -38,7 +38,7 @@ const pricingOptions = [
       { label: 'Gerenciador de clientes' },
       { label: 'Automatização com IA' },
       { label: '1 foto 3D por imóvel' },
-      { label: 'Universidade Imobi inclusa' }
+      { label: 'Universidade Imoblr inclusa' }
     ]
   },
   {
@@ -56,7 +56,7 @@ const pricingOptions = [
       { label: 'Gerenciador de clientes' },
       { label: 'Automatização com IA' },
       { label: 'Fotos 3D ilimitadas' },
-      { label: 'Universidade Imobi inclusa' }
+      { label: 'Universidade Imoblr inclusa' }
     ]
   }
 ]
@@ -167,7 +167,7 @@ export const Pricing = () => {
 
             <Image
               src="/illustration-trusty-rafiki-pricing.svg"
-              alt="Lista de planos e preços Imobi"
+              alt="Lista de planos e preços Imoblr"
               width={380}
               height={380}
             />

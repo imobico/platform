@@ -41,7 +41,12 @@ export const Highlights = () => {
         >
           <HStack width="100%" gap="16" alignItems="flex-start">
             <Center flex="1" flexDirection="column">
-              <Image src="/feature-icon-website.svg" alt="Imobi Test" width={120} height={120} />
+              <Image
+                src="/feature-icon-website.svg"
+                alt="Imoblr site pronto rápido"
+                width={120}
+                height={120}
+              />
               <H3 fontSize="xl" textAlign="center" lineHeight={1.2} my="6">
                 Seu otimizado e pronto em{' '}
                 <Strong
@@ -57,7 +62,12 @@ export const Highlights = () => {
               </Text>
             </Center>
             <Center flex="1" flexDirection="column">
-              <Image src="/feature-icon-properties.svg" alt="Imobi Test" width={120} height={120} />
+              <Image
+                src="/feature-icon-properties.svg"
+                alt="Imoblr gerencie seus imoveis"
+                width={120}
+                height={120}
+              />
               <H3 fontSize="xl" textAlign="center" lineHeight={1.2} my="6">
                 Gerencie seus imóveis em{' '}
                 <Strong
@@ -68,12 +78,17 @@ export const Highlights = () => {
                 </Strong>
               </H3>
               <Text textAlign="center" color="text.muted">
-                Você cadastra os seus imóveis na imobi e nós publicamos automaticamente no seu site
+                Você cadastra os seus imóveis na Imoblr e nós publicamos automaticamente no seu site
                 e diversos canais de integração.
               </Text>
             </Center>
             <Center flex="1" flexDirection="column">
-              <Image src="/feature-icon-users.svg" alt="Imobi Test" width={120} height={120} />
+              <Image
+                src="/feature-icon-users.svg"
+                alt="Imoblr gerencie seus clientes"
+                width={120}
+                height={120}
+              />
               <H3 fontSize="xl" textAlign="center" lineHeight={1.2} my="6">
                 Clientes e leads
                 <Strong
@@ -89,7 +104,12 @@ export const Highlights = () => {
               </Text>
             </Center>
             <Center flex="1" flexDirection="column">
-              <Image src="/feature-icon-mobile.svg" alt="Imobi Test" width={120} height={120} />
+              <Image
+                src="/feature-icon-mobile.svg"
+                alt="Imoblr app mobile"
+                width={120}
+                height={120}
+              />
               <H3 fontSize="xl" textAlign="center" lineHeight={1.2} my="6">
                 <Strong
                   px="1"
