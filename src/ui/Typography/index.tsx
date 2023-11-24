@@ -1,16 +1,5 @@
-import Link from 'next/link'
-
 import { styled } from '@/styled'
 import { cva } from '@/styled/css'
-
-const textLinkStyle = cva({
-  base: {
-    color: 'var(--color-trendy-5',
-    fontFamily: 'var(--font-body)',
-    fontSize: '1rem',
-    fontWeight: 500
-  }
-})
 
 const h1Style = cva({
   base: {
@@ -119,7 +108,6 @@ const smallHeadingStyle = cva({
   }
 })
 
-export const TextLink = styled(Link, textLinkStyle)
 export const H1 = styled('h1', h1Style)
 export const H2 = styled('h2', h2Style)
 export const H3 = styled('h3', h3Style)
