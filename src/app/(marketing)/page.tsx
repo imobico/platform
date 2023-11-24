@@ -98,8 +98,7 @@ export default function Home() {
           >
             <Box
               position="relative"
-              flex="1"
-              width={{ base: '100%', md: 'unset' }}
+              width={{ base: '100%', md: 'auto' }}
               px={{ base: 8, md: 'unset' }}
             >
               <Link href="/cadastro">
@@ -107,7 +106,7 @@ export default function Home() {
                   borderRadius="full"
                   size="2xl"
                   fontWeight="500"
-                  width={{ base: '100%', md: 'unset' }}
+                  width={{ base: '100%', md: 'auto' }}
                 >
                   Faça um
                   <strong style={{ fontWeight: 700, marginLeft: '-6px' }}>teste grátis</strong>
@@ -133,7 +132,6 @@ export default function Home() {
             </Box>
             <Box
               position="relative"
-              flex="1"
               width={{ base: '100%', md: 'unset' }}
               px={{ base: 8, md: 'unset' }}
             >
@@ -150,13 +148,13 @@ export default function Home() {
             </Box>
           </HStack>
 
-          <Box width="100vw" display="none">
+          <Center width="100vw" overflow="hidden" position="relative">
             <Box
               boxShadow="0 12px 36px 0 rgba(0,0,0,0.2)"
               borderRadius="3xl"
               overflow="hidden"
               width="800px"
-              height="664px"
+              maxWidth="100vw"
             >
               <Image
                 src="/floating-ui-center.jpg"
@@ -169,13 +167,12 @@ export default function Home() {
             </Box>
             <Box
               boxShadow="-12px 12px 36px 0 rgba(0,0,0,0.2)"
-              borderRadius="3xl"
+              borderRadius="2xl"
               overflow="hidden"
-              mb="-420px"
+              mb={{ base: '-120px', md: '-420px' }}
               position="absolute"
-              width="300px"
-              height="456px"
-              ml="-860px"
+              width={{ base: '180px', md: '300px' }}
+              ml={{ base: '-280px', md: '-860px' }}
             >
               <Image
                 src="/floating-ui-left.jpg"
@@ -188,13 +185,12 @@ export default function Home() {
             </Box>
             <Box
               boxShadow="12px 12px 36px 0 rgba(0,0,0,0.2)"
-              borderRadius="3xl"
+              borderRadius="2xl"
               overflow="hidden"
-              mb="-180px"
+              mb={{ base: '0', md: '-180px' }}
               position="absolute"
-              width="240px"
-              height="332px"
-              mr="-920px"
+              width={{ base: '160px', md: '240px' }}
+              mr={{ base: '-360px', md: '-920px' }}
             >
               <Image
                 src="/floating-ui-right.jpg"
@@ -205,7 +201,7 @@ export default function Home() {
                 style={{ width: '100%', height: 'auto' }}
               />
             </Box>
-          </Box>
+          </Center>
         </Center>
       </Center>
       {/* <Highlights />
