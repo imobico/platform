@@ -10,18 +10,7 @@ const DynamicForm = dynamic(() => import('../components/LoginForm'), {
 
 export default function LoginPage() {
   return (
-    <Flex
-      bg="white"
-      boxShadow="xl"
-      border="base"
-      borderRadius={{ base: 0, lg: 'xl' }}
-      width={{ base: '100%', xl: 'calc(100% - 24px)' }}
-      maxWidth="1440px"
-      height={{ base: '100%', xl: 'calc(100% - 24px)' }}
-      maxHeight={{ base: 'unset', lg: '780px' }}
-      position="relative"
-      overflow="hidden"
-    >
+    <>
       <Center width={{ base: '100%', lg: '50%' }} p={6}>
         <Box width="100%" maxWidth="480px">
           <Box
@@ -139,6 +128,6 @@ export default function LoginPage() {
           }}
         />
       </Flex>
-    </Flex>
+    </>
   )
 }

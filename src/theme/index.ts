@@ -21,7 +21,7 @@ export const theme = {
       },
       text: {
         // Global body text default color
-        default: { value: { base: '{colors.slate.12}', _dark: '{colors.slate.2}' } },
+        default: { value: { base: '{colors.slate.12  }', _dark: '{colors.slate.3}' } },
         // Alternative low contrast text color
         muted: { value: { base: '{colors.slate.11}', _dark: '{colors.slate.3}' } }
       },

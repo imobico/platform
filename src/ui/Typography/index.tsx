@@ -3,7 +3,7 @@ import { cva } from '@/styled/css'
 
 const h1Style = cva({
   base: {
-    color: '#FF0',
+    color: 'trusty.11',
     fontFamily: 'var(--font-heading)'
   },
   variants: {

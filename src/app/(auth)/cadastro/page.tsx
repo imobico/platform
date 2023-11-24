@@ -10,18 +10,8 @@ const DynamicForm = dynamic(() => import('../components/SignUpForm'), {
 
 export default function SignupPage() {
   return (
-    <Flex
-      boxShadow="xl"
-      border="base"
-      borderRadius="xl"
-      width={{ base: '100%', xl: 'calc(100% - 24px)' }}
-      maxWidth="1440px"
-      height={{ base: '100%', xl: 'calc(100% - 24px)' }}
-      maxHeight="780px"
-      position="relative"
-      overflow="hidden"
-    >
-      <Center width="50%" p={6}>
+    <>
+      <Center width="100%" p={6}>
         <Box width="100%" maxWidth="480px">
           <Box
             width="140px"
@@ -40,24 +30,21 @@ export default function SignupPage() {
               style={{ width: '100%', height: 'auto' }}
             />
           </Box>
-          <Box>
-            <H1 fontSize="3xl">Vamos começar?</H1>
+          <Box mb="12">
+            <H1 fontSize="3xl">Cadastre sua conta</H1>
             <Text mb={4} color="text.muted">
               Já tem uma conta?{' '}
               <TextLink fontWeight={700} href="/entrar">
-                Acesse sua conta.
+                Clique para acessar.
               </TextLink>
-            </Text>
-            <Text mb={4} fontWeight={600}>
-              Digite o seu e-mail no formulário abaixo
             </Text>
           </Box>
           <DynamicForm />
         </Box>
       </Center>
-      <Flex
+      {/* <Flex
         display={{ base: 'none', lg: 'flex' }}
-        bg="black"
+        bg="trusty.12"
         width="50%"
         position="relative"
         overflow="hidden"
@@ -112,7 +99,7 @@ export default function SignupPage() {
             backgroundSize: 'cover'
           }}
         />
-      </Flex>
-    </Flex>
+      </Flex> */}
+    </>
   )
 }

@@ -19,9 +19,17 @@ const Integrations = dynamic(() => import('./components/Integrations'), {
 export default function Home() {
   return (
     <>
-      <Center width="100vw" flexDirection="column">
-        <Center mt="20" flexDirection="column" px="12">
-          <H1 fontSize="5xl" textAlign="center" lineHeight="1.2" mb="8" maxWidth="880px">
+      <Center width="100vw" flexDirection="column" overflow="hidden">
+        <Center mt={{ base: 10, md: '20' }} flexDirection="column" px={{ base: 4, md: 12 }}>
+          <H1
+            fontSize={{ base: '4xl', md: '5xl' }}
+            textAlign="center"
+            lineHeight={1.2}
+            mb="8"
+            width="100vw"
+            maxWidth="880px"
+            px={{ base: 8, md: 12 }}
+          >
             Tecnologia com{' '}
             <Strong
               style={{
@@ -70,20 +78,49 @@ export default function Home() {
             </Strong>
             .
           </H1>
-          <Text textAlign="center" fontSize="xl" color="slate.11" maxWidth="780px" mb="12">
+          <Text
+            textAlign="center"
+            fontSize={{ base: 'lg', md: 'xl' }}
+            color="slate.11"
+            maxWidth="780px"
+            mb={{ base: 8, md: 12 }}
+            px={{ base: 8, md: 12 }}
+          >
             Crie seu site, gerencie seus imóveis, clientes/leads, marketing e muito mais através de
             um único produto e um único plano. <Strong>Menos complicação. Mais resultados.</Strong>
           </Text>
 
-          <HStack gap="6" mb="24">
-            <Box position="relative">
+          <HStack
+            width="100%"
+            gap={{ base: 4, md: 6 }}
+            mb="24"
+            flexDirection={{ base: 'column', md: 'row' }}
+          >
+            <Box
+              position="relative"
+              flex="1"
+              width={{ base: '100%', md: 'unset' }}
+              px={{ base: 8, md: 'unset' }}
+            >
               <Link href="/cadastro">
-                <Button borderRadius="full" size="2xl" fontWeight="500">
+                <Button
+                  borderRadius="full"
+                  size="2xl"
+                  fontWeight="500"
+                  width={{ base: '100%', md: 'unset' }}
+                >
                   Faça um
                   <strong style={{ fontWeight: 700, marginLeft: '-6px' }}>teste grátis</strong>
                 </Button>
               </Link>
-              <Box position="absolute" left="-260px" bottom="-60px" width="260px">
+              <Box
+                display={{ base: 'none', md: 'block' }}
+                position="absolute"
+                left={{ base: '-100px', md: '-260px' }}
+                transform={{ base: 'rotate(50deg)', md: 'none' }}
+                bottom={{ base: '60px', md: '-60px' }}
+                width={{ base: '160px', md: '260px' }}
+              >
                 <Image
                   src="/no-card-required.svg"
                   alt="Imobi Test"
@@ -94,72 +131,86 @@ export default function Home() {
                 />
               </Box>
             </Box>
-            <Link href="/entrar">
-              <Button borderRadius="full" size="2xl" variant="outline">
-                Agende uma apresentação
-              </Button>
-            </Link>
+            <Box
+              position="relative"
+              flex="1"
+              width={{ base: '100%', md: 'unset' }}
+              px={{ base: 8, md: 'unset' }}
+            >
+              <Link href="/entrar">
+                <Button
+                  borderRadius="full"
+                  size="2xl"
+                  variant="outline"
+                  width={{ base: '100%', md: 'unset' }}
+                >
+                  Agende uma apresentação
+                </Button>
+              </Link>
+            </Box>
           </HStack>
 
-          <Box
-            boxShadow="0 12px 36px 0 rgba(0,0,0,0.2)"
-            borderRadius="3xl"
-            overflow="hidden"
-            width="800px"
-            height="664px"
-          >
-            <Image
-              src="/floating-ui-center.jpg"
-              alt="Imobi Test"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </Box>
-          <Box
-            boxShadow="-12px 12px 36px 0 rgba(0,0,0,0.2)"
-            borderRadius="3xl"
-            overflow="hidden"
-            mb="-420px"
-            position="absolute"
-            width="300px"
-            height="456px"
-            ml="-860px"
-          >
-            <Image
-              src="/floating-ui-left.jpg"
-              alt="Imobi Test"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </Box>
-          <Box
-            boxShadow="12px 12px 36px 0 rgba(0,0,0,0.2)"
-            borderRadius="3xl"
-            overflow="hidden"
-            mb="-180px"
-            position="absolute"
-            width="240px"
-            height="332px"
-            mr="-920px"
-          >
-            <Image
-              src="/floating-ui-right.jpg"
-              alt="Imobi Test"
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: '100%', height: 'auto' }}
-            />
+          <Box width="100vw" display="none">
+            <Box
+              boxShadow="0 12px 36px 0 rgba(0,0,0,0.2)"
+              borderRadius="3xl"
+              overflow="hidden"
+              width="800px"
+              height="664px"
+            >
+              <Image
+                src="/floating-ui-center.jpg"
+                alt="Imobi Test"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </Box>
+            <Box
+              boxShadow="-12px 12px 36px 0 rgba(0,0,0,0.2)"
+              borderRadius="3xl"
+              overflow="hidden"
+              mb="-420px"
+              position="absolute"
+              width="300px"
+              height="456px"
+              ml="-860px"
+            >
+              <Image
+                src="/floating-ui-left.jpg"
+                alt="Imobi Test"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </Box>
+            <Box
+              boxShadow="12px 12px 36px 0 rgba(0,0,0,0.2)"
+              borderRadius="3xl"
+              overflow="hidden"
+              mb="-180px"
+              position="absolute"
+              width="240px"
+              height="332px"
+              mr="-920px"
+            >
+              <Image
+                src="/floating-ui-right.jpg"
+                alt="Imobi Test"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </Box>
           </Box>
         </Center>
       </Center>
-      <Highlights />
+      {/* <Highlights />
       <Integrations />
-      <Pricing />
+      <Pricing /> */}
     </>
   )
 }

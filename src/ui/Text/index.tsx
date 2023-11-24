@@ -1,19 +1,34 @@
 import Link from 'next/link'
 
-import { type HTMLStyledProps, styled } from '@/styled/jsx'
+import { cva } from '@/styled/css'
+import { styled } from '@/styled/jsx'
 
-type As = 'p' | 'span' | 'div' | 'label'
+export const textStyle = cva({
+  base: {
+    fontWeight: 500
+  },
+  variants: {
+    size: {
+      xs: {
+        fontSize: 'lg'
+      },
+      sm: {
+        fontSize: 'xl'
+      },
+      md: {
+        fontSize: '2xl'
+      },
+      lg: {
+        fontSize: '3xl'
+      },
+      xl: {
+        fontSize: '4xl'
+      }
+    }
+  }
+})
 
-export type TextProps = {
-  as?: As
-} & HTMLStyledProps<As>
-
-export const Text = (props: TextProps) => {
-  const { as = 'p', ...rest } = props
-  const Component = styled(as)
-
-  return <Component {...rest} />
-}
+export const Text = styled('p', textStyle)
 
 export const TextLink = styled(Link, {
   base: {
@@ -21,9 +36,8 @@ export const TextLink = styled(Link, {
   }
 })
 
-export const Strong = (props: TextProps) => {
-  const { ...rest } = props
-  const Component = styled('strong')
-
-  return <Component {...rest} />
-}
+export const Strong = styled('strong', {
+  base: {
+    fontWeight: 700
+  }
+})

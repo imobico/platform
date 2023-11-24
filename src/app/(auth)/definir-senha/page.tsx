@@ -38,18 +38,7 @@ export default function LoginPage(props: LoginPageProps) {
   }
 
   return (
-    <Flex
-      bg="white"
-      boxShadow="xl"
-      border="base"
-      borderRadius={{ base: 0, lg: 'xl' }}
-      width={{ base: '100%', xl: 'calc(100% - 24px)' }}
-      maxWidth="1440px"
-      height={{ base: '100%', xl: 'calc(100% - 24px)' }}
-      maxHeight={{ base: 'unset', lg: '780px' }}
-      position="relative"
-      overflow="hidden"
-    >
+    <>
       {isSignupSuccessful && (
         <Center
           width="100%"
@@ -178,6 +167,6 @@ export default function LoginPage(props: LoginPageProps) {
           style={{ backgroundImage: `url("${bg.src}")`, backgroundRepeat: 'repeat' }}
         />
       </Flex>
-    </Flex>
+    </>
   )
 }

@@ -9,7 +9,7 @@ import { H3, Text } from '@/ui'
 export const MarketingFooter = () => {
   return (
     <>
-      <Center bg="trusty.2" flexDirection="column">
+      {/* <Center bg="trusty.2" flexDirection="column">
         <Box width="100%" maxWidth="1220px">
           <Center justifyContent="space-between" width="100%" zIndex={1}>
             <Flex flex="1" mr="12">
@@ -52,7 +52,7 @@ export const MarketingFooter = () => {
           Copyright © 2023: Todos os direitos reservados a Imoblr Sistemas para Imobiliárias e
           Corretores
         </Text>
-      </Center>
+      </Center> */}
     </>
   )
 }

@@ -17,7 +17,7 @@ export const SignUpForm = () => {
       <Box width="100%">
         <Label htmlFor="user-email" size="xl">
           <Text color="black" py={2}>
-            Email
+            Digite seu e-mail
           </Text>
           <Input
             size="xl"
@@ -30,7 +30,8 @@ export const SignUpForm = () => {
         </Label>
       </Box>
       <Button
-        size="xl"
+        width="100%"
+        size="2xl"
         mt={4}
         onClick={() => {
           goToSetPassword()

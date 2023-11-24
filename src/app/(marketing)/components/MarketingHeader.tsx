@@ -7,10 +7,10 @@ import { Button, Text } from '@/ui'
 
 export const MarketingHeader = () => {
   return (
-    <Center py="4">
+    <Center py={{ base: 4, md: 4 }} px={{ base: 4, md: 4 }}>
       <Flex width="100%" maxWidth="1220px" alignItems="center" justifyContent="space-between">
         <Flex>
-          <Box width="140px">
+          <Box width={{ base: '140px', md: '140px' }}>
             <Image
               priority
               src="/logo-imoblr-light-bg.svg"
@@ -21,7 +21,7 @@ export const MarketingHeader = () => {
               style={{ width: '100%', height: 'auto' }}
             />
           </Box>
-          <HStack ml="12" gap="8">
+          <HStack ml="12" gap="8" display={{ base: 'none', md: 'flex' }}>
             <Box>
               <a href="#funcionalidades">
                 <Text fontWeight="bold">Funcionalidades</Text>
@@ -39,7 +39,7 @@ export const MarketingHeader = () => {
             </Box>
           </HStack>
         </Flex>
-        <Flex>
+        <Flex display={{ base: 'none', md: 'flex' }}>
           <HStack>
             <Link href="/entrar">
               <Button borderRadius="full" fontWeight="700" variant="outline">
