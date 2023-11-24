@@ -95,6 +95,8 @@ export default function Home() {
             gap={{ base: 4, md: 6 }}
             mb="24"
             flexDirection={{ base: 'column', md: 'row' }}
+            alignItems="center"
+            justifyContent="center"
           >
             <Box
               position="relative"
@@ -148,10 +150,10 @@ export default function Home() {
             </Box>
           </HStack>
 
-          <Center width="100vw" overflow="hidden" position="relative">
+          <Center width="100vw" overflow="hidden" position="relative" px="4" py="8">
             <Box
               boxShadow="0 12px 36px 0 rgba(0,0,0,0.2)"
-              borderRadius="3xl"
+              borderRadius="2xl"
               overflow="hidden"
               width="800px"
               maxWidth="100vw"
@@ -169,10 +171,10 @@ export default function Home() {
               boxShadow="-12px 12px 36px 0 rgba(0,0,0,0.2)"
               borderRadius="2xl"
               overflow="hidden"
-              mb={{ base: '-120px', md: '-420px' }}
+              mb={{ base: '-80px', md: '-80px' }}
               position="absolute"
-              width={{ base: '180px', md: '300px' }}
-              ml={{ base: '-280px', md: '-860px' }}
+              width={{ base: '140px', md: '280px' }}
+              ml={{ base: '-320px', md: '-860px' }}
             >
               <Image
                 src="/floating-ui-left.jpg"
@@ -187,10 +189,9 @@ export default function Home() {
               boxShadow="12px 12px 36px 0 rgba(0,0,0,0.2)"
               borderRadius="2xl"
               overflow="hidden"
-              mb={{ base: '0', md: '-180px' }}
               position="absolute"
-              width={{ base: '160px', md: '240px' }}
-              mr={{ base: '-360px', md: '-920px' }}
+              width={{ base: '140px', md: '240px' }}
+              mr={{ base: '-360px', md: '-840px' }}
             >
               <Image
                 src="/floating-ui-right.jpg"
