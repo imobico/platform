@@ -1,10 +1,11 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
-import { Box, Center, Divider, Flex, HStack } from '@/styled'
+import { Box, Center, Divider, Flex, Grid } from '@/styled'
 
-import { H1, H2, Strong, Text } from '@/ui'
+import { Button, H1, H2, Strong, Text } from '@/ui'
 
 const pricingOptions = [
   {
@@ -95,11 +96,18 @@ export const PricingCard = ({
       flexDirection="column"
       py="8"
       bg="white"
-      borderLeft={index === 0 ? 'none' : '1px solid token(colors.border.default)'}
-      borderTopLeftRadius={index === 0 ? '3xl' : 'unset'}
-      borderBottomLeftRadius={index === 0 || index === 1 ? '3xl' : 'unset'}
-      borderTopRightRadius={index === 2 ? '3xl' : 'unset'}
-      borderBottomRightRadius={index === 2 ? '3xl' : 'unset'}
+      borderLeft={{
+        base: 'none',
+        md: index === 0 ? 'none' : '1px solid token(colors.border.default)'
+      }}
+      borderTopLeftRadius={{ base: '2xl', lg: index === 0 ? '3xl' : 'unset' }}
+      borderBottomLeftRadius={{ base: '2xl', lg: index === 0 || index === 1 ? '3xl' : 'unset' }}
+      borderTopRightRadius={{ base: '2xl', lg: index === 2 ? '3xl' : 'unset' }}
+      borderBottomRightRadius={{ base: '2xl', lg: index === 2 ? '3xl' : 'unset' }}
+      boxShadow={{
+        base: '0 0 20px 0 token(colors.trusty.10), 0 0 4px 1px token(colors.trusty.10)',
+        md: 'none'
+      }}
     >
       <Image src={imagePath} alt={label} width={120} height={120} />
       <Flex
@@ -139,6 +147,15 @@ export const PricingCard = ({
           <Text fontWeight={feature.featured ? 700 : 500}>{feature.label}</Text>
         </>
       ))}
+      <Divider mt="4" mb="8" />
+      <Box width="100%" px="8">
+        <Link href="/cadastro">
+          <Button borderRadius="xl" size="xl" fontWeight="500" width="100%" bg="trusty.10">
+            Faça um
+            <strong style={{ fontWeight: 700, marginLeft: '-6px' }}>teste grátis</strong>
+          </Button>
+        </Link>
+      </Box>
     </Center>
   )
 }
@@ -146,11 +163,23 @@ export const PricingCard = ({
 export const Pricing = () => {
   return (
     <>
-      <Center bg="trusty" flexDirection="column" id="planos" py={{ base: 16, md: 8, lg: 0 }}>
+      <Center
+        bg="trusty"
+        flexDirection="column"
+        id="planos"
+        pt={{ base: 16, md: 8, lg: 0 }}
+        pb={16}
+      >
         <Box width="100%" maxWidth="1220px">
           <Center justifyContent="space-between" width="100%" mb={{ base: 16, lg: 0 }}>
-            <Box px={{ base: 12 }} flex="1">
-              <H1 fontSize="4xl" color="white" maxWidth="540px" mb="4">
+            <Box px={{ base: 8 }} flex="1">
+              <H1
+                fontSize="4xl"
+                color="white"
+                maxWidth="540px"
+                mb="4"
+                textAlign={{ base: 'center', lg: 'left' }}
+              >
                 <Strong
                   px="2"
                   bg="linear-gradient(360deg, token(colors.trusty.9) 0%, token(colors.trusty.9) 30%, rgba(209,226,255,0) 30%, rgba(255,255,255,0) 100%)"
@@ -159,7 +188,12 @@ export const Pricing = () => {
                 </Strong>
                 &nbsp;que se encaixam com as suas necessidades
               </H1>
-              <Text color="trusty.3" fontSize="xl" maxWidth="680px">
+              <Text
+                color="trusty.3"
+                fontSize="xl"
+                maxWidth="680px"
+                textAlign={{ base: 'center', lg: 'left' }}
+              >
                 <Strong>A nossa promessa para você</Strong>: Nós <Strong>sempre</Strong>{' '}
                 ofereceremos os melhores preços e a mais moderna tecnologia do mercado!
               </Text>
@@ -178,11 +212,17 @@ export const Pricing = () => {
               />
             </Box>
           </Center>
-          <HStack width="100%" gap="0" overflow="hidden" mb="24" alignItems="flex-start">
+          <Grid
+            width="100%"
+            columns={{ base: 1, md: 2, lg: 3 }}
+            gap={{ base: 6, lg: 0 }}
+            alignItems="flex-start"
+            px={{ base: 6, lg: 0 }}
+          >
             {pricingOptions.map((pricingOption) => {
               return pricingOption ? <PricingCard {...(pricingOption as PricingCardProps)} /> : null
             })}
-          </HStack>
+          </Grid>
         </Box>
       </Center>
     </>
