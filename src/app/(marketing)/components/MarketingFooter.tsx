@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import { Box, Center, Divider, Flex, Grid, HStack } from '@/styled'
 
-import { H3, Text } from '@/ui'
+import { H3, Strong, Text } from '@/ui'
 
 export const MarketingFooter = () => {
   return (

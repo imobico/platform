@@ -2,4 +2,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # npx tsc --noEmit && npx eslint --fix ./src
-npx lint-staged
+pnpm lint && npx lint-staged
