@@ -39,9 +39,9 @@ export default function Home() {
               }}
               color="trusty.8"
             >
-              O futuro
+              O futuro da tecnologia
             </Strong>{' '}
-            da tecnologia para{' '}
+            para{' '}
             <Strong
               style={{
                 paddingLeft: '10px',
