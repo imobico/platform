@@ -4,7 +4,6 @@ import { Lock, MailCheck } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 
-import bg from '@/public/cool-pattern-trusty.svg'
 import { browserClient } from '@/supabase'
 import { Box, Button, Center, Flex, H1, H2, H3, Input, Label, Text, VStack } from '@/ui'
 
@@ -42,7 +41,7 @@ export default function LoginPage(props: LoginPageProps) {
       {isSignupSuccessful && (
         <Center
           width="100%"
-          p={6}
+          p={8}
           position="absolute"
           height="100%"
           bg="white"
@@ -61,14 +60,13 @@ export default function LoginPage(props: LoginPageProps) {
           </Text>
         </Center>
       )}
-      <Center width={{ base: '100%', lg: '50%' }} p={6}>
+      <Center width={{ base: '100%', lg: '50%' }} p={{ base: 12, md: 16, xl: 24 }}>
         <Box width="100%" maxWidth="480px">
           <Box
             width="140px"
-            position={{ base: 'relative', xl: 'absolute' }}
+            position={{ base: 'relative', lg: 'absolute' }}
             mb={{ base: 6 }}
-            left={{ base: 'unset', xl: 8 }}
-            top={{ base: 'unset', xl: 8 }}
+            transform={{ lg: 'translateY(-100px)' }}
           >
             <Image
               priority
@@ -125,13 +123,15 @@ export default function LoginPage(props: LoginPageProps) {
       </Center>
       <Flex
         display={{ base: 'none', lg: 'flex' }}
-        bg="gray.900"
+        bg="slate.2"
         width="50%"
         position="relative"
         overflow="hidden"
         flexDirection="column"
+        borderLeft="1px solid token(colors.slate.6)"
+        p={{ base: 12, md: 16 }}
       >
-        <Center zIndex={20} flex={1} p="24" flexDirection="column" justifyContent="flex-end">
+        <Center zIndex={20} flex={1} flexDirection="column">
           <Center color="tomato.2" bg="trusty.9" borderRadius="full" width="100px" height="100px">
             <Lock width="40px" height="40px" />
           </Center>
@@ -149,23 +149,6 @@ export default function LoginPage(props: LoginPageProps) {
             familiares
           </Text>
         </Center>
-        <Box
-          zIndex={30}
-          width="100%"
-          height="120px"
-          background="rgba(0,0,0,0.0)"
-          borderBottomRightRadius="xl"
-        ></Box>
-        <Box
-          zIndex={10}
-          width="100%"
-          height="100%"
-          position="absolute"
-          top={0}
-          left={0}
-          opacity={0.6}
-          style={{ backgroundImage: `url("${bg.src}")`, backgroundRepeat: 'repeat' }}
-        />
       </Flex>
     </>
   )

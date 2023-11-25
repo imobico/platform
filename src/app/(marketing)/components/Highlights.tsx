@@ -2,15 +2,35 @@
 
 import Image from 'next/image'
 
-import { Box, Center, Flex, HStack } from '@/styled'
+import { Box, Center, Flex, Grid, HStack } from '@/styled'
 
-import { H3, Strong, Text } from '@/ui'
+import { H3, HighlightedUnderlineText, Strong, Text } from '@/ui'
+
+const highlightOptions = [
+  {
+    index: 0,
+    id: 'site',
+    title: () => (
+      <>
+        Crie seu site, gerencie seus imóveis, clientes/leads, marketing e muito mais através de um
+        único produto e um único plano. <Strong>Menos complicação. Mais resultados.</Strong>
+      </>
+    ),
+    description: () => (
+      <>
+        Utilizando as mais modernas tecnologias, você terá um site otimizado e pronto em 5 minutos!
+        Sem taxa de instalação. Sem custo de personalização. Sem complicação.
+      </>
+    ),
+    imagePath: '/pricing-icon-1.svg'
+  }
+]
 
 export const Highlights = () => {
   return (
     <>
       <Center
-        pt={{ base: '400px', md: '520px' }}
+        pt={{ base: '280px', md: '500px' }}
         pb="140px"
         bg="slate.3"
         mt={{ base: '-240px', md: '-480px' }}
@@ -22,16 +42,14 @@ export const Highlights = () => {
           alignItems="center"
           justifyContent="center"
           id="funcionalidades"
+          px={{ base: 12, md: 0 }}
         >
-          <Text fontSize="4xl" maxWidth="840px" textAlign="center">
+          <Text fontSize={{ base: '2xl', md: '4xl' }} maxWidth="840px" textAlign="center">
             Concentre-se no seu negócio e clientes.
             <br />
-            <Strong
-              px="2"
-              bg="linear-gradient(360deg, token(colors.trusty.4) 0%, token(colors.trusty.4) 30%, rgba(209,226,255,0) 30%, rgba(255,255,255,0) 100%)"
-            >
+            <HighlightedUnderlineText highlightColorMode="lightPrimary" px="2">
               Deixe o resto com a gente!
-            </Strong>
+            </HighlightedUnderlineText>
           </Text>
         </Flex>
 
@@ -45,7 +63,7 @@ export const Highlights = () => {
           pb="120px"
           mt="16"
         >
-          <HStack width="100%" gap="16" alignItems="flex-start">
+          <Grid width="100%" columns={{ base: 1, md: 2, lg: 4 }} gap="16" alignItems="flex-start">
             <Center flex="1" flexDirection="column">
               <Image
                 src="/feature-icon-website.svg"
@@ -130,7 +148,7 @@ export const Highlights = () => {
                 Android.
               </Text>
             </Center>
-          </HStack>
+          </Grid>
         </Box>
       </Center>
     </>

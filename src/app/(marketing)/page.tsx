@@ -1,12 +1,12 @@
-// import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import { Box, Button, Center, H1, HStack, Strong, Text } from '@/ui'
 
-// const Highlights = dynamic(() => import('./components/Highlights'), {
-//   loading: () => <p>Carregando...</p>
-// })
+const Highlights = dynamic(() => import('./components/Highlights'), {
+  loading: () => <p>Carregando...</p>
+})
 
 // const Pricing = dynamic(() => import('./components/Pricing'), {
 //   loading: () => <p>Carregando...</p>
@@ -152,7 +152,7 @@ export default function Home() {
 
           <Center
             width="100vw"
-            minHeight={{ base: '200px', md: '660px' }}
+            minHeight={{ base: '300px', md: '660px' }}
             overflow="hidden"
             position="relative"
             px="4"
@@ -213,7 +213,7 @@ export default function Home() {
           </Center>
         </Center>
       </Center>
-      {/* <Highlights /> */}
+      <Highlights />
       {/* <Integrations /> */}
       {/* <Pricing /> */}
     </>

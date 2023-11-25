@@ -38,6 +38,9 @@ dependencies:
   next:
     specifier: ^14.0.3
     version: 14.0.3(@babel/core@7.23.2)(react-dom@18.2.0)(react@18.2.0)
+  postcss-100vh-fix:
+    specifier: ^1.0.2
+    version: 1.0.2(postcss@8.4.31)
   react:
     specifier: ^18
     version: 18.2.0
@@ -7892,6 +7895,15 @@ packages:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
     dev: true
+
+  /postcss-100vh-fix@1.0.2(postcss@8.4.31):
+    resolution: {integrity: sha512-t7vqk9AfjI4fXmWlQCEiMZFFhi1hro4WlECINI1TV6Qh1XapUJE++gCmNr95F5Hen/+bz1OmO+SiSB9TZmFmSg==}
+    engines: {node: '>=10.0'}
+    peerDependencies:
+      postcss: ^8.1.0
+    dependencies:
+      postcss: 8.4.31
+    dev: false
 
   /postcss-discard-duplicates@6.0.0(postcss@8.4.31):
     resolution: {integrity: sha512-bU1SXIizMLtDW4oSsi5C/xHKbhLlhek/0/yCnoMQany9k3nPBq+Ctsv/9oMmyqbR96HYHxZcHyK2HR5P/mqoGA==}
