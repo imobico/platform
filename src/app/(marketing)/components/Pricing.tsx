@@ -129,16 +129,15 @@ export const PricingCard = ({
           {title}
         </H2>
       </Flex>
-      <Text fontSize="lg" fontWeight="600" mr="6" letterSpacing={0} mb="4">
+      <Text fontSize="lg" fontWeight="600" mr="6" letterSpacing={0} mb="4" color="trusty.10">
         R$
-        <Strong mx="1" fontSize="4xl" fontFamily="heading" fontWeight="900">
+        <Strong mx="1" fontSize="4xl" fontFamily="heading" fontWeight="900" color="trusty.10">
           {pricePerUser}
         </Strong>
       </Text>
       <Text fontSize="sm" fontWeight={700} mb="2" textAlign="center">
         Valor mensal por usuário
-        <br />
-        Mínimo de {minimumUsers} usuários
+        <br />A partir de {minimumUsers} usuários
       </Text>
 
       {features.map((feature) => (
@@ -169,6 +168,7 @@ export const Pricing = () => {
         id="planos"
         pt={{ base: 16, md: 8, lg: 0 }}
         pb={16}
+        px={{ base: 0, lg: 8 }}
       >
         <Box width="100%" maxWidth="1220px">
           <Center justifyContent="space-between" width="100%" mb={{ base: 16, lg: 0 }}>
