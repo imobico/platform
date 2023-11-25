@@ -1,10 +1,10 @@
 'use client'
 
-import Image from 'next/image'
+// import Image from 'next/image'
 
-import { Box, Center, Divider, Flex, HStack } from '@/styled'
+// import { Box, Center, Divider, Flex, HStack } from '@/styled'
 
-import { H3, Text } from '@/ui'
+// import { H3, Text } from '@/ui'
 
 export const MarketingFooter = () => {
   return (

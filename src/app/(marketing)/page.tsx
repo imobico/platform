@@ -1,20 +1,20 @@
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import { Box, Button, Center, H1, HStack, Strong, Text } from '@/ui'
 
-const Highlights = dynamic(() => import('./components/Highlights'), {
-  loading: () => <p>Carregando...</p>
-})
+// const Highlights = dynamic(() => import('./components/Highlights'), {
+//   loading: () => <p>Carregando...</p>
+// })
 
-const Pricing = dynamic(() => import('./components/Pricing'), {
-  loading: () => <p>Carregando...</p>
-})
+// const Pricing = dynamic(() => import('./components/Pricing'), {
+//   loading: () => <p>Carregando...</p>
+// })
 
-const Integrations = dynamic(() => import('./components/Integrations'), {
-  loading: () => <p>Carregando...</p>
-})
+// const Integrations = dynamic(() => import('./components/Integrations'), {
+//   loading: () => <p>Carregando...</p>
+// })
 
 export default function Home() {
   return (

@@ -1,8 +1,7 @@
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 
-import bg from '@/public/auth-bg.jpg'
-import { Box, Center, Flex, H1, Text, TextLink } from '@/ui'
+import { Box, Center, H1, Text, TextLink } from '@/ui'
 
 const DynamicForm = dynamic(() => import('../components/SignUpForm'), {
   loading: () => <p>Loading...</p>
