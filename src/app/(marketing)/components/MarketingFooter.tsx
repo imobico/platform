@@ -13,7 +13,6 @@ export const MarketingFooter = () => {
             <Flex flex="1" mr="12" flexDirection={{ base: 'column', lg: 'row' }}>
               <Box width="140px" mr="12" mt={{ base: 16, lg: 6 }} mb={{ base: 8, lg: 0 }}>
                 <Image
-                  priority
                   src="/logo-imobi-trusty.svg"
                   alt="Imobi Test"
                   width={0}
@@ -39,7 +38,6 @@ export const MarketingFooter = () => {
             </Flex>
             <Box width="240px" display={{ base: 'none', lg: 'block' }}>
               <Image
-                priority
                 src="/illustration-trusty-rafiki-city.svg"
                 alt="Imoblr sistema para imobiliárias e corretoras"
                 width={0}
