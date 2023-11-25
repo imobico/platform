@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
 
-import { Box, Center, Flex } from '@/ui'
+import { Box, Center } from '@/ui'
 
 export const metadata: Metadata = {
   title: 'Entrar | Imobi'
