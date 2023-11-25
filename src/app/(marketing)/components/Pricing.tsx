@@ -148,7 +148,7 @@ export const PricingCard = ({
       ))}
       <Divider mt="4" mb="8" />
       <Box width="100%" px="8">
-        <Link href="/cadastro">
+        <Link href={`/cadastro?plan=${id}`}>
           <Button borderRadius="xl" size="xl" fontWeight="500" width="100%" bg="trusty.10">
             Faça um
             <strong style={{ fontWeight: 700, marginLeft: '-6px' }}>teste grátis</strong>
