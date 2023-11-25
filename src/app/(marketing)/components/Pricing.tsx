@@ -146,10 +146,10 @@ export const PricingCard = ({
 export const Pricing = () => {
   return (
     <>
-      <Center bg="trusty" flexDirection="column" id="planos" py="12">
+      <Center bg="trusty" flexDirection="column" id="planos" py={{ base: 16, md: 8, lg: 0 }}>
         <Box width="100%" maxWidth="1220px">
-          <Center justifyContent="space-between" width="100%">
-            <Box>
+          <Center justifyContent="space-between" width="100%" mb={{ base: 16, lg: 0 }}>
+            <Box px={{ base: 12 }} flex="1">
               <H1 fontSize="4xl" color="white" maxWidth="540px" mb="4">
                 <Strong
                   px="2"
@@ -164,13 +164,19 @@ export const Pricing = () => {
                 ofereceremos os melhores preços e a mais moderna tecnologia do mercado!
               </Text>
             </Box>
-
-            <Image
-              src="/illustration-trusty-rafiki-pricing.svg"
-              alt="Lista de planos e preços Imoblr"
-              width={380}
-              height={380}
-            />
+            <Box
+              width={{ base: '100%', md: '380px', lg: '420px' }}
+              display={{ base: 'none', md: 'block' }}
+            >
+              <Image
+                src="/illustration-trusty-rafiki-pricing.svg"
+                alt="Lista de planos e preços Imoblr"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </Box>
           </Center>
           <HStack width="100%" gap="0" overflow="hidden" mb="24" alignItems="flex-start">
             {pricingOptions.map((pricingOption) => {

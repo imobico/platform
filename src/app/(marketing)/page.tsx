@@ -12,9 +12,9 @@ const Integrations = dynamic(() => import('./components/Integrations'), {
   loading: () => <p>Carregando...</p>
 })
 
-// const Pricing = dynamic(() => import('./components/Pricing'), {
-//   loading: () => <p>Carregando...</p>
-// })
+const Pricing = dynamic(() => import('./components/Pricing'), {
+  loading: () => <p>Carregando...</p>
+})
 
 export default function Home() {
   return (
@@ -205,7 +205,7 @@ export default function Home() {
       </Center>
       <Highlights />
       <Integrations />
-      {/* <Pricing /> */}
+      <Pricing />
     </>
   )
 }

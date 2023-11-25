@@ -22,7 +22,6 @@ export const Integrations = () => {
               mb={{ base: 12, lg: 0 }}
             >
               <Image
-                priority
                 src="/illustration-trusty-rafiki-integrations.svg"
                 alt="A Imoblr tem diversas integrações com portais de imóveis!"
                 width={0}
