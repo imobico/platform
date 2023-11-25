@@ -143,7 +143,11 @@ export const Highlights = () => {
         >
           <Grid width="100%" columns={{ base: 1, md: 2, lg: 4 }} gap="16" alignItems="flex-start">
             {highlightOptions.map((highlight) => (
-              <Center flex="1" flexDirection="column">
+              <Center
+                flex="1"
+                flexDirection="column"
+                key={`highlights-page-highlight-${highlight.id}`}
+              >
                 <Image
                   src={highlight.imagePath}
                   alt={highlight.imageAlt || 'Funcionalidade imobi'}
