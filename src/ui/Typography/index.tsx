@@ -1,7 +1,6 @@
 import { styled } from '@/styled'
-import { cva } from '@/styled/css'
 
-const h1Style = cva({
+export const H1 = styled('h1', {
   base: {
     color: 'trusty.11',
     fontFamily: 'var(--font-heading)'
@@ -27,7 +26,7 @@ const h1Style = cva({
   }
 })
 
-const h2Style = cva({
+export const H2 = styled('h2', {
   base: {
     color: 'trusty.12',
     fontFamily: 'var(--font-heading)',
@@ -54,7 +53,7 @@ const h2Style = cva({
   }
 })
 
-const h3Style = cva({
+export const H3 = styled('h3', {
   base: {
     color: 'trusty.12',
     fontFamily: 'var(--font-heading)',
@@ -81,7 +80,7 @@ const h3Style = cva({
   }
 })
 
-const smallHeadingStyle = cva({
+export const H4 = styled('h4', {
   base: {
     color: 'trusty.12',
     fontFamily: 'var(--font-heading)',
@@ -108,8 +107,29 @@ const smallHeadingStyle = cva({
   }
 })
 
-export const H1 = styled('h1', h1Style)
-export const H2 = styled('h2', h2Style)
-export const H3 = styled('h3', h3Style)
-export const H4 = styled('h4', smallHeadingStyle)
-export const H5 = styled('h5', smallHeadingStyle)
+export const H5 = styled('h5', {
+  base: {
+    color: 'trusty.12',
+    fontFamily: 'var(--font-heading)',
+    fontSize: '1.8rem'
+  },
+  variants: {
+    size: {
+      xs: {
+        fontSize: 'xs'
+      },
+      sm: {
+        fontSize: 'sm'
+      },
+      md: {
+        fontSize: 'md'
+      },
+      lg: {
+        fontSize: 'lg'
+      },
+      xl: {
+        fontSize: 'xl'
+      }
+    }
+  }
+})

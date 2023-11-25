@@ -93,7 +93,7 @@ export default function Home() {
           <HStack
             width="100%"
             gap={{ base: 4, md: 6 }}
-            mb="24"
+            mb={{ base: 24, md: 16 }}
             flexDirection={{ base: 'column', md: 'row' }}
             alignItems="center"
             justifyContent="center"
@@ -150,7 +150,15 @@ export default function Home() {
             </Box>
           </HStack>
 
-          <Center width="100vw" overflow="hidden" position="relative" px="4" py="8">
+          <Center
+            width="100vw"
+            minHeight={{ base: '200px', md: '660px' }}
+            overflow="hidden"
+            position="relative"
+            px="4"
+            pt={12}
+            pb={12}
+          >
             <Box
               boxShadow="0 12px 36px 0 rgba(0,0,0,0.2)"
               borderRadius="2xl"
@@ -205,9 +213,9 @@ export default function Home() {
           </Center>
         </Center>
       </Center>
-      {/* <Highlights />
-      <Integrations />
-      <Pricing /> */}
+      {/* <Highlights /> */}
+      {/* <Integrations /> */}
+      {/* <Pricing /> */}
     </>
   )
 }

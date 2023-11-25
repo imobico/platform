@@ -9,7 +9,13 @@ import { H3, Strong, Text } from '@/ui'
 export const Highlights = () => {
   return (
     <>
-      <Center pt="580px" pb="140px" bg="slate.3" mt="-500px" flexDirection="column">
+      <Center
+        pt={{ base: '400px', md: '520px' }}
+        pb="140px"
+        bg="slate.3"
+        mt={{ base: '-240px', md: '-480px' }}
+        flexDirection="column"
+      >
         <Flex
           width="100%"
           maxWidth="1220px"
