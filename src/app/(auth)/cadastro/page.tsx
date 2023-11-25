@@ -15,7 +15,7 @@ export default function SignupPage() {
           <Box
             width="140px"
             position={{ base: 'unset', xl: 'absolute' }}
-            mb={{ base: 6 }}
+            mb={{ base: 6, md: 'unset' }}
             left={{ base: 'unset', xl: 8 }}
             top={{ base: 'unset', xl: 8 }}
           >
