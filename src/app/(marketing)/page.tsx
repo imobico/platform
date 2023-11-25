@@ -25,7 +25,7 @@ export default function Home() {
             fontSize={{ base: '4xl', md: '5xl' }}
             textAlign="center"
             lineHeight={1.2}
-            mb="8"
+            mb={{ base: 4, md: 8 }}
             width="100vw"
             maxWidth="880px"
             px={{ base: 8, md: 12 }}
@@ -37,7 +37,7 @@ export default function Home() {
                 background:
                   'linear-gradient(360deg, rgba(209,226,255,1) 0%, rgba(209,226,255,1) 30%, rgba(209,226,255,0) 30%, rgba(255,255,255,0) 100%)'
               }}
-              color="trusty.8"
+              color="trusty"
             >
               O futuro da tecnologia
             </Strong>{' '}
@@ -74,8 +74,8 @@ export default function Home() {
             mb={{ base: 8, md: 12 }}
             px={{ base: 8, md: 12 }}
           >
-            Crie seu site, gerencie seus imóveis, clientes/leads, marketing e muito mais. Tudo
-            través de uma única plataforma e um único plano.
+            Crie seu site, gerencie seus imóveis, clientes/leads, marketing e muito mais. Tudo isso
+            <strong> com um clique</strong> través de uma única plataforma e um único plano.
             <br />
             <Strong>Menos complicação. Mais resultados.</Strong>
           </Text>
