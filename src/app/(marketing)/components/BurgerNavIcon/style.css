@@ -1,4 +1,5 @@
 .burger-nav-icon {
+  z-index: 999;
   width: 24px;
   height: 18px;
   position: relative;

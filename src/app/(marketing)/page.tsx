@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <Center width="100vw" flexDirection="column" overflow="hidden">
-        <Center mt={{ base: 10, md: '20' }} flexDirection="column" px={{ base: 4, md: 12 }}>
+        <Center mt={{ base: 8, md: '20' }} flexDirection="column" px={{ base: 4, md: 12 }}>
           <H1
             fontSize={{ base: '4xl', md: '5xl' }}
             textAlign="center"

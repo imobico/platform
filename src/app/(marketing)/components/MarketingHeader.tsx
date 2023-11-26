@@ -1,10 +1,12 @@
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import { Box, Center, Flex, HStack } from '@/styled'
 
-import { BurgerNavIcon } from '@/components'
 import { Button, Text } from '@/ui'
+
+export const BurgerNavIcon = dynamic(() => import('./BurgerNavIcon'))
 
 export const MarketingHeader = () => {
   return (
