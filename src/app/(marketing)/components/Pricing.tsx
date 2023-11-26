@@ -37,7 +37,6 @@ const pricingOptions = [
       { label: 'Limite de 120 imóveis' },
       { label: 'Gerenciador de imóveis' },
       { label: 'Gerenciador de clientes' },
-      { label: 'Automatização com IA' },
       { label: '1 foto 3D por imóvel' },
       { label: 'Universidade Imoblr inclusa' }
     ]
@@ -55,9 +54,9 @@ const pricingOptions = [
       { label: 'Limite de 600 imóveis' },
       { label: 'Gerenciador de imóveis' },
       { label: 'Gerenciador de clientes' },
-      { label: 'Automatização com IA' },
       { label: 'Fotos 3D ilimitadas' },
-      { label: 'Universidade Imoblr inclusa' }
+      { label: 'Universidade Imoblr inclusa' },
+      { label: 'Automatização com IA' }
     ]
   }
 ]
@@ -100,10 +99,7 @@ export const PricingCard = ({
         base: 'none',
         md: index === 0 ? 'none' : '1px solid token(colors.border.default)'
       }}
-      borderTopLeftRadius={{ base: '2xl', lg: index === 0 ? '3xl' : 'unset' }}
-      borderBottomLeftRadius={{ base: '2xl', lg: index === 0 || index === 1 ? '3xl' : 'unset' }}
-      borderTopRightRadius={{ base: '2xl', lg: index === 2 ? '3xl' : 'unset' }}
-      borderBottomRightRadius={{ base: '2xl', lg: index === 2 ? '3xl' : 'unset' }}
+      borderRadius="2xl"
       boxShadow={{
         base: '0 0 20px 0 token(colors.trusty.10), 0 0 4px 1px token(colors.trusty.10)',
         md: 'none'
@@ -149,7 +145,7 @@ export const PricingCard = ({
       <Divider mt="4" mb="8" />
       <Box width="100%" px="8">
         <Link href={`/cadastro?plan=${id}`}>
-          <Button borderRadius="xl" size="xl" fontWeight="500" width="100%" bg="trusty.10">
+          <Button borderRadius="xl" size="2xl" fontWeight="500" width="100%" bg="trusty.10">
             Faça um
             <strong style={{ fontWeight: 700, marginLeft: '-6px' }}>teste grátis</strong>
           </Button>
@@ -215,7 +211,7 @@ export const Pricing = () => {
           <Grid
             width="100%"
             columns={{ base: 1, md: 2, lg: 3 }}
-            gap={{ base: 6, lg: 0 }}
+            gap={{ base: 6, lg: 8 }}
             alignItems="flex-start"
             px={{ base: 6, lg: 0 }}
           >
