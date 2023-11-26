@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import { Box, Center, Flex, HStack } from '@/styled'
 
+import { BurgerNavIcon } from '@/components'
 import { Button, Text } from '@/ui'
 
 export const MarketingHeader = () => {
@@ -39,6 +40,9 @@ export const MarketingHeader = () => {
             </Box>
           </HStack>
         </Flex>
+        <Box display={{ base: 'block', md: 'none' }}>
+          <BurgerNavIcon />
+        </Box>
         <Flex display={{ base: 'none', md: 'flex' }}>
           <HStack>
             <Link href="/entrar">
