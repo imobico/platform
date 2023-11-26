@@ -1,10 +1,11 @@
 'use client'
 
+import Link from 'next/link'
 import { useState } from 'react'
 
 import { Box, Flex, VStack } from '@/styled'
 
-import { Text } from '@/ui'
+import { Button, Text } from '@/ui'
 
 import './style.css'
 
@@ -58,11 +59,64 @@ export const BurgerNavIcon = () => {
               </Text>
             </a>
           </Box>
+          <Box
+            mt={12}
+            mb={8}
+            position="relative"
+            width={{ base: '100%', md: 'unset' }}
+            px={{ base: 8, md: 'unset' }}
+          >
+            <Link href="/entrar">
+              <Button
+                borderRadius="full"
+                size="2xl"
+                variant="outline"
+                width={{ base: '100%', md: 'unset' }}
+              >
+                Acessar meu painel
+              </Button>
+            </Link>
+          </Box>
+          <Box
+            position="relative"
+            width={{ base: '100%', md: 'auto' }}
+            px={{ base: 8, md: 'unset' }}
+          >
+            <Link href="/cadastro">
+              <Button
+                borderRadius="full"
+                size="2xl"
+                fontWeight="500"
+                width={{ base: '100%', md: 'auto' }}
+              >
+                Faça um
+                <strong style={{ fontWeight: 700, marginLeft: '-6px' }}>teste grátis</strong>
+              </Button>
+            </Link>
+          </Box>
+          <Box
+            position="relative"
+            width={{ base: '100%', md: 'unset' }}
+            px={{ base: 8, md: 'unset' }}
+          >
+            <Link href="/entrar">
+              <Button
+                borderRadius="full"
+                size="2xl"
+                variant="outline"
+                width={{ base: '100%', md: 'unset' }}
+              >
+                Agende uma apresentação
+              </Button>
+            </Link>
+          </Box>
         </VStack>
       )}
 
       <Flex
-        position={isNavActive ? 'fixed' : 'relative'}
+        float="right"
+        display="flex"
+        position={isNavActive ? 'fixed' : 'unset'}
         top={isNavActive ? '16px' : 'unset'}
         right={isNavActive ? '16px' : 'unset'}
         alignItems="center"

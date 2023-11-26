@@ -68,7 +68,7 @@ export default function Home() {
           </H1>
           <Text
             textAlign="center"
-            fontSize={{ base: 'lg', md: 'xl' }}
+            fontSize={{ base: 'md', md: 'lg' }}
             color="slate.11"
             maxWidth="780px"
             mb={{ base: 8, md: 12 }}
