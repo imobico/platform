@@ -161,7 +161,7 @@ export default function Home() {
                 alt="Imobi Test"
                 width={0}
                 height={0}
-                sizes="100vw"
+                sizes="(max-width: 480px) 400px, (max-width: 768px) 740px, 800px"
                 style={{ width: '100%', height: 'auto' }}
               />
             </Box>
@@ -171,7 +171,7 @@ export default function Home() {
               overflow="hidden"
               mb={{ base: '-80px', md: '-80px' }}
               position="absolute"
-              width={{ base: '140px', md: '280px' }}
+              width={{ base: '160px', md: '280px' }}
               ml={{ base: '-320px', md: '-860px' }}
             >
               <Image
@@ -179,7 +179,7 @@ export default function Home() {
                 alt="Imobi Test"
                 width={0}
                 height={0}
-                sizes="100vw"
+                sizes="(max-width: 480px) 160px, 280px"
                 style={{ width: '100%', height: 'auto' }}
               />
             </Box>
@@ -196,7 +196,7 @@ export default function Home() {
                 alt="Imobi Test"
                 width={0}
                 height={0}
-                sizes="100vw"
+                sizes="(max-width: 480px) 140px, 240px"
                 style={{ width: '100%', height: 'auto' }}
               />
             </Box>
