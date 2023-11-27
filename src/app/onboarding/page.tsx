@@ -68,7 +68,7 @@ export default function Onboarding() {
         <Box>Algo deu errado</Box>
       ) : (
         <>
-          {!isWelcomeDismissed ? (
+          {isWelcomeDismissed ? (
             <Center
               display={{ base: 'flex', lg: 'none' }}
               width={{ base: '100vw', lg: '540px' }}
@@ -104,20 +104,22 @@ export default function Onboarding() {
                 letterSpacing="-0.5px"
                 lineHeight={1.3}
               >
-                Já está tudo certo com a sua conta e agora só precisamos saber um pouco mais sobre
-                você e sobre o seu negócio.
+                Já está tudo certo com a sua conta e você está pronto(a) para conhecer o futuro da
+                tecnologia para o mercado imobiliário.
+                <br />
+                Vamos lá?!
               </Text>
               <VStack gap="4vh" width="100%">
                 <Button
                   bg="white"
                   color="trusty"
-                  size="2xl"
+                  size="xl"
                   width="100%"
                   onClick={() => {
                     setIsWelcomeDismissed(true)
                   }}
                 >
-                  Cadastrar o meu negócio
+                  Concluir cadastro
                 </Button>
                 <Button
                   variant="link"
@@ -131,7 +133,12 @@ export default function Onboarding() {
               </VStack>
             </Center>
           ) : (
-            <Box width="600px" maxWidth="90%" flexDirection="column">
+            <Box
+              width={{ base: '100%', lg: '600px' }}
+              maxHeight="100vh"
+              overflow="auto"
+              flexDirection="column"
+            >
               {isCurrentUserLoading || !currentUserData ? (
                 <Center width="100%" height="100%">
                   <Box bg={trusty[4].value} borderRadius="300px" overflow="hidden" color="blue">

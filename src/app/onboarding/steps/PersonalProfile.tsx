@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form'
 
 import { useUpdateUser } from '@/mutations'
 import { User } from '@/types'
-import { Box, Button, H1, HStack, Input, Label, Text } from '@/ui'
+import { Box, Button, Grid, H1, Input, Label, Text } from '@/ui'
 
 import { StepComponentProps } from '../page'
 
@@ -43,16 +43,16 @@ export default function PersonalProfile({ currentUser, onComplete }: StepCompone
   }, [currentUser, reset])
 
   return (
-    <Box>
+    <Box p={{ base: 8, lg: 0 }}>
       <H1 fontSize="4xl">Sobre você</H1>
-      <Text color="text.muted" mb="12" pr="24">
+      <Text color="text.muted" mb="12" pr={{ base: 0, lg: '24' }}>
         Suas informações pessoais básicas.
         <br />
         (Nenhuma dessas informações será divulgada)
       </Text>
       <form onSubmit={handleSubmit(updateProfile)}>
         <Box width="100%">
-          <HStack width="100%" gap="4">
+          <Grid width="100%" gap="4" columns={{ base: 1, md: 2 }}>
             <Box flex="1">
               <Label size="xl" htmlFor="first_name">
                 Nome
@@ -79,7 +79,7 @@ export default function PersonalProfile({ currentUser, onComplete }: StepCompone
                 {...register('last_name')}
               />
             </Box>
-          </HStack>
+          </Grid>
 
           <Button
             mt={8}

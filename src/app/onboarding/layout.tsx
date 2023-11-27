@@ -6,7 +6,7 @@ import { Box, Center, Flex, H2, Text } from '@/ui'
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <ProvidersWrapper>
-      <Flex minHeight="100vh" minWidth="100vw" bg="trusty.9">
+      <Flex minHeight="100vh" minWidth="100vw" bg={{ base: 'white', lg: 'trusty.9' }}>
         <Center
           width="540px"
           maxWidth="50vw"
@@ -44,7 +44,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           borderBottomLeftRadius="3xl"
           bg="white"
           flex="1"
-          boxShadow="0 0 60px 6px token(colors.trusty.10), 0 0 8px 4px token(colors.trusty.10)"
+          boxShadow={{
+            base: 'none',
+            lg: '0 0 60px 6px token(colors.trusty.10), 0 0 8px 4px token(colors.trusty.10)'
+          }}
           flexDirection="column"
           position="relative"
         >
