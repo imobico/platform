@@ -12,7 +12,6 @@ interface SetPasswordPageProps {
 }
 
 export default function SetPasswordPage(props: SetPasswordPageProps) {
-  console.log(props)
   const [password, setPassword] = useState('')
   const [passwordConfirmation, setPasswordConfirmation] = useState('')
   // const [isSignupSuccessful, setIsSignupSuccessful] = useState(false)
@@ -25,8 +24,8 @@ export default function SetPasswordPage(props: SetPasswordPageProps) {
     } else if (password !== passwordConfirmation) {
       alert('A confirmação de senha deve ser idêntica ao campo senha.')
     } else {
-      try {
-        await browserClient.auth.signUp({
+      await browserClient.auth
+        .signUp({
           email: decodeURIComponent(props.searchParams?.email),
           password: password
           // options: {
@@ -35,14 +34,17 @@ export default function SetPasswordPage(props: SetPasswordPageProps) {
           //   )}`
           // }
         })
-      } catch (error) {
-        console.error(error)
-        alert(
-          'Tivemos um problema ao criar a sua conta! Por favor, entre em contato com o nosso suporte'
-        )
-      } finally {
-        window.location.href = '/onboarding'
-      }
+        .then((result) => {
+          if (result.error) {
+            alert(
+              result.error.message === 'User already registered'
+                ? 'Já existe uma conta cadastrada com este e-mail'
+                : 'Tivemos um problema ao criar a sua conta! Por favor, entre em contato com o nosso suporte'
+            )
+          } else {
+            window.location.href = '/onboarding'
+          }
+        })
     }
   }
 
