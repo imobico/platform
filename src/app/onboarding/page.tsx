@@ -103,7 +103,7 @@ export default function Onboarding() {
                 letterSpacing="-0.5px"
                 lineHeight={1.3}
               >
-                Já está tudo certo com a sua conta, agora só precisamos saber um pouco mais sobre
+                Já está tudo certo com a sua conta e agora só precisamos saber um pouco mais sobre
                 você e sobre o seu negócio.
               </Text>
               <Box
