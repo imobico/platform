@@ -50,9 +50,10 @@ export default function BusinessProfile({ currentUser, onComplete }: StepCompone
   }
 
   return (
-    <Box>
-      <H1 fontSize="4xl">Sobre o seu negócio</H1>
-      <Text color="text.muted" mb="12" pr="24">
+    <Box maxHeight="100vh" overflow="auto" p={{ base: 8, lg: 0 }}>
+      <H1 fontSize={{ base: '3xl', lg: '4xl' }}>Sobre o seu negócio</H1>
+
+      <Text fontSize="lg" color="text.muted" mb="12" pr={{ base: 0, lg: '32' }}>
         Agora só precisamos saber um pouco mais sobre o seu negócio
         <br />
         Essas informações serão visualizadas por seus clientes em seu site por exemplo
@@ -75,7 +76,7 @@ export default function BusinessProfile({ currentUser, onComplete }: StepCompone
             </Box>
           </HStack>
 
-          <Button type="submit" size="xl">
+          <Button type="submit" size="xl" width="100%">
             {createOrganization.isPending ? 'Salvando...' : 'Continuar'}
           </Button>
         </Box>
