@@ -38,36 +38,40 @@ export default function LoginPage(props: LoginPageProps) {
 
   return (
     <>
-      {isSignupSuccessful && (
-        <Center
-          width="100%"
-          p={8}
-          position="absolute"
-          height="100%"
-          bg="white"
-          zIndex={100}
-          flexDirection="column"
-        >
-          <Center width="120px" height="120px" bg="green.3" color="green.9" borderRadius="full">
-            <MailCheck width="60px" height="80px" />
-          </Center>
-          <H2 size="lg" mt={8} mb={4}>
-            Confirme sua conta
-          </H2>
-          <Text color="text.muted" maxWidth="30vw" textAlign="center">
-            Sua conta foi criada e agora é só clicar no link que enviamos para o seu e-mail (
-            <strong>{props.searchParams?.email}</strong>) para confirmar a sua conta
-          </Text>
-        </Center>
-      )}
-      <Center width={{ base: '100%', lg: '50%' }} p={{ base: 12, md: 16, xl: 24 }}>
-        <Box width="100%" maxWidth="480px">
-          <Box
-            width="140px"
-            position={{ base: 'relative', lg: 'absolute' }}
-            mb={{ base: 6 }}
-            transform={{ lg: 'translateY(-100px)' }}
+      {isSignupSuccessful ||
+        (false && (
+          <Center
+            width="100%"
+            p={8}
+            position="fixed"
+            height="100%"
+            bg="trusty.2"
+            zIndex={100}
+            flexDirection="column"
+            borderRadius="xl"
+            top="0"
+            left="0"
           >
+            <Center width="120px" height="120px" bg="trusty.2" color="green.9" borderRadius="full">
+              <MailCheck width="60px" height="80px" />
+            </Center>
+            <H2 size="lg" mt={8} mb={4}>
+              Confirme sua conta
+            </H2>
+            <Text color="text.muted" maxWidth={{ lg: '30vw' }} textAlign="center">
+              Sua conta foi criada e agora é só clicar no link que enviamos para o seu e-mail (
+              <strong>{props.searchParams?.email}</strong>) para confirmar a sua conta
+            </Text>
+          </Center>
+        ))}
+      <Box
+        width={{ base: '100%', lg: '50%' }}
+        p={{ base: 12, md: 16, xl: 24 }}
+        maxHeight="100%"
+        overflow="auto"
+      >
+        <Box width="100%" maxWidth="480px">
+          <Box width="140px" mb={6}>
             <Image
               priority
               src="/logo-imobi-trusty.svg"
@@ -120,13 +124,14 @@ export default function LoginPage(props: LoginPageProps) {
             </Button>
           </VStack>
         </Box>
-      </Center>
+      </Box>
       <Flex
         display={{ base: 'none', lg: 'flex' }}
         bg="slate.2"
         width="50%"
         position="relative"
-        overflow="hidden"
+        overflow="auto"
+        height="100%"
         flexDirection="column"
         borderLeft="1px solid token(colors.slate.6)"
         p={{ base: 12, md: 16 }}

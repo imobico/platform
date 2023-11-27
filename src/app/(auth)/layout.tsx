@@ -28,10 +28,9 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
           position="relative"
           bg="white"
           mx={{ base: 0, lg: 8 }}
+          overflow="hidden"
         >
-          <Box width="100%" maxHeight="100%" overflow="auto">
-            {children}
-          </Box>
+          {children}
         </Center>
       </Center>
     </Box>
