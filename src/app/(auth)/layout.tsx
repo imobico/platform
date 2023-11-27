@@ -27,7 +27,6 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
           maxHeight={{ base: 'unset', lg: '780px' }}
           position="relative"
           bg="white"
-          mx={{ base: 0, lg: 8 }}
           overflow="hidden"
         >
           {children}
