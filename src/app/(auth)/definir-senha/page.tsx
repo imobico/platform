@@ -18,15 +18,15 @@ export default function SetPasswordPage(props: SetPasswordPageProps) {
   // const [isSignupSuccessful, setIsSignupSuccessful] = useState(false)
 
   const handleSignup = async () => {
-    if (password !== passwordConfirmation) {
-      return alert(
-        password.length < 6 || passwordConfirmation.length < 6
-          ? 'Sua senha deve conter ao menos 6 caracteres'
-          : 'A confirmação de senha deve ser idêntica ao campo senha.'
-      )
+    if (!passwordConfirmation || passwordConfirmation.length === 0) {
+      alert('Digite a confirmação de senha')
+    } else if (password.length < 6 || passwordConfirmation.length < 6) {
+      alert('Sua senha deve conter ao menos 6 caracteres')
+    } else if (password !== passwordConfirmation) {
+      alert('A confirmação de senha deve ser idêntica ao campo senha.')
     } else {
-      await browserClient.auth
-        .signUp({
+      try {
+        await browserClient.auth.signUp({
           email: decodeURIComponent(props.searchParams?.email),
           password: password
           // options: {
@@ -35,10 +35,14 @@ export default function SetPasswordPage(props: SetPasswordPageProps) {
           //   )}`
           // }
         })
-        .then(() => {
-          window.location.href = '/onboarding'
-          // setIsSignupSuccessful(true)
-        })
+      } catch (error) {
+        console.error(error)
+        alert(
+          'Tivemos um problema ao criar a sua conta! Por favor, entre em contato com o nosso suporte'
+        )
+      } finally {
+        window.location.href = '/onboarding'
+      }
     }
   }
 
