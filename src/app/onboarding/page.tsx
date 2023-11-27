@@ -70,10 +70,11 @@ export default function Onboarding() {
         <>
           {!isWelcomeDismissed ? (
             <Center
+              display={{ base: 'flex', lg: 'none' }}
               width={{ base: '100vw', lg: '540px' }}
               maxWidth={{ base: '100vw', lg: '50vw' }}
               height="100%"
-              p={{ base: 8, lg: '16' }}
+              px={{ base: '6vw', lg: '16' }}
               flexDirection="column"
               position="absolute"
               zIndex={10}
@@ -81,7 +82,7 @@ export default function Onboarding() {
               left={{ base: '0', lg: 'unset' }}
               bg={{ base: 'trusty', lg: 'white' }}
             >
-              <Box width={{ base: '240px', lg: '320px' }} mb="12">
+              <Box width={{ base: '60%', lg: '320px' }} mb="6">
                 <Image
                   priority
                   src="/onboarding.svg"
@@ -92,13 +93,13 @@ export default function Onboarding() {
                   style={{ width: '100%', height: 'auto' }}
                 />
               </Box>
-              <H2 fontSize="3xl" color="trusty.1" mb="2" textAlign="center">
-                Bem-vindo à imobi!
+              <H2 fontSize="2xl" color="trusty.1" mb="2%" textAlign="center">
+                Bem-vindo à Imoblr!
               </H2>
               <Text
                 fontSize="lg"
                 color="trusty.2"
-                mb="6"
+                mb="4vh"
                 textAlign="center"
                 letterSpacing="-0.5px"
                 lineHeight={1.3}
@@ -106,20 +107,7 @@ export default function Onboarding() {
                 Já está tudo certo com a sua conta e agora só precisamos saber um pouco mais sobre
                 você e sobre o seu negócio.
               </Text>
-              <Box
-                bg="trusty.10"
-                p="6"
-                borderRadius="xl"
-                mt="12"
-                display={{ base: 'none', lg: 'block' }}
-              >
-                <Text fontSize="sm" color="trusty.1" textAlign="center">
-                  Caso precise, você poderá alterar suas informações a qualquer momento nas
-                  configurações da sua conta.
-                </Text>
-              </Box>
-
-              <VStack gap={8} width="100%" mt="8">
+              <VStack gap="4vh" width="100%">
                 <Button
                   bg="white"
                   color="trusty"
@@ -129,7 +117,7 @@ export default function Onboarding() {
                     setIsWelcomeDismissed(true)
                   }}
                 >
-                  Completar perfil
+                  Cadastrar o meu negócio
                 </Button>
                 <Button
                   variant="link"
