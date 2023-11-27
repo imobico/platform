@@ -72,7 +72,7 @@ export default function BusinessType({ onComplete }: StepComponentProps) {
             <RadioButtonGroup.Item
               key={id}
               value={option.value}
-              height={{ base: '8vh', lg: '8vw' }}
+              height={{ base: '6vh', lg: '8vw' }}
             >
               <RadioButtonGroup.ItemControl />
               <RadioButtonGroup.Label pointerEvents="none">
