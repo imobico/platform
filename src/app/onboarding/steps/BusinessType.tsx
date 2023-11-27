@@ -52,9 +52,9 @@ export default function BusinessType({ onComplete }: StepComponentProps) {
   }, [businessTypeParam])
 
   return (
-    <Box>
-      <H1 fontSize="4xl">Tipo de negócio</H1>
-      <Text color="text.muted" mb="12" pr="32">
+    <Box maxHeight="100vh" overflow="auto" p={{ base: 8, lg: 0 }}>
+      <H1 fontSize={{ base: '3xl', lg: '4xl' }}>Tipo de negócio</H1>
+      <Text fontSize="lg" color="text.muted" mb="12" pr={{ base: 0, lg: '32' }}>
         O seu perfil de negócio nos ajudará a personalizar o seu painel com as informações mais
         relevantes para você.
       </Text>
@@ -63,24 +63,37 @@ export default function BusinessType({ onComplete }: StepComponentProps) {
           value={selectedBusinessType}
           variant="outline"
           display="grid"
-          gridTemplateColumns="repeat(3, 1fr)"
+          gridTemplateColumns={{ base: 'repeat(1, 1fr)', lg: 'repeat(3, 1fr)' }}
           onValueChange={(businessType) => {
             setSelectedBusinessType(businessType.value as OrganizationType)
           }}
         >
           {Object.values(businessTypes).map((option, id) => (
-            <RadioButtonGroup.Item key={id} value={option.value} height="8vw">
+            <RadioButtonGroup.Item
+              key={id}
+              value={option.value}
+              height={{ base: '8vh', lg: '8vw' }}
+            >
               <RadioButtonGroup.ItemControl />
               <RadioButtonGroup.Label pointerEvents="none">
-                <Center flexDirection="column">
-                  <option.icon
-                    size="10"
-                    color={option.value === selectedBusinessType ? 'trusty' : 'slate.12'}
-                  />
+                <Center flexDirection={{ base: 'row', lg: 'column' }}>
+                  <Box display={{ base: 'block', lg: 'none' }}>
+                    <option.icon
+                      size="7"
+                      color={option.value === selectedBusinessType ? 'trusty' : 'slate.12'}
+                    />
+                  </Box>
+                  <Box display={{ base: 'none', lg: 'block' }}>
+                    <option.icon
+                      size="9"
+                      color={option.value === selectedBusinessType ? 'trusty' : 'slate.12'}
+                    />
+                  </Box>
                   <Text
                     fontSize="md"
                     color={option.value === selectedBusinessType ? 'trusty' : 'slate.12'}
-                    mt="3"
+                    mt={{ base: 0, lg: '2' }}
+                    ml={{ base: 2, lg: 0 }}
                   >
                     {option.label}
                   </Text>
