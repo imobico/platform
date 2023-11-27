@@ -7,7 +7,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <ProvidersWrapper>
       <Flex minHeight="100vh" minWidth="100vw" bg="trusty.9">
-        <Center width="540px" maxWidth="50vw" p="16" flexDirection="column">
+        <Center
+          width="540px"
+          maxWidth="50vw"
+          p="16"
+          flexDirection="column"
+          display={{ base: 'none', lg: 'flex' }}
+        >
           <Box width="320px" mb="12">
             <Image
               priority
