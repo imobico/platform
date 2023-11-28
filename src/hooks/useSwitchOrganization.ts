@@ -5,11 +5,15 @@ export const useSwitchOrganization = () => {
   const router = useRouter()
   const [currentOrgId, setOrgId] = useLocalStorageState('currentOrganizationId')
 
-  const switchOrganization = (newOrgId: string | undefined) => {
+  const switchOrganization = (newOrgId: string | undefined, callback?: () => void) => {
     console.log(`Mudando da organização - ${currentOrgId} - para - ${newOrgId} -`)
     setOrgId(newOrgId)
-    router.replace(`/app`)
+    if (callback) {
+      callback()
+    } else {
+      router.replace(`/app`)
+    }
   }
 
-  return [switchOrganization]
+  return switchOrganization
 }

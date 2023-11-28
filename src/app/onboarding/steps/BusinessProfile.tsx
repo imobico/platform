@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { useSearchParams } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 
+import { useSwitchOrganization } from '@/hooks'
 import { useCreateOrganization } from '@/mutations'
 import { OrganizationType } from '@/types'
 import { Box, Button, H1, HStack, Input, Label, Text } from '@/ui'
@@ -20,6 +21,7 @@ const schema = yup.object().shape({
 export default function BusinessProfile({ currentUser, onComplete }: StepComponentProps) {
   const createOrganization = useCreateOrganization()
   const params = useSearchParams()
+  const switchOrganization = useSwitchOrganization()
 
   const businessType = params.get('businessType')
 
@@ -38,14 +40,20 @@ export default function BusinessProfile({ currentUser, onComplete }: StepCompone
 
   async function createBusiness(formData: { name: string }) {
     try {
-      await createOrganization.mutateAsync({
-        ...formData,
-        type: (businessType || 'agency') as OrganizationType
-      })
+      await createOrganization
+        .mutateAsync({
+          ...formData,
+          type: (businessType || 'agency') as OrganizationType
+        })
+        .then((data) => {
+          const newOrganization = data[0]
+
+          switchOrganization(newOrganization.id, () => {
+            onComplete()
+          })
+        })
     } catch (error) {
       console.error(error)
-    } finally {
-      onComplete()
     }
   }
 

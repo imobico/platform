@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { createElement, useState } from 'react'
 import { BarLoader } from 'react-spinners'
 
-import { useCurrentUser } from '@/hooks'
+import { useCurrentUser, useSwitchOrganization } from '@/hooks'
 import { useCreateOrganization } from '@/mutations'
 import { trusty } from '@/theme/colors'
 import { OrganizationType, User } from '@/types'
@@ -47,18 +47,24 @@ export default function Onboarding() {
     error: currentUserError
   } = useCurrentUser()
   const createOrganization = useCreateOrganization()
+  const switchOrganization = useSwitchOrganization()
 
   async function skipOnboarding() {
     try {
-      await createOrganization.mutateAsync({
-        name: 'Meu Negócio Imobiliário',
-        type: 'agency' as OrganizationType
-      })
+      await createOrganization
+        .mutateAsync({
+          name: 'Meu Negócio Imobiliário',
+          type: 'agency' as OrganizationType
+        })
+        .then((data) => {
+          const newOrganization = data[0]
+
+          switchOrganization(newOrganization.id, () => {
+            window.location.href = '/app'
+          })
+        })
     } catch (error) {
-      alert('algo deu errado')
       console.error(error)
-    } finally {
-      alert('foi!')
     }
   }
 
@@ -68,7 +74,7 @@ export default function Onboarding() {
         <Box>Algo deu errado</Box>
       ) : (
         <>
-          {isWelcomeDismissed ? (
+          {!isWelcomeDismissed ? (
             <Center
               display={{ base: 'flex', lg: 'none' }}
               width={{ base: '100vw', lg: '540px' }}
