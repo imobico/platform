@@ -1,7 +1,41 @@
 import Image from 'next/image'
 
+import { Briefcase } from '@/icons'
 import { ProvidersWrapper } from '@/providers'
-import { Box, Flex } from '@/ui'
+import { Box, Flex, Text, VStack } from '@/ui'
+
+const navItems = [
+  {
+    id: 'overview',
+    label: 'Visão geral',
+    icon: Briefcase,
+    route: '/'
+  },
+  {
+    id: 'overview',
+    label: 'Visão geral',
+    icon: Briefcase,
+    route: '/'
+  },
+  {
+    id: 'overview',
+    label: 'Visão geral',
+    icon: Briefcase,
+    route: '/'
+  },
+  {
+    id: 'overview',
+    label: 'Visão geral',
+    icon: Briefcase,
+    route: '/'
+  },
+  {
+    id: 'overview',
+    label: 'Visão geral',
+    icon: Briefcase,
+    route: '/'
+  }
+]
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   console.log(children)
@@ -37,6 +71,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 style={{ width: '100%', height: 'auto' }}
               />
             </Box>
+            <VStack>
+              {navItems.map((navItem, index) => (
+                <Box bg="white" key={`app-main-nav-menu-${index}`}>
+                  <Text>{navItem.label}</Text>
+                  <navItem.icon size="7" color="slate.10" />
+                </Box>
+              ))}
+            </VStack>
           </Box>
 
           {/* <Input opacity={0.8} placeholder="Buscar imóveis ou leads..." width="100%" /> */}
