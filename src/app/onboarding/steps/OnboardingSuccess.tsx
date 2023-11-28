@@ -1,17 +1,24 @@
 'use client'
 
 import { ArrowRight } from 'lucide-react'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
 import { Button, Center, H1, Text } from '@/ui'
 
-import { SuccessfulOnboardingAnimation } from '../components/SuccessfulOnboardingAnimation'
 import { StepComponentProps } from '../page'
+
+const DynamicSuccessAnimation = dynamic(
+  () => import('../components/SuccessfulOnboardingAnimation'),
+  {
+    loading: () => <p>...</p>
+  }
+)
 
 export default function OnboardingSuccess({ currentUser }: StepComponentProps) {
   return (
     <Center maxHeight="100vh" overflowY="auto" p={8} flexDirection="column">
-      <SuccessfulOnboardingAnimation />
+      <DynamicSuccessAnimation />
       <H1 color="pine.7" fontSize="4xl" mb="6">
         Tudo certo, {currentUser?.first_name}!
       </H1>

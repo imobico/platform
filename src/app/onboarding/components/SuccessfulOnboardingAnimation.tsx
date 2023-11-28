@@ -12,3 +12,5 @@ export const SuccessfulOnboardingAnimation = () => (
     style={{ height: '200px', width: '200px' }}
   />
 )
+
+export default SuccessfulOnboardingAnimation
