@@ -22,7 +22,7 @@ export const SignUpForm = () => {
           <Input
             size="xl"
             id="user-email"
-            placeholder="Exemplo: joao@meuemail.com"
+            placeholder="Exemplo: joao@meusite.com"
             type="email"
             autoFocus
             onChange={(evt) => setEmail(evt.target.value)}

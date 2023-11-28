@@ -3,8 +3,8 @@ import { NextRequest, NextResponse } from 'next/server'
 
 import type { Database } from '@/types/db'
 
-const publicAppRoutes = ['/', '/entrar', '/cadastro', '/definir-senha', '/conta-confirmada']
-
+const authAppRoutes = ['/entrar', '/cadastro', '/definir-senha', '/conta-confirmada']
+const publicAppRoutes = ['/']
 export const config = {
   matcher: ['/app/:path*', '/entrar', '/cadastro']
 }
@@ -18,10 +18,12 @@ export default async function middleware(req: NextRequest) {
   // // Get the pathname of the request (e.g. /, /about, /blog/first-post)
   const url = req.nextUrl
   const path = url.pathname
-  const isNotPublicAppRoute = !publicAppRoutes.includes(path)
-  if (!isSessionValid && isNotPublicAppRoute) {
+  const isPublicAppRoute = publicAppRoutes.includes(path)
+  const isAuthAppRoute = authAppRoutes.includes(path)
+
+  if (!isSessionValid && !isPublicAppRoute && !isAuthAppRoute) {
     return NextResponse.redirect(new URL('/entrar', req.url))
-  } else if (isSessionValid && path == '/entrar') {
+  } else if (isSessionValid && isAuthAppRoute) {
     return NextResponse.redirect(new URL('/app', req.url))
   } else {
     return res
