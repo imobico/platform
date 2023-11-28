@@ -43,9 +43,14 @@ export default function PersonalProfile({ currentUser, onComplete }: StepCompone
   }, [currentUser, reset])
 
   return (
-    <Box p={{ base: 8, lg: 0 }}>
+    <Box maxHeight="100vh" overflowY="auto" p={8}>
       <H1 fontSize={{ base: '3xl', lg: '4xl' }}>Sobre você</H1>
-      <Text fontSize="lg" color="text.muted" mb="12" pr={{ base: 0, lg: '24' }}>
+      <Text
+        fontSize={{ base: 'md', md: 'lg' }}
+        color="text.muted"
+        mb={{ base: 8, lg: 12 }}
+        pr={{ base: 0, lg: '24' }}
+      >
         Suas informações pessoais básicas.
         <br />
         (Nenhuma dessas informações será divulgada)

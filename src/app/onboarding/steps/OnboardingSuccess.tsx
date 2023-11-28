@@ -1,14 +1,17 @@
 'use client'
 
 import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 import { Button, Center, H1, Text } from '@/ui'
 
+import { SuccessfulOnboardingAnimation } from '../components/SuccessfulOnboardingAnimation'
 import { StepComponentProps } from '../page'
 
 export default function OnboardingSuccess({ currentUser }: StepComponentProps) {
   return (
-    <Center flexDirection="column">
+    <Center maxHeight="100vh" overflowY="auto" p={8} flexDirection="column">
+      <SuccessfulOnboardingAnimation />
       <H1 color="pine.7" fontSize="4xl" mb="6">
         Tudo certo, {currentUser?.first_name}!
       </H1>
@@ -18,10 +21,12 @@ export default function OnboardingSuccess({ currentUser }: StepComponentProps) {
         <strong>gerenciar seu negócio</strong>.
       </Text>
 
-      <Button size="2xl">
-        Visualizar meu painel
-        <ArrowRight />
-      </Button>
+      <Link href="/app">
+        <Button size="2xl">
+          Visualizar meu painel
+          <ArrowRight />
+        </Button>
+      </Link>
     </Center>
   )
 }

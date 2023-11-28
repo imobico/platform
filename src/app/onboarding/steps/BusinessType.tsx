@@ -52,9 +52,14 @@ export default function BusinessType({ onComplete }: StepComponentProps) {
   }, [businessTypeParam])
 
   return (
-    <Box maxHeight="100vh" overflow="auto" p={{ base: 8, lg: 0 }}>
+    <Box maxHeight="100vh" overflowY="auto" p={8}>
       <H1 fontSize={{ base: '3xl', lg: '4xl' }}>Tipo de negócio</H1>
-      <Text fontSize="lg" color="text.muted" mb="12" pr={{ base: 0, lg: '32' }}>
+      <Text
+        fontSize={{ base: 'md', md: 'lg' }}
+        color="text.muted"
+        mb={{ base: 8, lg: 12 }}
+        pr={{ base: 0, lg: '32' }}
+      >
         O seu perfil de negócio nos ajudará a personalizar o seu painel com as informações mais
         relevantes para você.
       </Text>
@@ -72,7 +77,7 @@ export default function BusinessType({ onComplete }: StepComponentProps) {
             <RadioButtonGroup.Item
               key={id}
               value={option.value}
-              height={{ base: '6vh', lg: '8vw' }}
+              height={{ base: '8vh', lg: '8vw' }}
             >
               <RadioButtonGroup.ItemControl />
               <RadioButtonGroup.Label pointerEvents="none">
@@ -90,7 +95,6 @@ export default function BusinessType({ onComplete }: StepComponentProps) {
                     />
                   </Box>
                   <Text
-                    fontSize="md"
                     color={option.value === selectedBusinessType ? 'trusty' : 'slate.12'}
                     mt={{ base: 0, lg: '2' }}
                     ml={{ base: 2, lg: 0 }}

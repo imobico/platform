@@ -40,7 +40,7 @@ const CurrentStepComponent = ({ currentStep, currentUser, onComplete }: StepComp
 
 export default function Onboarding() {
   const [isWelcomeDismissed, setIsWelcomeDismissed] = useState(false)
-  const [currentStep, setCurrentStep] = useState<Steps>(1) // Changed from 0 to 1
+  const [currentStep, setCurrentStep] = useState<Steps>(4) // Changed from 0 to 1
   const {
     data: currentUserData,
     isLoading: isCurrentUserLoading,
@@ -134,7 +134,7 @@ export default function Onboarding() {
             </Center>
           ) : (
             <Box
-              width={{ base: '100%', lg: '600px' }}
+              width={{ base: '100%', lg: '640px' }}
               maxHeight="100vh"
               overflow="auto"
               flexDirection="column"
