@@ -4,19 +4,21 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { PropsWithChildren, useEffect, useState } from 'react'
 
+import { token } from '@/styled/tokens'
+
 import { Briefcase } from '@/icons'
 import { ProvidersWrapper } from '@/providers'
 import { Box, Flex, Text, VStack } from '@/ui'
 
 const navItemsList = [
   {
-    label: 'Home',
-    route: '/painel',
+    label: 'Visão geral',
+    route: '/app',
     icon: Briefcase
   },
   {
-    label: 'Torneios',
-    route: '/painel/torneios',
+    label: 'Imoveis',
+    route: '/app/imoveis',
     icon: Briefcase
   },
   {
@@ -35,7 +37,8 @@ const AppLayout = (props: PropsWithChildren) => {
     setActiveNavItemIndex(activeNavItem)
   }, [pathname])
 
-  console.log(props.children)
+  console.log('just a placeholder', props)
+
   return (
     <ProvidersWrapper>
       <Flex minHeight="100vh" minWidth="100vw" bg="white">
@@ -63,7 +66,7 @@ const AppLayout = (props: PropsWithChildren) => {
             transition="all ease-in-out 0.2s"
             borderRight="1px solid token(colors.slate.5)"
           >
-            <Box position="absolute" top="9px" left="12px" width="136px">
+            <Box position="absolute" top="10px" left="14px" width="136px">
               <Image
                 priority
                 src="/imoblr-app-navbar-logo.svg"
@@ -78,39 +81,52 @@ const AppLayout = (props: PropsWithChildren) => {
               p="4"
               alignItems="flex-start"
               position="absolute"
-              top="100px"
+              top="80px"
               width="280px"
-              gap="8"
+              gap="4"
             >
               <Box
-                width="100%"
                 position="absolute"
                 style={{
-                  width: isSidebarActive ? '260px' : '60px',
-                  top: (activeNavItemIndex + 1) * 20
+                  width: isSidebarActive ? '252px' : '52px',
+                  top: (activeNavItemIndex + 1) * 16
                 }}
-                left="10px"
-                height="30px"
-                bg="red"
+                left="14px"
+                height="48px"
+                bg="white"
+                borderRadius="xl"
+                border="1px solid token(colors.slate.6)"
+                boxShadow="0 2px 4px 0 token(colors.slate.4)"
                 transition="all ease-in-out 0.2s"
               />
-              {navItemsList.map((navItem, index) => (
-                <Flex
-                  bg="white"
-                  key={`app-main-nav-menu-${index}`}
-                  px={4}
-                  py={2}
-                  width="100%"
-                  zIndex={20}
-                  className="group"
-                  cursor="pointer"
-                >
-                  <navItem.icon size="7" color="slate.10" />
-                  <Text color="slate.10" _groupHover={{ color: 'slate.12' }} ml="8">
-                    {navItem.label}
-                  </Text>
-                </Flex>
-              ))}
+              {navItemsList.map((navItem, index) => {
+                console.log(index, activeNavItemIndex)
+                console.log(activeNavItemIndex === index)
+                return (
+                  <Flex
+                    key={`app-main-nav-menu-${index}`}
+                    px={3}
+                    width="100%"
+                    zIndex={20}
+                    className="group"
+                    cursor="pointer"
+                    height="48px"
+                    alignItems="center"
+                  >
+                    <navItem.icon size="6" color="slate.10" />
+                    <Text
+                      color="slate.10"
+                      _groupHover={{ color: 'slate.12' }}
+                      ml="8"
+                      style={{
+                        color: activeNavItemIndex === index ? token('colors.slate.12') : 'slate.10'
+                      }}
+                    >
+                      {navItem.label}
+                    </Text>
+                  </Flex>
+                )
+              })}
             </VStack>
           </Box>
 
