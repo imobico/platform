@@ -71,12 +71,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 style={{ width: '100%', height: 'auto' }}
               />
             </Box>
-            <VStack>
+            <VStack
+              p="4"
+              alignItems="flex-start"
+              position="absolute"
+              top="100px"
+              width="280px"
+              gap="8"
+            >
+              <Box width="100%" position="absolute" top="0" left="0" height="30px" bg="red" />
               {navItems.map((navItem, index) => (
-                <Box bg="white" key={`app-main-nav-menu-${index}`}>
-                  <Text>{navItem.label}</Text>
+                <Flex
+                  bg="white"
+                  key={`app-main-nav-menu-${index}`}
+                  px={4}
+                  py={2}
+                  width="100%"
+                  zIndex={20}
+                  className="group"
+                  cursor="pointer"
+                >
                   <navItem.icon size="7" color="slate.10" />
-                </Box>
+                  <Text color="slate.10" _groupHover={{ color: 'slate.12' }} ml="8">
+                    {navItem.label}
+                  </Text>
+                </Flex>
               ))}
             </VStack>
           </Box>
