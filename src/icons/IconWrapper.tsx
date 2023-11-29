@@ -21,9 +21,9 @@ export const IconWrapper = ({
   strokeColor = 'slate.11',
   activeStrokeColor = 'trusty.12',
   backgroundColor = 'slate.2',
-  activeBackgroundColor = 'trusty.2',
+  activeBackgroundColor = 'trusty.3',
   accentColor = 'slate.2',
-  activeAccentColor = 'trusty',
+  activeAccentColor = 'trusty.5',
   children,
   ...rest
 }: IconProps) => {

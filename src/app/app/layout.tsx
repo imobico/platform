@@ -1,17 +1,15 @@
 'use client'
 
 import { useWindowWidth } from '@react-hook/window-size'
-import { Url } from 'next/dist/shared/lib/router/router'
 import Image from 'next/image'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { PropsWithChildren, useEffect, useState } from 'react'
 
-import { token } from '@/styled/tokens'
-
 import { DashboardIcon } from '@/icons'
 import { ProvidersWrapper } from '@/providers'
-import { Box, Flex, Text, VStack } from '@/ui'
+import { Box, Flex, VStack } from '@/ui'
+
+import { SidebarNavigationItem } from './components/SidebarNavigationItem'
 
 const navItemsList = [
   {
@@ -25,7 +23,8 @@ const navItemsList = [
     icon: DashboardIcon
   },
   {
-    label: 'Busca',
+    label: 'Clientes',
+    route: '/app/clientes',
     icon: DashboardIcon
   }
 ]
@@ -93,13 +92,13 @@ const AppLayout = (props: PropsWithChildren) => {
               position="absolute"
               top="80px"
               width="280px"
-              gap="4"
+              gap="2"
             >
               <Box
                 position="absolute"
                 style={{
                   width: isSidebarActive ? '252px' : '52px',
-                  top: `${activeNavItemIndex > 0 ? activeNavItemIndex * 80 : 16}px`
+                  top: `${activeNavItemIndex > 0 ? activeNavItemIndex * 72 : 16}px`
                 }}
                 left="14px"
                 height="48px"
@@ -110,40 +109,14 @@ const AppLayout = (props: PropsWithChildren) => {
                 transition="all ease-in-out 0.2s"
               />
               {navItemsList.map((navItem, index) => {
-                console.log(navItem.route)
                 return (
-                  <Link
-                    href={(navItem.route || '#') as Url}
-                    style={{ zIndex: 999, height: '48px', width: '100%' }}
-                    key={`nav-item-${index}`}
-                  >
-                    <Flex
-                      zIndex={999}
-                      key={`app-main-nav-menu-${index}`}
-                      px={3}
-                      width="100%"
-                      className="group"
-                      cursor="pointer"
-                      height="48px"
-                      alignItems="center"
-                    >
-                      <navItem.icon
-                        size="6"
-                        color={activeNavItemIndex === index ? 'trusty' : 'slate.10'}
-                      />
-                      <Text
-                        _groupHover={{ color: 'slate.12' }}
-                        color="slate.10"
-                        ml="8"
-                        transition="color 0.15s ease-in-out"
-                        style={{
-                          color: activeNavItemIndex === index ? token('colors.trusty') : undefined
-                        }}
-                      >
-                        {navItem.label}
-                      </Text>
-                    </Flex>
-                  </Link>
+                  <SidebarNavigationItem
+                    key={`SidebarNavigation-${index}`}
+                    isActive={index === activeNavItemIndex}
+                    route={navItem.route}
+                    label={navItem.label}
+                    icon={navItem.icon}
+                  />
                 )
               })}
             </VStack>

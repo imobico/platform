@@ -4,9 +4,6 @@ export const DashboardIcon = (props: IconProps) => {
   return (
     <IconWrapper {...props}>
       {({ strokeColor, accentColor, backgroundColor }) => {
-        console.log('strokeColor', strokeColor)
-        console.log('accentColor', accentColor)
-        console.log('backgroundColor', backgroundColor)
         return (
           <>
             <path
