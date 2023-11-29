@@ -1,61 +1,64 @@
+'use client'
+
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
+import { PropsWithChildren, useEffect, useState } from 'react'
 
 import { Briefcase } from '@/icons'
 import { ProvidersWrapper } from '@/providers'
 import { Box, Flex, Text, VStack } from '@/ui'
 
-const navItems = [
+const navItemsList = [
   {
-    id: 'overview',
-    label: 'Visão geral',
-    icon: Briefcase,
-    route: '/'
+    label: 'Home',
+    route: '/painel',
+    icon: Briefcase
   },
   {
-    id: 'overview',
-    label: 'Visão geral',
-    icon: Briefcase,
-    route: '/'
+    label: 'Torneios',
+    route: '/painel/torneios',
+    icon: Briefcase
   },
   {
-    id: 'overview',
-    label: 'Visão geral',
-    icon: Briefcase,
-    route: '/'
-  },
-  {
-    id: 'overview',
-    label: 'Visão geral',
-    icon: Briefcase,
-    route: '/'
-  },
-  {
-    id: 'overview',
-    label: 'Visão geral',
-    icon: Briefcase,
-    route: '/'
+    label: 'Busca',
+    icon: Briefcase
   }
 ]
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  console.log(children)
+const AppLayout = (props: PropsWithChildren) => {
+  const [isSidebarActive, setIsSidebarActive] = useState(false)
+  const [activeNavItemIndex, setActiveNavItemIndex] = useState(0)
+  const pathname = usePathname()
+
+  useEffect(() => {
+    const activeNavItem = navItemsList.findIndex((navItem) => navItem.route === pathname)
+    setActiveNavItemIndex(activeNavItem)
+  }, [pathname])
+
+  console.log(props.children)
   return (
     <ProvidersWrapper>
       <Flex minHeight="100vh" minWidth="100vw" bg="white">
         <Box
-          width={{ base: '82px', '2xl': '280px' }}
+          width={{ base: '80px', '2xl': '280px' }}
           bg="linear-gradient(0deg, rgba(252,253,254,1) 0%, rgba(239,243,247,1) 100%)"
+          onMouseEnter={() => {
+            setIsSidebarActive(true)
+          }}
+          onMouseLeave={() => {
+            setIsSidebarActive(false)
+          }}
         >
           <Box
             position="absolute"
             top={0}
             left={0}
-            width={{ base: '82px', '2xl': '280px' }}
+            width={{ base: '80px', '2xl': '280px' }}
             height="100vh"
             overflow="hidden"
             bg="linear-gradient(0deg, rgba(252,253,254,1) 0%, rgba(239,243,247,1) 100%)"
             _hover={{
-              width: { base: '82px', md: '280px' }
+              width: { base: '80px', md: '280px' }
             }}
             transition="all ease-in-out 0.2s"
             borderRight="1px solid token(colors.slate.5)"
@@ -79,8 +82,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               width="280px"
               gap="8"
             >
-              <Box width="100%" position="absolute" top="0" left="0" height="30px" bg="red" />
-              {navItems.map((navItem, index) => (
+              <Box
+                width="100%"
+                position="absolute"
+                style={{
+                  width: isSidebarActive ? '260px' : '60px',
+                  top: (activeNavItemIndex + 1) * 20
+                }}
+                left="10px"
+                height="30px"
+                bg="red"
+                transition="all ease-in-out 0.2s"
+              />
+              {navItemsList.map((navItem, index) => (
                 <Flex
                   bg="white"
                   key={`app-main-nav-menu-${index}`}
@@ -111,3 +125,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </ProvidersWrapper>
   )
 }
+
+export default AppLayout
