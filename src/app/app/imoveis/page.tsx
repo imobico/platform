@@ -29,7 +29,6 @@ export default function ImoveisPage(props: ImoveisPageProps) {
         position="absolute"
         height="100%"
         bg="white"
-        zIndex={100}
         flexDirection="column"
       >
         <Center width="120px" height="120px" bg="green.3" color="green.9" borderRadius="full">

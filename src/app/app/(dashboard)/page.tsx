@@ -8,7 +8,7 @@ import { H1 } from '@/ui'
 
 export default function Home() {
   return (
-    <Center width="100vw" height="100vh">
+    <Center width="100%" height="100%">
       <H1>Você está logado!</H1>
     </Center>
   )

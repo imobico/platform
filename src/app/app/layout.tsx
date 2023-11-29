@@ -9,7 +9,7 @@ import { PropsWithChildren, useEffect, useState } from 'react'
 
 import { token } from '@/styled/tokens'
 
-import { Briefcase } from '@/icons'
+import { DashboardIcon } from '@/icons'
 import { ProvidersWrapper } from '@/providers'
 import { Box, Flex, Text, VStack } from '@/ui'
 
@@ -17,16 +17,16 @@ const navItemsList = [
   {
     label: 'Visão geral',
     route: '/app',
-    icon: Briefcase
+    icon: DashboardIcon
   },
   {
     label: 'Imoveis',
     route: '/app/imoveis',
-    icon: Briefcase
+    icon: DashboardIcon
   },
   {
     label: 'Busca',
-    icon: Briefcase
+    icon: DashboardIcon
   }
 ]
 
@@ -48,8 +48,6 @@ const AppLayout = (props: PropsWithChildren) => {
       setIsSidebarActive(false)
     }
   }, [windowWidth])
-
-  console.log('just a placeholder', props)
 
   return (
     <ProvidersWrapper>
@@ -74,6 +72,7 @@ const AppLayout = (props: PropsWithChildren) => {
             _hover={{
               width: { base: '80px', md: '280px' }
             }}
+            zIndex={10}
             transition="all ease-in-out 0.2s"
             borderRight="1px solid token(colors.slate.5)"
           >
@@ -153,9 +152,7 @@ const AppLayout = (props: PropsWithChildren) => {
           {/* <Input opacity={0.8} placeholder="Buscar imóveis ou leads..." width="100%" /> */}
         </Box>
         <Box borderRadius="3xl" bg="white" m="2" flex="1">
-          {/* <Box px="12" py="8">
-            {children}
-          </Box> */}
+          {props.children}
         </Box>
       </Flex>
     </ProvidersWrapper>
