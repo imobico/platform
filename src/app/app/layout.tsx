@@ -1,6 +1,9 @@
 'use client'
 
+import { useWindowWidth } from '@react-hook/window-size'
+import { Url } from 'next/dist/shared/lib/router/router'
 import Image from 'next/image'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { PropsWithChildren, useEffect, useState } from 'react'
 
@@ -28,6 +31,7 @@ const navItemsList = [
 ]
 
 const AppLayout = (props: PropsWithChildren) => {
+  const windowWidth = useWindowWidth()
   const [isSidebarActive, setIsSidebarActive] = useState(false)
   const [activeNavItemIndex, setActiveNavItemIndex] = useState(0)
   const pathname = usePathname()
@@ -37,6 +41,14 @@ const AppLayout = (props: PropsWithChildren) => {
     setActiveNavItemIndex(activeNavItem)
   }, [pathname])
 
+  useEffect(() => {
+    if (windowWidth > 1536) {
+      setIsSidebarActive(true)
+    } else {
+      setIsSidebarActive(false)
+    }
+  }, [windowWidth])
+
   console.log('just a placeholder', props)
 
   return (
@@ -44,12 +56,11 @@ const AppLayout = (props: PropsWithChildren) => {
       <Flex minHeight="100vh" minWidth="100vw" bg="white">
         <Box
           width={{ base: '80px', '2xl': '280px' }}
-          bg="linear-gradient(0deg, rgba(252,253,254,1) 0%, rgba(239,243,247,1) 100%)"
           onMouseEnter={() => {
-            setIsSidebarActive(true)
+            if (windowWidth < 1536) setIsSidebarActive(true)
           }}
           onMouseLeave={() => {
-            setIsSidebarActive(false)
+            if (windowWidth < 1536) setIsSidebarActive(false)
           }}
         >
           <Box
@@ -66,7 +77,7 @@ const AppLayout = (props: PropsWithChildren) => {
             transition="all ease-in-out 0.2s"
             borderRight="1px solid token(colors.slate.5)"
           >
-            <Box position="absolute" top="10px" left="14px" width="136px">
+            <Box position="absolute" top="10px" left="13px" width="136px">
               <Image
                 priority
                 src="/imoblr-app-navbar-logo.svg"
@@ -89,7 +100,7 @@ const AppLayout = (props: PropsWithChildren) => {
                 position="absolute"
                 style={{
                   width: isSidebarActive ? '252px' : '52px',
-                  top: (activeNavItemIndex + 1) * 16
+                  top: `${activeNavItemIndex > 0 ? activeNavItemIndex * 80 : 16}px`
                 }}
                 left="14px"
                 height="48px"
@@ -100,31 +111,40 @@ const AppLayout = (props: PropsWithChildren) => {
                 transition="all ease-in-out 0.2s"
               />
               {navItemsList.map((navItem, index) => {
-                console.log(index, activeNavItemIndex)
-                console.log(activeNavItemIndex === index)
+                console.log(navItem.route)
                 return (
-                  <Flex
-                    key={`app-main-nav-menu-${index}`}
-                    px={3}
-                    width="100%"
-                    zIndex={20}
-                    className="group"
-                    cursor="pointer"
-                    height="48px"
-                    alignItems="center"
+                  <Link
+                    href={(navItem.route || '#') as Url}
+                    style={{ zIndex: 999, height: '48px', width: '100%' }}
+                    key={`nav-item-${index}`}
                   >
-                    <navItem.icon size="6" color="slate.10" />
-                    <Text
-                      color="slate.10"
-                      _groupHover={{ color: 'slate.12' }}
-                      ml="8"
-                      style={{
-                        color: activeNavItemIndex === index ? token('colors.slate.12') : 'slate.10'
-                      }}
+                    <Flex
+                      zIndex={999}
+                      key={`app-main-nav-menu-${index}`}
+                      px={3}
+                      width="100%"
+                      className="group"
+                      cursor="pointer"
+                      height="48px"
+                      alignItems="center"
                     >
-                      {navItem.label}
-                    </Text>
-                  </Flex>
+                      <navItem.icon
+                        size="6"
+                        color={activeNavItemIndex === index ? 'trusty' : 'slate.10'}
+                      />
+                      <Text
+                        _groupHover={{ color: 'slate.12' }}
+                        color="slate.10"
+                        ml="8"
+                        transition="color 0.15s ease-in-out"
+                        style={{
+                          color: activeNavItemIndex === index ? token('colors.trusty') : undefined
+                        }}
+                      >
+                        {navItem.label}
+                      </Text>
+                    </Flex>
+                  </Link>
                 )
               })}
             </VStack>
