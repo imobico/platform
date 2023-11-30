@@ -18,3 +18,8 @@ h5,
 h6 {
   font-family: var(--font-heading), var(--font-body), Arial, Helvetica, sans-serif;
 }
+
+svg,
+svg * {
+  transition: all 0.2s ease-in-out;
+}

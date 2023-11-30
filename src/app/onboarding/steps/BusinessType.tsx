@@ -3,7 +3,7 @@
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
-import { Briefcase, Building, User as UserIcon } from '@/icons'
+import { BriefcaseIcon, BuildingIcon, UserIcon } from '@/icons'
 import { OrganizationType } from '@/types'
 import { Box, Button, Center, H1, RadioButtonGroup, Text } from '@/ui'
 
@@ -15,14 +15,14 @@ const businessTypes = {
     label: 'Corretor',
     description:
       'Você trabalha de forma individual e independente, gerenciando uma quantidade menor de imóveis.',
-    icon: Briefcase
+    icon: BriefcaseIcon
   },
   agency: {
     value: 'agency',
     label: 'Imobiliária',
     description:
       'Negócios com equipes de dois ou mais corretores, que gerencia números maiores de imóveis.',
-    icon: Building
+    icon: BuildingIcon
   },
   owner: {
     value: 'owner',
@@ -83,22 +83,12 @@ export default function BusinessType({ onComplete }: StepComponentProps) {
               <RadioButtonGroup.Label pointerEvents="none">
                 <Center flexDirection={{ base: 'row', lg: 'column' }}>
                   <Box display={{ base: 'block', lg: 'none' }}>
-                    <option.icon
-                      size="7"
-                      color={option.value === selectedBusinessType ? 'trusty' : 'slate.12'}
-                    />
+                    <option.icon size="7" />
                   </Box>
                   <Box display={{ base: 'none', lg: 'block' }}>
-                    <option.icon
-                      size="9"
-                      color={option.value === selectedBusinessType ? 'trusty' : 'slate.12'}
-                    />
+                    <option.icon size="9" isActive={selectedBusinessType === option.value} />
                   </Box>
-                  <Text
-                    color={option.value === selectedBusinessType ? 'trusty' : 'slate.12'}
-                    mt={{ base: 0, lg: '2' }}
-                    ml={{ base: 2, lg: 0 }}
-                  >
+                  <Text mt={{ base: 0, lg: '2' }} ml={{ base: 2, lg: 0 }}>
                     {option.label}
                   </Text>
                 </Center>

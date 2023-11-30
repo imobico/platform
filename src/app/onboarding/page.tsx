@@ -74,7 +74,7 @@ export default function Onboarding() {
         <Box>Algo deu errado</Box>
       ) : (
         <>
-          {!isWelcomeDismissed ? (
+          {!isWelcomeDismissed && (
             <Center
               display={{ base: 'flex', lg: 'none' }}
               width={{ base: '100vw', lg: '540px' }}
@@ -138,37 +138,36 @@ export default function Onboarding() {
                 </Button>
               </VStack>
             </Center>
-          ) : (
-            <Box
-              width={{ base: '100%', lg: '640px' }}
-              maxHeight="100vh"
-              overflow="auto"
-              flexDirection="column"
-            >
-              {isCurrentUserLoading || !currentUserData ? (
-                <Center width="100%" height="100%">
-                  <Box bg={trusty[4].value} borderRadius="300px" overflow="hidden" color="blue">
-                    <BarLoader
-                      color={trusty[8].value}
-                      width="200px"
-                      height="10px"
-                      speedMultiplier={2}
-                    />
-                  </Box>
-                </Center>
-              ) : (
-                <CurrentStepComponent
-                  currentStep={currentStep}
-                  currentUser={currentUserData}
-                  onComplete={() => {
-                    if (currentStep < Object.keys(stepComponents).length) {
-                      setCurrentStep((currentStep + 1) as Steps)
-                    }
-                  }}
-                />
-              )}
-            </Box>
           )}
+          <Box
+            width={{ base: '100%', lg: '640px' }}
+            maxHeight="100vh"
+            overflow="auto"
+            flexDirection="column"
+          >
+            {isCurrentUserLoading || !currentUserData ? (
+              <Center width="100%" height="100%">
+                <Box bg={trusty[4].value} borderRadius="300px" overflow="hidden" color="blue">
+                  <BarLoader
+                    color={trusty[8].value}
+                    width="200px"
+                    height="10px"
+                    speedMultiplier={2}
+                  />
+                </Box>
+              </Center>
+            ) : (
+              <CurrentStepComponent
+                currentStep={currentStep}
+                currentUser={currentUserData}
+                onComplete={() => {
+                  if (currentStep < Object.keys(stepComponents).length) {
+                    setCurrentStep((currentStep + 1) as Steps)
+                  }
+                }}
+              />
+            )}
+          </Box>
         </>
       )}
     </>

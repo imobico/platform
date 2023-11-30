@@ -3,11 +3,18 @@ import { ColorToken, SizeToken, token } from '@/styled/tokens'
 
 export type IconProps = {
   isActive?: boolean
+  isHover?: boolean
   strokeColor?: ColorToken
-  backgroundColor?: ColorToken
-  accentColor?: ColorToken
+  hoverStrokeColor?: ColorToken
   activeStrokeColor?: ColorToken
+  backgroundColor?: ColorToken
+  hoverBackgroundColor?: ColorToken
   activeBackgroundColor?: ColorToken
+  altBackgroundColor?: ColorToken
+  hoverAltBackgroundColor?: ColorToken
+  activeAltBackgroundColor?: ColorToken
+  accentColor?: ColorToken
+  hoverAccentColor?: ColorToken
   activeAccentColor?: ColorToken
   size?: SizeToken
   children?: (props: IconProps) => React.ReactNode
@@ -17,19 +24,35 @@ const SVG = styled.svg
 
 export const IconWrapper = ({
   isActive = false,
+  isHover = false,
   size = '8',
   strokeColor = 'slate.11',
+  hoverStrokeColor = 'trusty.12',
   activeStrokeColor = 'trusty.12',
-  backgroundColor = 'slate.2',
-  activeBackgroundColor = 'trusty.3',
-  accentColor = 'slate.2',
-  activeAccentColor = 'trusty.5',
+  backgroundColor = 'slate.1',
+  hoverBackgroundColor = 'slate.2',
+  activeBackgroundColor = 'trusty.1',
+  altBackgroundColor = 'slate.3',
+  hoverAltBackgroundColor = 'slate.4',
+  activeAltBackgroundColor = 'trusty.3',
+  accentColor = 'slate.6',
+  hoverAccentColor = 'slate.8',
+  activeAccentColor = 'trusty.6',
   children,
   ...rest
 }: IconProps) => {
-  const stroke = isActive ? activeStrokeColor : strokeColor
-  const background = isActive ? activeBackgroundColor : backgroundColor
-  const accent = isActive ? activeAccentColor : accentColor
+  const stroke = isActive ? activeStrokeColor : isHover ? hoverStrokeColor : strokeColor
+  const background = isActive
+    ? activeBackgroundColor
+    : isHover
+    ? hoverBackgroundColor
+    : backgroundColor
+  const altBackground = isActive
+    ? activeAltBackgroundColor
+    : isHover
+    ? hoverAltBackgroundColor
+    : altBackgroundColor
+  const accent = isActive ? activeAccentColor : isHover ? hoverAccentColor : accentColor
 
   return (
     <SVG
@@ -43,6 +66,7 @@ export const IconWrapper = ({
           isActive,
           strokeColor: token(`colors.${stroke}`) as ColorToken,
           backgroundColor: token(`colors.${background}`) as ColorToken,
+          altBackgroundColor: token(`colors.${altBackground}`) as ColorToken,
           accentColor: token(`colors.${accent}`) as ColorToken
         })}
     </SVG>

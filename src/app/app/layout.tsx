@@ -5,9 +5,9 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { PropsWithChildren, useEffect, useState } from 'react'
 
-import { DashboardIcon } from '@/icons'
+import { CustomersIcon, DashboardIcon, PropertiesIcon } from '@/icons'
 import { ProvidersWrapper } from '@/providers'
-import { Box, Flex, VStack } from '@/ui'
+import { Box, Flex, Text, VStack } from '@/ui'
 
 import { SidebarNavigationItem } from './components/SidebarNavigationItem'
 
@@ -20,12 +20,12 @@ const navItemsList = [
   {
     label: 'Imoveis',
     route: '/app/imoveis',
-    icon: DashboardIcon
+    icon: PropertiesIcon
   },
   {
     label: 'Clientes',
     route: '/app/clientes',
-    icon: DashboardIcon
+    icon: CustomersIcon
   }
 ]
 
@@ -86,11 +86,24 @@ const AppLayout = (props: PropsWithChildren) => {
                 style={{ width: '100%', height: 'auto' }}
               />
             </Box>
+            <Text
+              position="absolute"
+              left="27px"
+              top="90px"
+              color="slate.9"
+              fontSize="sm"
+              fontWeight={400}
+              letterSpacing={2}
+              style={{ opacity: isSidebarActive ? 1 : 0 }}
+              transition="opacity 0.2s ease-in-out"
+            >
+              MENU
+            </Text>
             <VStack
-              p="4"
+              px="4"
               alignItems="flex-start"
               position="absolute"
-              top="80px"
+              top="120px"
               width="280px"
               gap="2"
             >
@@ -98,14 +111,14 @@ const AppLayout = (props: PropsWithChildren) => {
                 position="absolute"
                 style={{
                   width: isSidebarActive ? '252px' : '52px',
-                  top: `${activeNavItemIndex > 0 ? activeNavItemIndex * 72 : 16}px`
+                  top: `${activeNavItemIndex * 56}px`
                 }}
                 left="14px"
                 height="48px"
                 bg="white"
-                borderRadius="xl"
+                borderRadius="lg"
                 border="1px solid token(colors.slate.6)"
-                boxShadow="0 2px 4px 0 token(colors.slate.4)"
+                boxShadow="0 1px 2px 0 token(colors.slate.4), 0 2px 6px 0 token(colors.slate.3)"
                 transition="all ease-in-out 0.2s"
               />
               {navItemsList.map((navItem, index) => {
