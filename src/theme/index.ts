@@ -11,6 +11,14 @@ export const theme = {
   semanticTokens: {
     // Example: Set primary color to another value
     colors: {
+      gray: {
+        a2: {
+          value: {
+            base: '{colors.slate.2}',
+            _dark: '{colors.slate.3}'
+          }
+        }
+      },
       bg: {
         canvas: {
           value: {

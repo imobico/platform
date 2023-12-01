@@ -50,30 +50,36 @@ const AppLayout = (props: PropsWithChildren) => {
 
   return (
     <ProvidersWrapper>
-      <Flex minHeight="100vh" minWidth="100vw" bg="white">
-        <Box
-          width={{ base: '80px', '2xl': '280px' }}
-          onMouseEnter={() => {
-            if (windowWidth < 1536) setIsSidebarActive(true)
-          }}
-          onMouseLeave={() => {
-            if (windowWidth < 1536) setIsSidebarActive(false)
-          }}
-        >
+      <Flex minHeight="100vh" minWidth="100vw" bg="slate.2">
+        <Box width={{ base: '96px', '2xl': '296px' }}>
           <Box
-            position="absolute"
+            position="relative"
+            m="8px"
             top={0}
             left={0}
             width={{ base: '80px', '2xl': '280px' }}
-            height="100vh"
+            height="calc(100vh - 16px)"
             overflow="hidden"
-            bg="linear-gradient(0deg, rgba(252,253,254,1) 0%, rgba(239,243,247,1) 100%)"
+            bg="white"
+            borderRadius="xl"
+            onMouseEnter={() => {
+              if (windowWidth < 1536) setIsSidebarActive(true)
+            }}
+            onMouseLeave={() => {
+              if (windowWidth < 1536) setIsSidebarActive(false)
+            }}
+            // bg="linear-gradient(0deg, rgba(252,253,254,1) 0%, rgba(239,243,247,1) 100%)"
+            // boxShadow={
+            //   isSidebarActive
+            //     ? '0 1px 5px 1px rgba(0,0,0,0.1), 0 2px 20px 0 rgba(0,0,0,0.1)'
+            //     : undefined
+            // }
             _hover={{
               width: { base: '80px', md: '280px' }
             }}
             zIndex={10}
             transition="all ease-in-out 0.2s"
-            borderRight="1px solid token(colors.slate.5)"
+            border="1px solid token(colors.slate.5)"
           >
             <Box position="absolute" top="10px" left="13px" width="136px">
               <Image
@@ -88,7 +94,7 @@ const AppLayout = (props: PropsWithChildren) => {
             </Box>
             <Text
               position="absolute"
-              left="27px"
+              left="26px"
               top="90px"
               color="slate.9"
               fontSize="sm"
@@ -105,20 +111,20 @@ const AppLayout = (props: PropsWithChildren) => {
               position="absolute"
               top="120px"
               width="280px"
-              gap="2"
+              gap="12px"
             >
               <Box
                 position="absolute"
                 style={{
                   width: isSidebarActive ? '252px' : '52px',
-                  top: `${activeNavItemIndex * 56}px`
+                  top: `${activeNavItemIndex * 60}px`
                 }}
                 left="14px"
                 height="48px"
-                bg="white"
+                bg="slate.2"
                 borderRadius="lg"
-                border="1px solid token(colors.slate.6)"
-                boxShadow="0 1px 2px 0 token(colors.slate.4), 0 2px 6px 0 token(colors.slate.3)"
+                border="1px solid token(colors.slate.4)"
+                boxShadow="0 1px 2px 0 token(colors.slate.3), 0 2px 6px 0 token(colors.slate.2)"
                 transition="all ease-in-out 0.2s"
               />
               {navItemsList.map((navItem, index) => {
@@ -137,7 +143,7 @@ const AppLayout = (props: PropsWithChildren) => {
 
           {/* <Input opacity={0.8} placeholder="Buscar imóveis ou leads..." width="100%" /> */}
         </Box>
-        <Box borderRadius="3xl" bg="white" m="2" flex="1">
+        <Box flex="1" maxHeight="100vh" overflowY="auto">
           {props.children}
         </Box>
       </Flex>

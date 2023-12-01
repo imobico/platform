@@ -1,5 +1,9 @@
+import { ReactElement } from 'react'
+
 import { styled } from '@/styled'
 import { ColorToken, SizeToken, token } from '@/styled/tokens'
+
+export type IconElement = (props: IconProps) => ReactElement
 
 export type IconProps = {
   isActive?: boolean
@@ -35,9 +39,9 @@ export const IconWrapper = ({
   altBackgroundColor = 'slate.3',
   hoverAltBackgroundColor = 'slate.4',
   activeAltBackgroundColor = 'trusty.3',
-  accentColor = 'slate.6',
-  hoverAccentColor = 'slate.8',
-  activeAccentColor = 'trusty.6',
+  accentColor = 'slate.5',
+  hoverAccentColor = 'slate.7',
+  activeAccentColor = 'trusty.5',
   children,
   ...rest
 }: IconProps) => {

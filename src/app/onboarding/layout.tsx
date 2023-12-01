@@ -6,7 +6,7 @@ import { Box, Center, Flex, H2, Text } from '@/ui'
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <ProvidersWrapper>
-      <Flex minHeight="100vh" minWidth="100vw" bg={{ base: 'white', lg: 'trusty.9' }}>
+      <Flex minHeight="100vh" minWidth="100vw" bg={{ base: 'white', lg: 'trusty' }}>
         <Center
           width="540px"
           maxWidth="50vw"
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             Já está tudo certo com a sua conta, agora só precisamos saber um pouco mais sobre você e
             sobre o seu negócio.
           </Text>
-          <Box bg="trusty.10" p="6" borderRadius="xl" mt="12">
+          <Box bg="trusty.9" p="6" borderRadius="xl" mt="12">
             <Text fontSize="sm" color="trusty.1" textAlign="center">
               Caso precise, você poderá alterar suas informações a qualquer momento nas
               configurações da sua conta.
@@ -46,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           flex="1"
           boxShadow={{
             base: 'none',
-            lg: '0 0 60px 6px token(colors.trusty.10), 0 0 8px 4px token(colors.trusty.10)'
+            lg: '0 0 60px 6px token(colors.trusty.9), 0 0 8px 4px token(colors.trusty.9)'
           }}
           flexDirection="column"
           position="relative"

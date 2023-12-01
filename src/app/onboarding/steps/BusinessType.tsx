@@ -5,8 +5,9 @@ import { useEffect, useState } from 'react'
 
 import { BriefcaseIcon, BuildingIcon, UserIcon } from '@/icons'
 import { OrganizationType } from '@/types'
-import { Box, Button, Center, H1, RadioButtonGroup, Text } from '@/ui'
+import { Box, Button, H1, RadioButtonGroup, Text } from '@/ui'
 
+import { BusinessTypeItem } from '../components/BusinessTypeItem'
 import { StepComponentProps } from '../page'
 
 const businessTypes = {
@@ -35,6 +36,7 @@ const businessTypes = {
 
 export default function BusinessType({ onComplete }: StepComponentProps) {
   const [selectedBusinessType, setSelectedBusinessType] = useState<OrganizationType>('agency')
+
   const { push } = useRouter()
 
   const searchParams = useSearchParams()
@@ -73,27 +75,14 @@ export default function BusinessType({ onComplete }: StepComponentProps) {
             setSelectedBusinessType(businessType.value as OrganizationType)
           }}
         >
-          {Object.values(businessTypes).map((option, id) => (
-            <RadioButtonGroup.Item
-              key={id}
+          {Object.values(businessTypes).map((option, index) => (
+            <BusinessTypeItem
+              key={`BusinessTypeItem-${index}`}
               value={option.value}
-              height={{ base: '8vh', lg: '8vw' }}
-            >
-              <RadioButtonGroup.ItemControl />
-              <RadioButtonGroup.Label pointerEvents="none">
-                <Center flexDirection={{ base: 'row', lg: 'column' }}>
-                  <Box display={{ base: 'block', lg: 'none' }}>
-                    <option.icon size="7" />
-                  </Box>
-                  <Box display={{ base: 'none', lg: 'block' }}>
-                    <option.icon size="9" isActive={selectedBusinessType === option.value} />
-                  </Box>
-                  <Text mt={{ base: 0, lg: '2' }} ml={{ base: 2, lg: 0 }}>
-                    {option.label}
-                  </Text>
-                </Center>
-              </RadioButtonGroup.Label>
-            </RadioButtonGroup.Item>
+              label={option.label}
+              icon={option.icon}
+              isActive={selectedBusinessType === option.value}
+            />
           ))}
         </RadioButtonGroup.Root>
 

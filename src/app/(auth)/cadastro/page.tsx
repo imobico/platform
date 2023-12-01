@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 
-import { Box, Center, H1, Text, TextLink } from '@/ui'
+import { Box, Center, H1, H2, Text } from '@/ui'
 
 const DynamicForm = dynamic(() => import('../components/SignUpForm'), {
   loading: () => <p>Loading...</p>
@@ -30,14 +30,15 @@ export default function SignupPage() {
             />
           </Box>
           <Box mb="12">
-            <H1 fontSize="3xl">Cadastre sua conta</H1>
-            <Text mb={4} color="text.muted">
-              Já tem uma conta?{' '}
-              <TextLink fontWeight={700} href="/entrar">
-                Clique para acessar.
-              </TextLink>
-            </Text>
+            <H1 fontSize="3xl">Faça um teste grátis</H1>
+            <H2 fontSize="xl" fontWeight={500} color="trusty.5" mt="-2" mb="2">
+              (O cadastro leva menos de 1 minuto!)
+            </H2>
+            <Text color="slate.10">•&nbsp; Não precisa de cartão de crédito.</Text>
+            <Text color="slate.10">•&nbsp; Teste grátis por 14 dias!</Text>
+            <Text color="slate.10">•&nbsp; Cancele a qualquer momento.</Text>
           </Box>
+
           <DynamicForm />
         </Box>
       </Center>

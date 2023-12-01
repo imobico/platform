@@ -113,7 +113,7 @@ export default function SetPasswordPage(props: SetPasswordPageProps) {
       </Box>
       <Flex
         display={{ base: 'none', md: 'flex' }}
-        bg="slate.2"
+        bg="slate.1"
         width="50%"
         position="relative"
         overflow="auto"
@@ -123,13 +123,13 @@ export default function SetPasswordPage(props: SetPasswordPageProps) {
         p={{ base: 12, md: 16 }}
       >
         <Center zIndex={20} flex={1} flexDirection="column">
-          <Center color="tomato.2" bg="trusty.9" borderRadius="full" width="100px" height="100px">
+          <Center bg="trusty.2" borderRadius="full" width="100px" height="100px" color="trusty.10">
             <Lock width="40px" height="40px" />
           </Center>
           <H3 size="xl" mt="4" color="trusty.11">
             Dicas de segurança
           </H3>
-          <Text mt="4" color="trusty.12" textAlign="center" px="4" py="2">
+          <Text mt="4" color="slate.11" textAlign="center" px="4" py="2" lineHeight={2}>
             &#8226; Sua senha deve conter pelo menos 8 caracteres
             <br />
             &#8226; Utilize pelo menos 1 letra maiúscula e 1 minúscula
