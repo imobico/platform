@@ -51,10 +51,13 @@ const AppLayout = (props: PropsWithChildren) => {
   return (
     <ProvidersWrapper>
       <Flex minHeight="100vh" minWidth="100vw" bg="slate.2">
-        <Box width={{ base: '96px', '2xl': '296px' }}>
+        <Box width={{ base: '88px', '2xl': '288px' }}>
           <Box
             position="relative"
-            m="8px"
+            ml="8px"
+            mt="8px"
+            mb="8px"
+            mr="0"
             top={0}
             left={0}
             width={{ base: '80px', '2xl': '280px' }}
@@ -143,7 +146,7 @@ const AppLayout = (props: PropsWithChildren) => {
 
           {/* <Input opacity={0.8} placeholder="Buscar imóveis ou leads..." width="100%" /> */}
         </Box>
-        <Box flex="1" maxHeight="100vh" overflowY="auto">
+        <Box flex="1" maxHeight="100vh" overflowY="auto" p="16px">
           {props.children}
         </Box>
       </Flex>

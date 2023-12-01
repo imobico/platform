@@ -30,7 +30,7 @@ export const H1 = styled('h1', {
 export const H2 = styled('h2', {
   base: {
     fontWeight: 600,
-    color: 'trusty.12',
+    color: 'trusty.11',
     fontFamily: 'var(--font-heading)',
     fontSize: '2.4rem'
   },
@@ -58,7 +58,7 @@ export const H2 = styled('h2', {
 export const H3 = styled('h3', {
   base: {
     fontWeight: 600,
-    color: 'trusty.12',
+    color: 'trusty.11',
     fontFamily: 'var(--font-heading)',
     fontSize: '2rem'
   },
@@ -86,7 +86,7 @@ export const H3 = styled('h3', {
 export const H4 = styled('h4', {
   base: {
     fontWeight: 600,
-    color: 'trusty.12',
+    color: 'trusty.11',
     fontFamily: 'var(--font-heading)',
     fontSize: '1.8rem'
   },
@@ -114,7 +114,7 @@ export const H4 = styled('h4', {
 export const H5 = styled('h5', {
   base: {
     fontWeight: 600,
-    color: 'trusty.12',
+    color: 'trusty.11',
     fontFamily: 'var(--font-heading)',
     fontSize: '1.8rem'
   },
