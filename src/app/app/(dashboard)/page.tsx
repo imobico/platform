@@ -1,7 +1,7 @@
 // import { css } from '@/styled/css'
 import { Box } from '@/styled'
 
-import { Checkbox, H1, H2, Text } from '@/ui'
+import { Checkbox, H1, H2, Strong, Text } from '@/ui'
 
 // import { Button } from '@/components/Button'
 // import { Input } from '@/components/Input'
@@ -19,9 +19,13 @@ const getGreeting = () => {
 export default function Home() {
   const greeting = getGreeting()
   return (
-    <Box width="100%" height="100%">
+    <Box>
       <Box p="10" m="8px">
-        <H1 fontSize="3xl">{greeting}, Kaue! 👋</H1>
+        <H1 fontSize="3xl">
+          {greeting}
+          {true && <>, </>}
+          {true && <Strong fontWeight={900}>Kaue</Strong>}!&nbsp; 👋
+        </H1>
         <Text color="text.muted" fontSize="lg">
           Aqui você consegue ter uma visão geral do seu negócio.
         </Text>

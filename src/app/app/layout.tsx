@@ -146,7 +146,7 @@ const AppLayout = (props: PropsWithChildren) => {
 
           {/* <Input opacity={0.8} placeholder="Buscar imóveis ou leads..." width="100%" /> */}
         </Box>
-        <Box flex="1" maxHeight="100vh" overflowY="auto" p="16px">
+        <Box flex="1" maxHeight="100vh" overflowY="auto" px={{ base: 2, md: 2, lg: 12, xl: 32 }}>
           {props.children}
         </Box>
       </Flex>
