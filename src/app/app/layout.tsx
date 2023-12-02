@@ -84,7 +84,7 @@ const AppLayout = (props: PropsWithChildren) => {
             transition="all ease-in-out 0.2s"
             border="1px solid token(colors.slate.5)"
           >
-            <Box position="absolute" top="10px" left="13px" width="136px">
+            <Box position="absolute" top="10px" left="12px" width="136px">
               <Image
                 priority
                 src="/imoblr-app-navbar-logo.svg"
@@ -122,7 +122,7 @@ const AppLayout = (props: PropsWithChildren) => {
                   width: isSidebarActive ? '252px' : '52px',
                   top: `${activeNavItemIndex * 60}px`
                 }}
-                left="14px"
+                left="13px"
                 height="48px"
                 bg="slate.2"
                 borderRadius="lg"

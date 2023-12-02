@@ -35,7 +35,7 @@ export const SidebarNavigationItem = ({
     >
       <Flex
         zIndex={999}
-        px="10px"
+        px="11px"
         width="100%"
         cursor="pointer"
         height="48px"
