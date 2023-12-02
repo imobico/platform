@@ -36,9 +36,10 @@ export const ToDoList = ({ items, ...rest }: ToDoListProps) => {
             cursor="pointer"
           >
             <Box
+              transition="all 0.25s ease-in-out"
               opacity={1}
               _groupHover={{
-                opacity: 0.4
+                opacity: 0
               }}
             >
               {todoListItem.isDone ? (
@@ -53,10 +54,10 @@ export const ToDoList = ({ items, ...rest }: ToDoListProps) => {
               color={todoListItem.isDone ? 'slate.8' : 'slate.11'}
               textDecoration={todoListItem.isDone ? 'line-through' : 'none'}
               lineHeight={1.3}
-              transition="all 0.1s ease-in-out"
+              transition="all 0.25s ease-in-out"
               opacity={1}
               _groupHover={{
-                opacity: 0.4
+                opacity: 0
               }}
             >
               {todoListItem.label}
@@ -70,16 +71,14 @@ export const ToDoList = ({ items, ...rest }: ToDoListProps) => {
                 color="slate.10"
                 position="absolute"
                 width="100%"
-                transition="all 0.1s ease-in-out"
+                transition="all 0.25s ease-in-out"
                 opacity={0}
-                backdropFilter="blur(4px)"
                 _groupHover={{ opacity: 1 }}
+                zIndex={10}
               >
-                <Box zIndex={10}>
-                  <ArrowRightSquare size="7" isActive />
-                </Box>
+                <ArrowRightSquare size="7" isActive />
                 <Box width="100%" height="100%" position="absolute" />
-                <Text zIndex={10} pl="18px" color="trusty.11">
+                <Text zIndex={10} pl="16px" color="trusty.11">
                   {todoListItem.goToTask?.label}
                 </Text>
               </Flex>
