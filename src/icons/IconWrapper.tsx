@@ -8,6 +8,7 @@ export type IconElement = (props: IconProps) => ReactElement
 export type IconProps = {
   isActive?: boolean
   isHover?: boolean
+  isDisabled?: boolean
   strokeColor?: ColorToken
   hoverStrokeColor?: ColorToken
   activeStrokeColor?: ColorToken
@@ -29,6 +30,7 @@ const SVG = styled.svg
 export const IconWrapper = ({
   isActive = false,
   isHover = false,
+  isDisabled = false,
   size = '8',
   strokeColor = 'slate.11',
   hoverStrokeColor = 'trusty.12',
@@ -41,7 +43,7 @@ export const IconWrapper = ({
   activeAltBackgroundColor = 'trusty.3',
   accentColor = 'slate.5',
   hoverAccentColor = 'slate.7',
-  activeAccentColor = 'trusty.5',
+  activeAccentColor = 'trusty.6',
   children,
   ...rest
 }: IconProps) => {
@@ -60,7 +62,12 @@ export const IconWrapper = ({
 
   return (
     <SVG
-      style={{ width: token(`sizes.${size}`), height: token(`sizes.${size}`), fill: 'transparent' }}
+      style={{
+        opacity: isDisabled ? 0.6 : 1,
+        width: token(`sizes.${size}`),
+        height: token(`sizes.${size}`),
+        fill: 'transparent'
+      }}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       {...rest}

@@ -2,7 +2,7 @@
 
 import { Checkbox as ArkCheckbox } from '@ark-ui/react'
 
-import { styled } from '@/styled'
+import { styled } from '@/styled/jsx'
 import { checkbox } from '@/styled/recipes'
 
 import { createStyleContext } from '../utils/createStyleContext'
