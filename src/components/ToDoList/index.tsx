@@ -23,6 +23,7 @@ export const ToDoList = ({ items, ...rest }: ToDoListProps) => {
       {items.map((todoListItem, index) => {
         return (
           <Flex
+            transition="all 0.25s ease-in-out"
             alignItems="center"
             key={`todo-list-item-${index}`}
             position="relative"
@@ -34,6 +35,9 @@ export const ToDoList = ({ items, ...rest }: ToDoListProps) => {
             px={2}
             borderRadius="lg"
             cursor="pointer"
+            _hover={{
+              border: '1px solid token(colors.slate.10)'
+            }}
           >
             <Box
               transition="all 0.25s ease-in-out"

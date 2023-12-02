@@ -39,7 +39,7 @@ export default function Home() {
       isDone: false,
       goToTask: {
         route: '/imoveis',
-        label: 'Ir para a página de Imóveis'
+        label: 'Ver página de imóveis'
       }
     },
     {
@@ -47,7 +47,7 @@ export default function Home() {
       isDone: false,
       goToTask: {
         route: '/canais',
-        label: 'Visualizar configurações do Site'
+        label: 'Configurar meu site'
       }
     }
   ]
