@@ -56,13 +56,12 @@ export default function Home() {
     <Box>
       <Box p="10" m="8px">
         <H1 fontSize="3xl">
-          {greeting}
+          <Strong fontWeight={900}>{greeting}</Strong>
           {true && <>, </>}
-          {true && <Strong fontWeight={900}>Kaue</Strong>}!&nbsp; 👋
+          {true && 'Kaue'}
+          !&nbsp; 👋
         </H1>
-        <Text color="text.muted" fontSize="lg">
-          Aqui você consegue ter uma visão geral do seu negócio.
-        </Text>
+        <Text fontSize="lg">Aqui você consegue ter uma visão geral do seu negócio.</Text>
       </Box>
       <Flex
         m="8px"
@@ -71,16 +70,18 @@ export default function Home() {
         py="6"
         border="1px solid token(colors.slate.6)"
         borderRadius="xl"
-        flexDirection={{ base: 'column', lg: 'row' }}
+        flexDirection={{ base: 'column', md: 'row' }}
       >
         <Box mb={8} maxWidth="480px" flex="1">
           <H2 fontSize="2xl">Próximos passos</H2>
-          <Text color="text.muted" fontSize="sm" pr={16}>
+          <Text color="text.muted" pr={16}>
             Para facilitar a sua experiência, aqui estão alguns passo que você pode seguir para
-            conseguir tirar o máximo proveito da sua conta Imoblr!
+            conseguir ao máximo sua conta Imoblr!
           </Text>
         </Box>
-        <ToDoList items={nextStepsList} />
+        <Box py={4} flex="1">
+          <ToDoList items={nextStepsList} />
+        </Box>
       </Flex>
     </Box>
   )

@@ -29,10 +29,12 @@ export const ToDoList = ({ items, ...rest }: ToDoListProps) => {
               <SquareIcon size="7" isActive />
             )}
             <Text
+              flex="1"
               ml="4"
               fontSize="lg"
               color={todoListItem.isDone ? 'slate.8' : 'slate.10'}
               textDecoration={todoListItem.isDone ? 'line-through' : 'none'}
+              lineHeight={1.3}
             >
               {todoListItem.label}
             </Text>
