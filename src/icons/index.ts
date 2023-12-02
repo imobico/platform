@@ -1,5 +1,6 @@
 export * from './IconWrapper'
 
+export * from './ArrowRightSquare'
 export * from './PropertiesIcon'
 export * from './DashboardIcon'
 export * from './CustomersIcon'
