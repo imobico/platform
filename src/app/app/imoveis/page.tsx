@@ -1,8 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 
+import { PlusSquareIcon } from '@/icons'
 import { Box, Button, Center, H2, Text } from '@/ui'
 
 interface ImoveisPageProps {
@@ -26,16 +26,15 @@ export default function ImoveisPage(props: ImoveisPageProps) {
       <H2 size="lg" mb={4}>
         Nenhum imóvel cadastrado
       </H2>
-      <Text color="text.muted" textAlign="center" fontSize="lg">
+      <Text color="text.muted" textAlign="center" fontSize="lg" mb={16}>
         Parece que ainda não temos nenhum imóvel cadastrado.
         <br />
         Para cadastrar um imóvel, clique no botão abaixo.
       </Text>
-      <Link href="/entrar">
-        <Button mt={12} size="2xl">
-          Cadastrar um imóvel
-        </Button>
-      </Link>
+      <Button size="2xl">
+        <PlusSquareIcon isActive activeStrokeColor="trusty.1" activeBackgroundColor="trusty.6" />
+        Cadastrar um imóvel
+      </Button>
     </Center>
   )
 }
