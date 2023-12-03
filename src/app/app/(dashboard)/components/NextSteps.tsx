@@ -1,13 +1,16 @@
 import { Box, Flex } from '@/styled'
 
 import { ProgressBar, ToDoList } from '@/components'
+import { useCurrentUser } from '@/hooks'
 import { H2, Strong, Text } from '@/ui'
 
 export const NextSteps = () => {
+  const { data: currentUserData } = useCurrentUser()
+
   const nextStepsList = [
     {
       label: 'Preencha seus dados pessoais',
-      isDone: true,
+      isDone: currentUserData?.first_name && currentUserData?.last_name,
       goToTask: {
         route: '/app/minha-conta',
         label: 'Ver configurações conta'
