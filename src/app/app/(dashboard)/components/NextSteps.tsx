@@ -10,7 +10,7 @@ export const NextSteps = () => {
   const nextStepsList = [
     {
       label: 'Preencha seus dados pessoais',
-      isDone: currentUserData?.first_name && currentUserData?.last_name,
+      isDone: !!currentUserData?.first_name && !!currentUserData?.last_name,
       goToTask: {
         route: '/app/minha-conta',
         label: 'Ver configurações conta'
@@ -42,6 +42,9 @@ export const NextSteps = () => {
     }
   ]
 
+  const stepsCount = nextStepsList.length
+  const completedStepsCount = nextStepsList.filter((step) => step.isDone).length
+
   return (
     <Flex
       m="8px"
@@ -58,9 +61,12 @@ export const NextSteps = () => {
         </H2>
         <Box maxWidth="380px" mr="12" mb={4}>
           <Text color="text.muted" mb={2}>
-            <Strong color="accent.default">2 de 4</Strong> objetivos concluídos!
+            <Strong color="accent.default">
+              {completedStepsCount} de {stepsCount}
+            </Strong>{' '}
+            objetivos concluídos!
           </Text>
-          <ProgressBar completed={2} total={4} />
+          <ProgressBar completed={completedStepsCount} total={stepsCount} />
         </Box>
         <Text color="text.muted" pr={16}>
           Para facilitar a sua experiência, aqui estão alguns passo que você pode seguir para
