@@ -24,10 +24,10 @@ export default function CanaisPage(props: CanaisPageProps) {
         />
       </Box>
       <H2 size="lg" mb={4}>
-        Nenhum imóvel cadastrado
+        Nenhum canal cadastrado
       </H2>
       <Text color="text.muted" textAlign="center" fontSize="lg" mb={16}>
-        Parece que ainda não temos nenhum imóvel cadastrado.
+        Parece que ainda não temos nenhum canal cadastrado.
         <br />
         Para cadastrar um imóvel, clique no botão abaixo.
       </Text>

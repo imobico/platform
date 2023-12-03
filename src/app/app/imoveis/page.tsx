@@ -13,7 +13,7 @@ export default function ImoveisPage(props: ImoveisPageProps) {
   console.log(props)
   return (
     <Center width="100%" height="100%" flexDirection="column" p={8}>
-      <Box width="100%" maxWidth="340px">
+      <Box width="100%" maxWidth="320px">
         <Image
           src="/illustrations/illustration-trusty-rafiki-realtor.svg"
           alt="A Imoblr tem diversas integrações com portais de imóveis!"

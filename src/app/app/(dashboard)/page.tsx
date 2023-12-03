@@ -1,5 +1,8 @@
+'use client'
+
 import { Box } from '@/styled'
 
+import { useCurrentUser } from '@/hooks'
 import { H1, Strong, Text } from '@/ui'
 
 import { NextSteps } from './components/NextSteps'
@@ -16,6 +19,7 @@ const getGreeting = () => {
   }
 }
 export default function Home() {
+  const { data: currentUserData } = useCurrentUser()
   const greeting = getGreeting()
 
   return (
@@ -23,8 +27,8 @@ export default function Home() {
       <Box p="10" m="8px">
         <H1 fontSize="3xl">
           <Strong fontWeight={900}>{greeting}</Strong>
-          {true && <>, </>}
-          {true && 'Kaue'}
+          {currentUserData?.first_name && <>, </>}
+          {currentUserData?.first_name && 'Kaue'}
           !&nbsp; 👋
         </H1>
         <Text fontSize="lg">Aqui você consegue ter uma visão geral do seu negócio.</Text>

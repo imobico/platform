@@ -26,7 +26,7 @@ export const ToDoList = ({ items, ...rest }: ToDoListProps) => {
         return (
           <Link
             href={todoListItem.goToTask?.route || '#'}
-            style={{ width: '100%' }}
+            style={{ width: '100%', pointerEvents: todoListItem.isDone ? 'none' : 'all' }}
             key={`todo-list-item-${index}`}
           >
             <Flex
@@ -35,7 +35,6 @@ export const ToDoList = ({ items, ...rest }: ToDoListProps) => {
               position="relative"
               width="100%"
               className="group"
-              pointerEvents={todoListItem.isDone ? 'none' : 'all'}
               border={todoListItem.isDone ? 'none' : '1px solid token(colors.slate.4)'}
               bg="white"
               py={todoListItem.isDone ? 0 : 2}
@@ -56,7 +55,7 @@ export const ToDoList = ({ items, ...rest }: ToDoListProps) => {
                 }}
               >
                 {todoListItem.isDone ? (
-                  <SquareCheckmarkAltIcon size="7" isDisabled />
+                  <SquareCheckmarkAltIcon size="7" isDisabled strokeColor="trusty" />
                 ) : (
                   <SquareIcon size="7" />
                 )}

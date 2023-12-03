@@ -1,6 +1,6 @@
 import { Box, Flex } from '@/styled'
 
-import { ToDoList } from '@/components'
+import { ProgressBar, ToDoList } from '@/components'
 import { H2, Text } from '@/ui'
 
 export const NextSteps = () => {
@@ -50,7 +50,12 @@ export const NextSteps = () => {
       flexDirection={{ base: 'column', md: 'row' }}
     >
       <Box mb={8} maxWidth="480px" flex="1">
-        <H2 fontSize="2xl">Próximos passos</H2>
+        <H2 fontSize="2xl" mb={2}>
+          Próximos passos
+        </H2>
+        <Box maxWidth="380px" mr="12">
+          <ProgressBar completed={2} total={4} />
+        </Box>
         <Text color="text.muted" pr={16}>
           Para facilitar a sua experiência, aqui estão alguns passo que você pode seguir para
           conseguir ao máximo sua conta Imoblr!
