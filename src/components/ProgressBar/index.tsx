@@ -1,7 +1,9 @@
-import { Box, BoxProps } from '@/styled'
+import { Box, Flex, FlexProps } from '@/styled'
 import { ColorToken } from '@/styled/tokens'
 
-interface ProgressBarProps extends BoxProps {
+import { Text } from '@/ui'
+
+interface ProgressBarProps extends FlexProps {
   percentage?: number
   completed?: number
   total?: number
@@ -30,13 +32,18 @@ export const ProgressBar = ({
   }
 
   return (
-    <Box width={width} height={height} {...rest} borderRadius="full" bg={backgroundColor}>
-      <Box
-        borderRadius="full"
-        bg={progressColor}
-        height="100%"
-        style={{ width: `${calculatedPercentage}%` }}
-      />
-    </Box>
+    <Flex width={width} height={height} alignItems="center" justifyContent="center" {...rest}>
+      <Box borderRadius="full" bg={backgroundColor} flex="1" height={height}>
+        <Box
+          borderRadius="full"
+          bg={progressColor}
+          height="100%"
+          style={{ width: `${calculatedPercentage}%` }}
+        />
+      </Box>
+      <Text ml={4} color="slate.11" fontWeight={700} fontSize="sm">
+        {calculatedPercentage.toFixed(0)}%
+      </Text>
+    </Flex>
   )
 }
