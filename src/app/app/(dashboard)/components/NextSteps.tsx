@@ -9,7 +9,7 @@ export const NextSteps = () => {
       label: 'Preencha seus dados pessoais',
       isDone: true,
       goToTask: {
-        route: '/minha-conta',
+        route: '/app/minha-conta',
         label: 'Ver configurações conta'
       }
     },
@@ -17,7 +17,7 @@ export const NextSteps = () => {
       label: 'Complete o seu perfil de negócio',
       isDone: true,
       goToTask: {
-        route: '/meu-negocio',
+        route: '/app/meu-negocio',
         label: 'Ver configurações de negócio'
       }
     },
@@ -25,7 +25,7 @@ export const NextSteps = () => {
       label: 'Adicione o seu primeiro imóvel',
       isDone: false,
       goToTask: {
-        route: '/imoveis',
+        route: '/app/imoveis',
         label: 'Ver página de imóveis'
       }
     },
@@ -33,7 +33,7 @@ export const NextSteps = () => {
       label: 'Configure o seu site',
       isDone: false,
       goToTask: {
-        route: '/canais',
+        route: '/app/canais',
         label: 'Configurar meu site'
       }
     }
