@@ -30,13 +30,16 @@ export const ToDoList = ({ items, ...rest }: ToDoListProps) => {
             width="100%"
             className="group"
             pointerEvents={todoListItem.isDone ? 'none' : 'all'}
-            border={todoListItem.isDone ? 'none' : '1px solid token(colors.slate.5)'}
+            border={todoListItem.isDone ? 'none' : '1px solid token(colors.slate.4)'}
+            bg="white"
             py={todoListItem.isDone ? 0 : 2}
             px={2}
             borderRadius="lg"
             cursor="pointer"
             _hover={{
-              border: '1px solid token(colors.slate.10)'
+              border: '1px solid token(colors.slate.6)',
+              bg: 'slate.2',
+              boxShadow: '0 1px 2px 0 token(colors.slate.3), 0 2px 6px 0 token(colors.slate.2)'
             }}
           >
             <Box
@@ -49,7 +52,7 @@ export const ToDoList = ({ items, ...rest }: ToDoListProps) => {
               {todoListItem.isDone ? (
                 <SquareCheckmarkAltIcon size="7" isDisabled />
               ) : (
-                <SquareIcon size="7" isActive />
+                <SquareIcon size="7" />
               )}
             </Box>
             <Text
@@ -82,7 +85,7 @@ export const ToDoList = ({ items, ...rest }: ToDoListProps) => {
               >
                 <ArrowRightSquare size="7" isActive />
                 <Box width="100%" height="100%" position="absolute" />
-                <Text zIndex={10} pl="16px" color="trusty.11">
+                <Text zIndex={10} pl="16px" color="trusty.11" transform="translateY(-0.5px)">
                   {todoListItem.goToTask?.label}
                 </Text>
               </Flex>

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Outfit, Plus_Jakarta_Sans } from 'next/font/google'
 
-import { DynamicCrispChat } from '@/components'
+import { CrispChat } from '@/components'
 
 import './globals.css'
 
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <DynamicCrispChat />
+      <CrispChat />
       <body className={`${Heading.variable} ${Body.variable}`}>{children}</body>
     </html>
   )

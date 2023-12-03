@@ -63,7 +63,7 @@ export const IconWrapper = ({
   return (
     <SVG
       style={{
-        opacity: isDisabled ? 0.6 : 1,
+        opacity: isDisabled ? 0.5 : 1,
         width: token(`sizes.${size}`),
         height: token(`sizes.${size}`),
         fill: 'transparent'
