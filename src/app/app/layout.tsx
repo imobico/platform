@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { PropsWithChildren, useEffect, useState } from 'react'
 
-import { CustomersIcon, DashboardIcon, PropertiesIcon } from '@/icons'
+import { CustomersIcon, DashboardIcon, LayersIcon, PropertiesIcon } from '@/icons'
 import { ProvidersWrapper } from '@/providers'
 import { Box, Flex, Text, VStack } from '@/ui'
 
@@ -26,6 +26,11 @@ const navItemsList = [
     label: 'Clientes',
     route: '/app/clientes',
     icon: CustomersIcon
+  },
+  {
+    label: 'Canais',
+    route: '/app/canais?target=channel',
+    icon: LayersIcon
   }
 ]
 
@@ -36,8 +41,11 @@ const AppLayout = (props: PropsWithChildren) => {
   const pathname = usePathname()
 
   useEffect(() => {
-    const activeNavItem = navItemsList.findIndex((navItem) => navItem.route === pathname)
-    setActiveNavItemIndex(activeNavItem)
+    const basePathname = pathname.split('/')[2]
+
+    const activeNavItem = navItemsList.findIndex((navItem) => navItem.route.includes(basePathname))
+
+    setActiveNavItemIndex(activeNavItem >= 0 ? activeNavItem : 0)
   }, [pathname])
 
   useEffect(() => {
