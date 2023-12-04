@@ -25,7 +25,7 @@ export const ProgressBar = ({
 
   if (percentage) {
     calculatedPercentage = percentage
-  } else if (completed && total) {
+  } else if (typeof completed === 'number' && typeof total === 'number') {
     calculatedPercentage = (completed / total) * 100
   } else {
     throw new Error('Either percentage or completed and total are required')
@@ -38,6 +38,7 @@ export const ProgressBar = ({
           borderRadius="full"
           bg={progressColor}
           height="100%"
+          transition="width 0.3s ease-in-out"
           style={{ width: `${calculatedPercentage}%` }}
         />
       </Box>

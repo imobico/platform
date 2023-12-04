@@ -4,6 +4,7 @@ import { Box } from '@/styled'
 
 import { PageRowLayout } from '@/components'
 import { useCurrentUser } from '@/hooks'
+import useCurrentOrganization from '@/hooks/useCurrentOrganization'
 import { H1, Strong, Text } from '@/ui'
 
 import { NextSteps } from './components/NextSteps'
@@ -21,6 +22,7 @@ const getGreeting = () => {
 }
 export default function Home() {
   const { data: currentUserData } = useCurrentUser()
+  const { data: currentOrganizationData } = useCurrentOrganization()
   const greeting = getGreeting()
 
   // CRIAR COMPONENT PAGE LAYOUT QUE APLICA O PADDING
@@ -47,7 +49,7 @@ export default function Home() {
         // backgroundImage="repeating-radial-gradient( circle at 0 0, transparent 0, #001F55 32px ), repeating-linear-gradient( #00143655, #001436 )"
         // backgroundColor="trusty.12"
       >
-        <Box width="100%">
+        <Box width="100%" px={10}>
           <H1 fontSize="3xl" color="trusty.1">
             <Strong fontWeight={900}>{greeting}</Strong>
             {currentUserData?.first_name && <>, </>}
@@ -55,7 +57,11 @@ export default function Home() {
             !&nbsp; 👋
           </H1>
           <Text color="trusty.1" fontSize="lg" opacity={0.8}>
-            Aqui você consegue ter uma visão geral do seu negócio.
+            Aqui você consegue ter uma visão geral do seu negócio
+            {currentOrganizationData?.name && (
+              <Strong>&nbsp;({currentOrganizationData?.name})</Strong>
+            )}
+            .
           </Text>
         </Box>
       </PageRowLayout>

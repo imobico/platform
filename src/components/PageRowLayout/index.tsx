@@ -5,8 +5,8 @@ export const PageRowLayout = (props: BoxProps) => {
     <Box
       pl={{
         base: '8px',
-        // 2 * SIDEBAR_GUTTER + COLLAPSED_SIDEBAR_WIDTH
-        md: '96px',
+        // 2 * SIDEBAR_GUTTER + COLLAPSED_SIDEBAR_WIDTH + 20
+        md: '116px',
         // 2 * SIDEBAR_GUTTER + COLLAPSED_SIDEBAR_WIDTH + 50
         lg: '146px',
         // 2 * SIDEBAR_GUTTER + COLLAPSED_SIDEBAR_WIDTH + 100
@@ -16,8 +16,8 @@ export const PageRowLayout = (props: BoxProps) => {
       }}
       pr={{
         base: '8px',
-        // SIDEBAR_GUTTER
-        md: '8px',
+        // SIDEBAR_GUTTER + 20
+        md: '28px',
         // SIDEBAR_GUTTER + 50
         lg: '58px',
         // SIDEBAR_GUTTER + 100

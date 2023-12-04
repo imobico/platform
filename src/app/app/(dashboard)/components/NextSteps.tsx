@@ -2,10 +2,12 @@ import { Box, Flex } from '@/styled'
 
 import { ProgressBar, ToDoList } from '@/components'
 import { useCurrentUser } from '@/hooks'
+import useCurrentOrganization from '@/hooks/useCurrentOrganization'
 import { H2, Strong, Text } from '@/ui'
 
 export const NextSteps = () => {
   const { data: currentUserData } = useCurrentUser()
+  const { data: currentOrganizationData } = useCurrentOrganization()
 
   const nextStepsList = [
     {
@@ -18,7 +20,7 @@ export const NextSteps = () => {
     },
     {
       label: 'Complete o seu perfil de negócio',
-      isDone: true,
+      isDone: !!currentOrganizationData?.name,
       goToTask: {
         route: '/app/meu-negocio',
         label: 'Ver configurações de negócio'
