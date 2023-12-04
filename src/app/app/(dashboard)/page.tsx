@@ -59,7 +59,7 @@ export default function Home() {
           {currentUserData?.first_name && 'Kaue'}
           !&nbsp; 👋
         </H1>
-        <Text color="slate.4" fontSize="lg">
+        <Text color="trusty.1" fontSize="lg" opacity={0.8}>
           Aqui você consegue ter uma visão geral do seu negócio.
         </Text>
       </Box>
