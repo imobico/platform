@@ -24,14 +24,23 @@ export default function Home() {
 
   return (
     <Box>
-      <Box p="10" m="8px">
-        <H1 fontSize="3xl">
+      <Box
+        py={16}
+        width="100vw"
+        bg="trusty.12"
+        pl={{ base: '160px', lg: '214px' }}
+        ml={{ base: '-148px', lg: '-208px' }}
+        mb="12"
+      >
+        <H1 fontSize="3xl" color="slate.1">
           <Strong fontWeight={900}>{greeting}</Strong>
           {currentUserData?.first_name && <>, </>}
           {currentUserData?.first_name && 'Kaue'}
           !&nbsp; 👋
         </H1>
-        <Text fontSize="lg">Aqui você consegue ter uma visão geral do seu negócio.</Text>
+        <Text color="slate.4" fontSize="lg">
+          Aqui você consegue ter uma visão geral do seu negócio.
+        </Text>
       </Box>
       <NextSteps />
     </Box>

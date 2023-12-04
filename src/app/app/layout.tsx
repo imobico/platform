@@ -11,6 +11,10 @@ import { Box, Flex, Text, VStack } from '@/ui'
 
 import { SidebarNavigationItem } from './components/SidebarNavigationItem'
 
+export const EXPANDED_SIDEBAR_WIDTH = 280
+export const COLLAPSED_SIDEBAR_WIDTH = 80
+export const SIDEBAR_GUTTER = 8
+
 const navItemsList = [
   {
     label: 'Visão geral',
@@ -59,17 +63,16 @@ const AppLayout = (props: PropsWithChildren) => {
   return (
     <ProvidersWrapper>
       <Flex minHeight="100vh" minWidth="100vw" bg="slate.2">
-        <Box width={{ base: '88px', '2xl': '288px' }}>
+        <Box
+          width={{ base: `${COLLAPSED_SIDEBAR_WIDTH}px`, '2xl': `${EXPANDED_SIDEBAR_WIDTH}px` }}
+          position="absolute"
+          top={`${SIDEBAR_GUTTER}px`}
+          left={`${SIDEBAR_GUTTER}px`}
+        >
           <Box
             position="relative"
-            ml="8px"
-            mt="8px"
-            mb="8px"
-            mr="0"
-            top={0}
-            left={0}
-            width={{ base: '80px', '2xl': '280px' }}
-            height="calc(100vh - 16px)"
+            width={{ base: `${COLLAPSED_SIDEBAR_WIDTH}px`, '2xl': `${EXPANDED_SIDEBAR_WIDTH}px` }}
+            height={`calc(100vh - ${SIDEBAR_GUTTER * 2}px)`}
             overflow="hidden"
             bg="white"
             borderRadius="xl"
@@ -79,14 +82,8 @@ const AppLayout = (props: PropsWithChildren) => {
             onMouseLeave={() => {
               if (windowWidth < 1536) setIsSidebarActive(false)
             }}
-            // bg="linear-gradient(0deg, rgba(252,253,254,1) 0%, rgba(239,243,247,1) 100%)"
-            // boxShadow={
-            //   isSidebarActive
-            //     ? '0 1px 5px 1px rgba(0,0,0,0.1), 0 2px 20px 0 rgba(0,0,0,0.1)'
-            //     : undefined
-            // }
             _hover={{
-              width: { base: '80px', md: '280px' }
+              width: { base: COLLAPSED_SIDEBAR_WIDTH, md: EXPANDED_SIDEBAR_WIDTH }
             }}
             zIndex={10}
             transition="all ease-in-out 0.2s"
@@ -121,7 +118,7 @@ const AppLayout = (props: PropsWithChildren) => {
               alignItems="flex-start"
               position="absolute"
               top="120px"
-              width="280px"
+              width="100%"
               gap="12px"
             >
               <Box
@@ -154,7 +151,13 @@ const AppLayout = (props: PropsWithChildren) => {
 
           {/* <Input opacity={0.8} placeholder="Buscar imóveis ou leads..." width="100%" /> */}
         </Box>
-        <Box flex="1" maxHeight="100vh" overflowY="auto" px={{ base: 2, md: 2, lg: 12, xl: 32 }}>
+        <Box
+          flex="1"
+          maxHeight="100vh"
+          overflowY="auto"
+          pl={{ base: '8px', md: '8px', lg: '148px', xl: '208px', '2xl': '540px' }}
+          pr={{ base: '8px', md: '8px', lg: '60p', xl: '120px', '2xl': '260px' }}
+        >
           {props.children}
         </Box>
       </Flex>

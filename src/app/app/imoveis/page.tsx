@@ -23,16 +23,21 @@ export default function ImoveisPage(props: ImoveisPageProps) {
           style={{ width: '100%', height: 'auto' }}
         />
       </Box>
-      <H2 size="lg" mb={4}>
+      <H2 fontSize="2xl" mb={4}>
         Nenhum imóvel cadastrado
       </H2>
-      <Text color="text.muted" textAlign="center" fontSize="lg" mb={16}>
+      <Text color="text.muted" textAlign="center" mb={16}>
         Parece que ainda não temos nenhum imóvel cadastrado.
         <br />
         Para cadastrar um imóvel, clique no botão abaixo.
       </Text>
-      <Button size="2xl">
-        <PlusSquareIcon isActive activeStrokeColor="trusty.1" activeBackgroundColor="trusty.6" />
+      <Button size="xl">
+        <PlusSquareIcon
+          isActive
+          activeStrokeColor="trusty.1"
+          activeBackgroundColor="trusty.6"
+          size="6"
+        />
         Cadastrar um imóvel
       </Button>
     </Center>

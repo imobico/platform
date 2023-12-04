@@ -49,9 +49,11 @@ export const SidebarNavigationItem = ({
       >
         <Icon size="6" isActive={isActive} isHover={isItemHovered} />
         <Text
-          ml="8"
+          position="absolute"
+          ml="58px"
           mt="-1px"
           transition="color 0.15s ease-in-out"
+          whiteSpace="nowrap"
           style={{
             color: isActive
               ? token('colors.trusty.10')
