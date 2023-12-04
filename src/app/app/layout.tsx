@@ -11,11 +11,9 @@ import { Box, Flex, Text, VStack } from '@/ui'
 
 import { SidebarNavigationItem } from './components/SidebarNavigationItem'
 
-export const EXPANDED_SIDEBAR_WIDTH = 280
-export const COLLAPSED_SIDEBAR_WIDTH = 80
-export const SIDEBAR_GUTTER = 8
-
-export const COLLAPSED_LEFT_MARGIN = 2 * SIDEBAR_GUTTER + COLLAPSED_SIDEBAR_WIDTH
+const EXPANDED_SIDEBAR_WIDTH = 280
+const COLLAPSED_SIDEBAR_WIDTH = 80
+const SIDEBAR_GUTTER = 8
 
 const navItemsList = [
   {
