@@ -47,7 +47,6 @@ export const NextSteps = () => {
 
   return (
     <Flex
-      m="8px"
       bg="white"
       px="10"
       py="6"

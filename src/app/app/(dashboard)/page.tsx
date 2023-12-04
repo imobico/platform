@@ -27,9 +27,30 @@ export default function Home() {
       <Box
         py={16}
         width="100vw"
-        bg="trusty.12"
-        pl={{ base: '160px', lg: '214px' }}
-        ml={{ base: '-148px', lg: '-208px' }}
+        backgroundImage="repeating-radial-gradient( circle at 0 0, transparent 0, #001F55 32px ), repeating-linear-gradient( #00143655, #001436 )"
+        backgroundColor="trusty.12"
+        pl={{
+          base: '8px',
+          // 2 * SIDEBAR_GUTTER + COLLAPSED_SIDEBAR_WIDTH
+          md: '96px',
+          // 2 * SIDEBAR_GUTTER + COLLAPSED_SIDEBAR_WIDTH + 50
+          lg: '146px',
+          // 2 * SIDEBAR_GUTTER + EXPANDED_SIDEBAR_WIDTH + 100
+          xl: '396px',
+          // 2 * SIDEBAR_GUTTER + EXPANDED_SIDEBAR_WIDTH + 200
+          '2xl': '496px'
+        }}
+        ml={{
+          base: '-8px',
+          // 2 * SIDEBAR_GUTTER + COLLAPSED_SIDEBAR_WIDTH
+          md: '-96px',
+          // 2 * SIDEBAR_GUTTER + COLLAPSED_SIDEBAR_WIDTH + 50
+          lg: '-146px',
+          // 2 * SIDEBAR_GUTTER + EXPANDED_SIDEBAR_WIDTH + 100
+          xl: '-396px',
+          // 2 * SIDEBAR_GUTTER + EXPANDED_SIDEBAR_WIDTH + 200
+          '2xl': '-496px'
+        }}
         mb="12"
       >
         <H1 fontSize="3xl" color="slate.1">

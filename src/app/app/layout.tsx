@@ -163,8 +163,8 @@ const AppLayout = (props: PropsWithChildren) => {
             md: '96px',
             // 2 * SIDEBAR_GUTTER + COLLAPSED_SIDEBAR_WIDTH + 50
             lg: '146px',
-            // 2 * SIDEBAR_GUTTER + EXPANDED_SIDEBAR_WIDTH + 100
-            xl: '396px',
+            // 2 * SIDEBAR_GUTTER + COLLAPSED_SIDEBAR_WIDTH + 100
+            xl: '196px',
             // 2 * SIDEBAR_GUTTER + EXPANDED_SIDEBAR_WIDTH + 200
             '2xl': '496px'
           }}
