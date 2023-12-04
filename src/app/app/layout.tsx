@@ -15,6 +15,8 @@ export const EXPANDED_SIDEBAR_WIDTH = 280
 export const COLLAPSED_SIDEBAR_WIDTH = 80
 export const SIDEBAR_GUTTER = 8
 
+export const COLLAPSED_LEFT_MARGIN = 2 * SIDEBAR_GUTTER + COLLAPSED_SIDEBAR_WIDTH
+
 const navItemsList = [
   {
     label: 'Visão geral',
@@ -155,8 +157,28 @@ const AppLayout = (props: PropsWithChildren) => {
           flex="1"
           maxHeight="100vh"
           overflowY="auto"
-          pl={{ base: '8px', md: '8px', lg: '148px', xl: '208px', '2xl': '540px' }}
-          pr={{ base: '8px', md: '8px', lg: '60p', xl: '120px', '2xl': '260px' }}
+          pl={{
+            base: '8px',
+            // 2 * SIDEBAR_GUTTER + COLLAPSED_SIDEBAR_WIDTH
+            md: '96px',
+            // 2 * SIDEBAR_GUTTER + COLLAPSED_SIDEBAR_WIDTH + 50
+            lg: '146px',
+            // 2 * SIDEBAR_GUTTER + EXPANDED_SIDEBAR_WIDTH + 100
+            xl: '396px',
+            // 2 * SIDEBAR_GUTTER + EXPANDED_SIDEBAR_WIDTH + 200
+            '2xl': '496px'
+          }}
+          pr={{
+            base: '8px',
+            // SIDEBAR_GUTTER
+            md: '8px',
+            // SIDEBAR_GUTTER + 50
+            lg: '58px',
+            // SIDEBAR_GUTTER + 100
+            xl: '108px',
+            // SIDEBAR_GUTTER + 200
+            '2xl': '208px'
+          }}
         >
           {props.children}
         </Box>
