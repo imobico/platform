@@ -55,6 +55,8 @@ export const NextSteps = () => {
       border="1px solid token(colors.slate.6)"
       borderRadius="xl"
       flexDirection={{ base: 'column', md: 'row' }}
+      animationName="fadeInUp"
+      animationDuration="0.4s"
     >
       <Box mb={8} maxWidth="480px" flex="1">
         <H2 fontSize="2xl" mb={2}>
