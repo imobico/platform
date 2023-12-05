@@ -79,36 +79,43 @@ export default function SetPasswordPage(props: SetPasswordPageProps) {
               &nbsp;para acessar sua conta.
             </Text>
           </Box>
-          <VStack>
-            <Box width="100%">
-              <Label size="xl" htmlFor="user-password">
-                <Text py={2}>Senha</Text>
-                <Input
-                  size="xl"
-                  id="user-password"
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Digite sua senha"
-                  type="password"
-                  autoFocus
-                />
-              </Label>
-            </Box>
-            <Box width="100%">
-              <Label size="xl" htmlFor="user-confirm-password">
-                <Text py={2}>Confirme a senha</Text>
-                <Input
-                  size="xl"
-                  id="user-confirm-password"
-                  onChange={(e) => setPasswordConfirmation(e.target.value)}
-                  placeholder="Repita sua senha"
-                  type="password"
-                />
-              </Label>
-            </Box>
-            <Button size="xl" width="100%" mt={4} onClick={handleSignup}>
-              Confirmar e criar minha conta
-            </Button>
-          </VStack>
+          <form
+            onSubmit={(event) => {
+              event.preventDefault()
+              handleSignup()
+            }}
+          >
+            <VStack>
+              <Box width="100%">
+                <Label size="xl" htmlFor="user-password">
+                  <Text py={2}>Senha</Text>
+                  <Input
+                    size="xl"
+                    id="user-password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Digite sua senha"
+                    type="password"
+                    autoFocus
+                  />
+                </Label>
+              </Box>
+              <Box width="100%">
+                <Label size="xl" htmlFor="user-confirm-password">
+                  <Text py={2}>Confirme a senha</Text>
+                  <Input
+                    size="xl"
+                    id="user-confirm-password"
+                    onChange={(e) => setPasswordConfirmation(e.target.value)}
+                    placeholder="Repita sua senha"
+                    type="password"
+                  />
+                </Label>
+              </Box>
+              <Button type="submit" size="xl" width="100%" mt={4} onClick={handleSignup}>
+                Confirmar e criar minha conta
+              </Button>
+            </VStack>
+          </form>
         </Box>
       </Box>
       <Flex

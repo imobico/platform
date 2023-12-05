@@ -74,6 +74,7 @@ export default function LoginPage() {
         display={{ base: 'none', lg: 'flex' }}
         bg="black"
         width="50%"
+        height="100%"
         position="relative"
         overflow="hidden"
         flexDirection="column"

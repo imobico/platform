@@ -6,7 +6,7 @@ export const SuccessfulOnboardingAnimation = () => (
   <Player
     autoplay
     loop={false}
-    speed={0.8}
+    speed={1}
     keepLastFrame={true}
     src={successAnimation}
     style={{ height: '200px', width: '200px' }}
