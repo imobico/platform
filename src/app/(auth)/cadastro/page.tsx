@@ -30,16 +30,47 @@ export default function SignupPage() {
             />
           </Box>
           <Box mb="12">
-            <H1 fontSize="3xl">Faça um teste grátis</H1>
-            <H2 fontSize="xl" fontWeight={500} color="trusty.5" mt="-2" mb="2">
+            <H1 animationName="fadeIn" fontSize="3xl">
+              Faça um teste grátis
+            </H1>
+            <H2
+              animationName="fadeIn"
+              fontSize="xl"
+              fontWeight={500}
+              color="trusty.5"
+              mt="-2"
+              mb="2"
+            >
               (O cadastro leva menos de 1 minuto!)
             </H2>
-            <Text color="slate.10">•&nbsp; Não precisa de cartão de crédito.</Text>
-            <Text color="slate.10">•&nbsp; Teste grátis por 14 dias!</Text>
-            <Text color="slate.10">•&nbsp; Cancele a qualquer momento.</Text>
+            <Text
+              animationName="fadeInUp"
+              animationDelay="0.2s"
+              animationDuration="0.1s"
+              color="slate.10"
+            >
+              •&nbsp; Não precisa de cartão de crédito.
+            </Text>
+            <Text
+              animationName="fadeInUp"
+              animationDelay="0.4s"
+              animationDuration="0.1s"
+              color="slate.10"
+            >
+              •&nbsp; Teste grátis por 14 dias!
+            </Text>
+            <Text
+              animationName="fadeInUp"
+              animationDelay="0.6s"
+              animationDuration="0.1s"
+              color="slate.10"
+            >
+              •&nbsp; Cancele a qualquer momento.
+            </Text>
           </Box>
-
-          <DynamicForm />
+          <Box animationName="zoomIn" animationDelay="0.8s">
+            <DynamicForm />
+          </Box>
         </Box>
       </Center>
     </>
