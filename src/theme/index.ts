@@ -51,6 +51,9 @@ export const theme = {
     shadows: {
       accent: {
         value: '0 0 0px 5px {colors.trusty.3}'
+      },
+      emphasized: {
+        value: '0 0 0px 5px {colors.trusty.3}'
       }
     }
   }

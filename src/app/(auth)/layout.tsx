@@ -13,12 +13,17 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
       <Center
         height="100vh"
         width="100vw"
-        background="radial-gradient(circle at top,transparent 9%, token(colors.slate.3) 10% ,token(colors.slate.3) 15% , transparent 16%), radial-gradient(circle at bottom,transparent 9%, token(colors.slate.3) 10% ,token(colors.slate.3) 15% , transparent 16%), radial-gradient(circle at right,transparent 9%, token(colors.slate.3) 10% ,token(colors.slate.3) 15% , transparent 16%), radial-gradient(circle at left,transparent 9%, token(colors.slate.3) 10% ,token(colors.slate.3) 15% , transparent 16%)"
-        backgroundSize="3em 3em"
+        background="conic-gradient(from -60deg at 50% calc(100%/3),token(colors.slate.3) 0 120deg,#0000 0),
+        conic-gradient(from 120deg at 50% calc(200%/3),token(colors.slate.3) 0 120deg,#0000 0),
+        conic-gradient(from  60deg at calc(200%/3),token(colors.slate.3) 60deg,token(colors.slate.4) 0 120deg,#0000 0),
+        conic-gradient(from 180deg at calc(100%/3),token(colors.slate.2) 60deg,token(colors.slate.3) 0 120deg,#0000 0),
+        linear-gradient(90deg,token(colors.slate.2) calc(100%/6),token(colors.slate.4) 0 50%,
+        token(colors.slate.2) 0 calc(500%/6), token(colors.slate.4) 0)"
+        backgroundSize="132px 76px"
         opacity="1"
       >
         <Center
-          boxShadow="0 0 120px 0 token(colors.slate.3), 0 0 6px 6px token(colors.slate.3)"
+          boxShadow="0 0 120px 0 token(colors.slate.5), 0 0 6px 6px token(colors.slate.5)"
           border="1px solid token(colors.slate.6)"
           borderRadius="xl"
           width={{ base: '100vw', xl: 'calc(100% - 24px)' }}

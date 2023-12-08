@@ -29,36 +29,43 @@ export const LoginForm = () => {
   }
 
   return (
-    <VStack>
-      <Box width="100%">
-        <Label htmlFor="user-email" size="xl">
-          <Text py={2}>Email</Text>
-          <Input
-            size="xl"
-            id="user-email"
-            placeholder="Digite seu e-mail"
-            type="email"
-            autoFocus
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Label>
-      </Box>
-      <Box width="100%">
-        <Label htmlFor="user-password" size="xl">
-          <Text py={2}>Senha</Text>
-          <Input
-            size="xl"
-            id="user-password"
-            placeholder="Digite sua senha"
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Label>
-      </Box>
-      <Button size="xl" width="100%" mt={4} onClick={handleLogin}>
-        Entrar com meu e-mail
-      </Button>
-    </VStack>
+    <form
+      onSubmit={(event) => {
+        event.preventDefault()
+        handleLogin()
+      }}
+    >
+      <VStack>
+        <Box width="100%">
+          <Label htmlFor="user-email" size="xl">
+            <Text py={2}>Email</Text>
+            <Input
+              size="xl"
+              id="user-email"
+              placeholder="Digite seu e-mail"
+              type="email"
+              autoFocus
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Label>
+        </Box>
+        <Box width="100%">
+          <Label htmlFor="user-password" size="xl">
+            <Text py={2}>Senha</Text>
+            <Input
+              size="xl"
+              id="user-password"
+              placeholder="Digite sua senha"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Label>
+        </Box>
+        <Button size="xl" width="100%" mt={4} onClick={handleLogin} type="submit">
+          Entrar com meu e-mail
+        </Button>
+      </VStack>
+    </form>
   )
 }
 

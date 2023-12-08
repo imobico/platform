@@ -34,12 +34,12 @@ export default function Home() {
       <PageRowLayout
         pt={12}
         pb={32}
-        background="conic-gradient(from -60deg at 50% calc(100%/3),#001f55 0 120deg,#0000 0),
-        conic-gradient(from 120deg at 50% calc(200%/3),#001f55 0 120deg,#0000 0),
-        conic-gradient(from  60deg at calc(200%/3),#001f55 60deg,#001436 0 120deg,#0000 0),
-        conic-gradient(from 180deg at calc(100%/3),#002f81 60deg,#001f55 0 120deg,#0000 0),
-        linear-gradient(90deg,#002f81 calc(100%/6),#001436 0 50%,
-        #002f81 0 calc(500%/6), #001436 0)"
+        background="conic-gradient(from -60deg at 50% calc(100%/3),token(colors.trusty.11) 0 120deg,#0000 0),
+        conic-gradient(from 120deg at 50% calc(200%/3),token(colors.trusty.11) 0 120deg,#0000 0),
+        conic-gradient(from  60deg at calc(200%/3),token(colors.trusty.11) 60deg,token(colors.trusty.12) 0 120deg,#0000 0),
+        conic-gradient(from 180deg at calc(100%/3),token(colors.trusty.10) 60deg,token(colors.trusty.11) 0 120deg,#0000 0),
+        linear-gradient(90deg,token(colors.trusty.10) calc(100%/6),token(colors.trusty.12) 0 50%,
+        token(colors.trusty.10) 0 calc(500%/6), token(colors.trusty.12) 0)"
         backgroundSize="132px 76px"
       >
         <Box width="100%" px={10} animationName="fadeIn" animationDuration="0.8s">

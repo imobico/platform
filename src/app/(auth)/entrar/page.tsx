@@ -11,7 +11,7 @@ const DynamicForm = dynamic(() => import('../components/LoginForm'), {
 export default function LoginPage() {
   return (
     <>
-      <Center width={{ base: '100%', lg: '50%' }} p={6}>
+      <Center width={{ base: '100%', lg: '60%' }} p={6}>
         <Box width="100%" maxWidth="480px">
           <Box
             width="140px"
@@ -72,14 +72,14 @@ export default function LoginPage() {
       </Center>
       <Flex
         display={{ base: 'none', lg: 'flex' }}
-        bg="black"
-        width="50%"
+        bg="trusty.11"
+        width="40%"
         height="100%"
         position="relative"
         overflow="hidden"
         flexDirection="column"
       >
-        <Center zIndex={20} flex={1} p="28" flexDirection="column" justifyContent="flex-end">
+        <Center zIndex={20} flex={1} p="16" flexDirection="column" height="100%">
           <Image
             priority
             alt="Eduarda Machado CEO na ImobiliPlace"
@@ -87,7 +87,7 @@ export default function LoginPage() {
             width={100}
             height={100}
           />
-          <Text fontWeight={600} fontSize="xl" color="white" textAlign="center" mt="8">
+          <Text fontWeight={600} fontSize="lg" color="white" textAlign="center" mt="8">
             &ldquo;A Imobi tem nos ajudado a economizar tempo e conseguir mais oportunidades de
             negócio. Fechamos o último mês com 15% mais vendas!&ldquo;
           </Text>
@@ -106,13 +106,7 @@ export default function LoginPage() {
             Eduarda Machado - <strong>CEO na ImobiliPlace</strong>
           </Text>
         </Center>
-        <Box
-          zIndex={30}
-          width="100%"
-          height="120px"
-          background="rgba(0,0,0,0)"
-          borderBottomRightRadius="xl"
-        ></Box>
+
         <Box
           zIndex={10}
           width="100%"
@@ -120,7 +114,7 @@ export default function LoginPage() {
           position="absolute"
           top={0}
           left={0}
-          opacity={0.5}
+          opacity={0.4}
           style={{
             backgroundImage: `url("${bg.src}")`,
             backgroundRepeat: 'no-repeat',
