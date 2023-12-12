@@ -1,4 +1,6 @@
-import { HTMLStyledProps, styled } from '@/styled'
+import { SpinnerCircular } from 'spinners-react/lib/esm/SpinnerCircular'
+
+import { Box, HTMLStyledProps, styled } from '@/styled'
 import { ButtonVariantProps, button } from '@/styled/recipes'
 
 export interface ButtonProps extends ButtonVariantProps, HTMLStyledProps<typeof StyledButton> {
@@ -16,8 +18,13 @@ export const Button = (props: ButtonProps) => {
         pointerEvents: props.isLoading ? 'none' : 'all'
       }}
     >
-      <l-squircle></l-squircle>
-      {props.children}
+      {props.isLoading ? (
+        <Box position="absolute">
+          <SpinnerCircular />
+        </Box>
+      ) : (
+        props.children
+      )}
     </StyledButton>
   )
 }

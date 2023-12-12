@@ -1,4 +1,3 @@
-import type {} from 'ldrs'
 import type { Metadata } from 'next'
 import { Outfit, Plus_Jakarta_Sans } from 'next/font/google'
 
@@ -26,11 +25,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <script
-        type="module"
-        defer
-        src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/squircle.js"
-      ></script>
       <CrispChat />
       <body className={`${Heading.variable} ${Body.variable}`}>{children}</body>
     </html>
