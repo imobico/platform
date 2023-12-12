@@ -1,5 +1,3 @@
-import type {} from 'ldrs'
-
 import { HTMLStyledProps, styled } from '@/styled'
 import { ButtonVariantProps, button } from '@/styled/recipes'
 
