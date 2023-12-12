@@ -25,6 +25,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <script
+        type="module"
+        defer
+        src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/squircle.js"
+      ></script>
       <CrispChat />
       <body className={`${Heading.variable} ${Body.variable}`}>{children}</body>
     </html>
