@@ -14,14 +14,14 @@ export default function SignupPage() {
         <Box width="100%" maxWidth="480px">
           <Box
             width="140px"
-            position={{ base: 'unset', xl: 'absolute' }}
-            mb={{ base: 6, md: 'unset' }}
+            position={{ base: 'relative', xl: 'absolute' }}
+            mb={{ base: 6 }}
             left={{ base: 'unset', xl: 8 }}
             top={{ base: 'unset', xl: 8 }}
           >
             <Image
               priority
-              src="/logo-imobi-trusty.svg"
+              src="/logo-imoblr-light-bg.svg"
               alt="Imobi Test"
               width={0}
               height={0}

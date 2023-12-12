@@ -26,6 +26,7 @@
     "@svgr/webpack": "^8.1.0",
     "@tanstack/react-query": "^5.4.3",
     "crisp-sdk-web": "^1.0.21",
+    "ldrs": "^1.0.1",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.290.0",
     "next": "^14.0.3",

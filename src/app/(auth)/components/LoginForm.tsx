@@ -7,20 +7,23 @@ import { Box, Button, Input, Label, Text, VStack } from '@/ui'
 
 export const LoginForm = () => {
   const [email, setEmail] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [password, setPassword] = useState('')
 
   const handleLogin = async () => {
     if (password.length === 0 || email.length === 0) {
       return alert('Email e senha não podem estar em branco')
     } else {
-      await browserClient.auth
+      setIsSubmitting(true)
+      browserClient.auth
         .signInWithPassword({
           email,
           password
         })
         .then((res) => {
+          setIsSubmitting(false)
           if (res.error) {
-            console.error('falha: ', res.error)
+            alert('Usuário ou senha inválidos.')
           } else {
             window.location.href = '/app'
           }
@@ -61,7 +64,14 @@ export const LoginForm = () => {
             />
           </Label>
         </Box>
-        <Button size="xl" width="100%" mt={4} onClick={handleLogin} type="submit">
+        <Button
+          isLoading={isSubmitting}
+          size="xl"
+          width="100%"
+          mt={4}
+          onClick={handleLogin}
+          type="submit"
+        >
           Entrar com meu e-mail
         </Button>
       </VStack>
