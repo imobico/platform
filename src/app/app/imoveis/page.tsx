@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { PageRowLayout } from '@/components'
 import { PlusSquareIcon } from '@/icons'
@@ -34,15 +35,17 @@ export default function ImoveisPage(props: ImoveisPageProps) {
           <br />
           Para cadastrar um imóvel, clique no botão abaixo.
         </Text>
-        <Button size="xl">
-          <PlusSquareIcon
-            isActive
-            activeStrokeColor="trusty.1"
-            activeBackgroundColor="trusty.6"
-            size="6"
-          />
-          Cadastrar um imóvel
-        </Button>
+        <Link href="/app/imoveis/cadastrar">
+          <Button size="xl">
+            <PlusSquareIcon
+              isActive
+              activeStrokeColor="trusty.1"
+              activeBackgroundColor="trusty.6"
+              size="6"
+            />
+            Cadastrar um imóvel
+          </Button>
+        </Link>
       </Center>
     </PageRowLayout>
   )

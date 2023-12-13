@@ -1,6 +1,8 @@
 import { Box, BoxProps } from '@/styled'
 
-export const PageRowLayout = (props: BoxProps) => {
+export interface PageRowLayoutProps extends BoxProps {}
+
+export const PageRowLayout = (props: PageRowLayoutProps) => {
   return (
     <Box
       pl={{

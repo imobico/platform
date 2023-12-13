@@ -30,8 +30,8 @@ export const NextSteps = () => {
       label: 'Adicione o seu primeiro imóvel',
       isDone: false,
       goToTask: {
-        route: '/app/imoveis',
-        label: 'Ver página de imóveis'
+        route: '/app/imoveis/cadastrar',
+        label: 'Adicionar um imóvel'
       }
     },
     {
