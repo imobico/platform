@@ -5,6 +5,7 @@ export * from './Label'
 export * from './RadioButtonGroup'
 export { Tabs } from './Tabs'
 export * from './Text'
+export * from './Textarea'
 export * from './Typography'
 export * from './utils/createStyleContext'
 

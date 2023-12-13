@@ -27,7 +27,7 @@ export const NextSteps = () => {
       }
     },
     {
-      label: 'Adicione o seu primeiro imóvel',
+      label: 'Cadastre seu primeiro imóvel',
       isDone: false,
       goToTask: {
         route: '/app/imoveis/cadastrar',
@@ -35,7 +35,7 @@ export const NextSteps = () => {
       }
     },
     {
-      label: 'Configure o seu site',
+      label: 'Configure seu site',
       isDone: false,
       goToTask: {
         route: '/app/canais',
