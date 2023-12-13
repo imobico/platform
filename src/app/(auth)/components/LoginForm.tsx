@@ -66,7 +66,7 @@ export const LoginForm = () => {
         </Box>
         <Button
           loadingLabel="Entrando..."
-          isLoading={true || isSubmitting}
+          isLoading={isSubmitting}
           size="xl"
           width="100%"
           mt={4}
