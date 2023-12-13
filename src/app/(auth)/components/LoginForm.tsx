@@ -65,11 +65,11 @@ export const LoginForm = () => {
           </Label>
         </Box>
         <Button
-          isLoading={isSubmitting}
+          loadingLabel="Entrando..."
+          isLoading={true || isSubmitting}
           size="xl"
           width="100%"
           mt={4}
-          onClick={handleLogin}
           type="submit"
         >
           Entrar com meu e-mail
