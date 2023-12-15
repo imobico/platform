@@ -1,3 +1,4 @@
+import omit from 'lodash-es/omit'
 import { SpinnerCircularFixed } from 'spinners-react/lib/esm/SpinnerCircularFixed'
 
 import { Center, HTMLStyledProps, styled } from '@/styled'
@@ -16,7 +17,7 @@ export const StyledButton = styled('button', button)
 export const Button = ({ loadingLabel = 'Carregando...', ...props }: ButtonProps) => {
   return (
     <StyledButton
-      {...props}
+      {...omit(props, ['isLoading', 'loadingLabel'])}
       style={{
         opacity: props.isLoading ? 0.75 : 1,
         pointerEvents: props.isLoading ? 'none' : 'all'
