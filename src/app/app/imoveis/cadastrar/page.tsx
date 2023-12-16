@@ -7,16 +7,18 @@ import { Card, PageRowLayout } from '@/components'
 import { PageHeaderLayout } from '@/components/PageHeaderLayout'
 import { Box, Center, Flex, H1, H2, Input, Label, Text, Textarea, VStack } from '@/ui'
 
-import { AddressCard } from './AddressCard'
+import { AddressCard } from './components/AddressCard'
 import { schema } from './formValidation'
 
 export default function CadastrarImovel() {
   const {
-    handleSubmit,
-    register,
-    resetField,
+    // handleSubmit,
+    // register,
+    // resetField,
     formState: { errors, isSubmitting }
   } = useForm({ resolver: yupResolver(schema) })
+
+  console.log(errors, isSubmitting)
 
   return (
     <>
@@ -32,7 +34,12 @@ export default function CadastrarImovel() {
       </PageHeaderLayout>
       <PageRowLayout>
         <form>
-          <AddressCard />
+          <AddressCard
+            onAddressChange={(address) => {
+              console.log(address)
+              // resetField("firstName", { defaultValue: address.properties. })
+            }}
+          />
           <Card py={8}>
             <Flex width="100%">
               <Box maxWidth="280px">

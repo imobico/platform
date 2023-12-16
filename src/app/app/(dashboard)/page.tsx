@@ -44,7 +44,7 @@ export default function Home() {
       >
         <Box width="100%" px={10} animationName="fadeIn" animationDuration="0.8s">
           <H1 fontSize="3xl" color="trusty.1">
-            <Strong fontWeight={900}>{greeting}</Strong>
+            <Strong fontWeight={900}>{greeting}</Strong> sodfksdfsokdf
             {currentUserData?.first_name && <>, {currentUserData?.first_name}</>}
             !&nbsp; 👋
           </H1>

@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import { Box, Center, Flex, Grid } from '@/styled'
 
-import { H3, Strong, Text } from '@/ui'
+import { H2, H3, Strong, Text } from '@/ui'
 
 const highlightOptions = [
   {
@@ -119,7 +119,7 @@ export const Highlights = () => {
           id="funcionalidades"
           px={{ base: 12, md: 0 }}
         >
-          <Text fontSize={{ base: '3xl', md: '4xl' }} maxWidth="840px" textAlign="center">
+          <H2 fontSize={{ base: '2xl', md: '3xl' }} maxWidth="840px" textAlign="center">
             Concentre-se no seu negócio e clientes.
             <br />
             <Strong
@@ -128,7 +128,7 @@ export const Highlights = () => {
             >
               Deixe o resto com a gente!
             </Strong>
-          </Text>
+          </H2>
         </Flex>
 
         <Box
@@ -154,10 +154,10 @@ export const Highlights = () => {
                   width={120}
                   height={120}
                 />
-                <H3 fontSize="2xl" textAlign="center" lineHeight={1.2} my="6">
+                <H3 fontSize="xl" textAlign="center" lineHeight={1.2} my="6">
                   <highlight.title />
                 </H3>
-                <Text fontSize="lg" textAlign="center" color="text.muted">
+                <Text textAlign="center" color="text.muted">
                   <highlight.description />
                 </Text>
               </Center>
