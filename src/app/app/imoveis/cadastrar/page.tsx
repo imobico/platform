@@ -61,7 +61,7 @@ export default function CadastrarImovel() {
               <Box pl={24} flex={1}>
                 <VStack gap={8}>
                   <Label width="100%" htmlFor="property-title" size="xl">
-                    <Text fontWeight={600} py={2}>
+                    <Text fontWeight={600} mb={2}>
                       Nome do imóvel
                     </Text>
                     <Input
@@ -71,7 +71,7 @@ export default function CadastrarImovel() {
                     />
                   </Label>
                   <Label width="100%" htmlFor="property-description" size="xl">
-                    <Text fontWeight={600} py={2}>
+                    <Text fontWeight={600} mb={2}>
                       Descrição do imóvel
                     </Text>
                     <Textarea

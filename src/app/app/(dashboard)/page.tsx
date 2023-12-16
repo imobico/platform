@@ -3,6 +3,7 @@
 import { Box } from '@/styled'
 
 import { PageRowLayout } from '@/components'
+import { PageHeaderLayout } from '@/components/PageHeaderLayout'
 import { useCurrentUser } from '@/hooks'
 import useCurrentOrganization from '@/hooks/useCurrentOrganization'
 import { H1, Strong, Text } from '@/ui'
@@ -31,20 +32,10 @@ export default function Home() {
 
   return (
     <>
-      <PageRowLayout
-        pt={12}
-        pb={32}
-        background="conic-gradient(from -60deg at 50% calc(100%/3),token(colors.trusty.11) 0 120deg,#0000 0),
-        conic-gradient(from 120deg at 50% calc(200%/3),token(colors.trusty.11) 0 120deg,#0000 0),
-        conic-gradient(from  60deg at calc(200%/3),token(colors.trusty.11) 60deg,token(colors.trusty.12) 0 120deg,#0000 0),
-        conic-gradient(from 180deg at calc(100%/3),token(colors.trusty.10) 60deg,token(colors.trusty.11) 0 120deg,#0000 0),
-        linear-gradient(90deg,token(colors.trusty.10) calc(100%/6),token(colors.trusty.12) 0 50%,
-        token(colors.trusty.10) 0 calc(500%/6), token(colors.trusty.12) 0)"
-        backgroundSize="132px 76px"
-      >
-        <Box width="100%" px={10} animationName="fadeIn" animationDuration="0.8s">
+      <PageHeaderLayout>
+        <Box width="100%" animationName="fadeIn" animationDuration="0.8s">
           <H1 fontSize="3xl" color="trusty.1">
-            <Strong fontWeight={900}>{greeting}</Strong> sodfksdfsokdf
+            <Strong fontWeight={900}>{greeting}</Strong>
             {currentUserData?.first_name && <>, {currentUserData?.first_name}</>}
             !&nbsp; 👋
           </H1>
@@ -56,7 +47,7 @@ export default function Home() {
             .
           </Text>
         </Box>
-      </PageRowLayout>
+      </PageHeaderLayout>
       <PageRowLayout mt={-16}>
         <NextSteps />
       </PageRowLayout>

@@ -33,7 +33,7 @@ export const AddressCard = ({ onAddressChange }: AddressCardProps) => {
         <Box pl={24} flex={1}>
           <VStack gap={8}>
             <Label width="100%" size="xl">
-              <Text fontWeight={600} py={2}>
+              <Text fontWeight={600} mb={2}>
                 Buscar endereço:
               </Text>
               <AddressAutocomplete onAddressChange={onAddressChange} />

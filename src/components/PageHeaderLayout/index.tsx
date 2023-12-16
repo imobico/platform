@@ -7,9 +7,9 @@ export interface PageHeaderLayoutProps extends PageRowLayoutProps {}
 export const PageHeaderLayout = (props: PageHeaderLayoutProps) => {
   return (
     <PageRowLayout
-      pt={12}
-      pb={32}
-      mb={-16}
+      pt={10}
+      pb={36}
+      mb={-24}
       background="conic-gradient(from -60deg at 50% calc(100%/3),token(colors.trusty.11) 0 120deg,#0000 0),
         conic-gradient(from 120deg at 50% calc(200%/3),token(colors.trusty.11) 0 120deg,#0000 0),
         conic-gradient(from  60deg at calc(200%/3),token(colors.trusty.11) 60deg,token(colors.trusty.12) 0 120deg,#0000 0),
