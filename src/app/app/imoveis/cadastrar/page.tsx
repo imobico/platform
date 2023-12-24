@@ -40,7 +40,7 @@ export default function CadastrarImovel() {
               // resetField("firstName", { defaultValue: address.properties. })
             }}
           />
-          <Card py={8}>
+          <Card py={8} boxShadow="2xl">
             <Flex width="100%">
               <Box maxWidth="280px">
                 <Flex alignItems="center" mb={4}>

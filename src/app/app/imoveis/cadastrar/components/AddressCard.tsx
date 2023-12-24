@@ -1,6 +1,7 @@
 import { Box, Center, Flex, VStack } from '@/styled'
 
 import { Card } from '@/components'
+import { MapLocationIcon } from '@/icons'
 import { geoapifyAutocompleteItem } from '@/types'
 import { H2, Label, Text } from '@/ui'
 
@@ -12,21 +13,18 @@ export type AddressCardProps = {
 
 export const AddressCard = ({ onAddressChange }: AddressCardProps) => {
   return (
-    <Card py={8} mb={12}>
+    <Card py={8} mb={12} boxShadow="2xl">
       <Flex width="100%">
         <Box maxWidth="280px">
-          <Flex alignItems="center" mb={4}>
-            <Center width="2.4rem" height="2.4rem" bg="trusty" borderRadius="full" mr={4}>
-              <Text color="white" fontWeight="bold" textAlign="center" lineHeight="30px">
-                1
-              </Text>
+          <Flex alignItems="center" mb={2}>
+            <Center width="3.6rem" height="3.6rem" bg="trusty.3" borderRadius="full" mr={4}>
+              <MapLocationIcon isActive />
             </Center>
             <H2 fontSize="xl">Localização do imóvel</H2>
           </Flex>
-          <Box flex="1" pl="2.4rem" ml={4}>
+          <Box flex="1" pl="3.6rem" ml={4} mb={8}>
             <Text color="text.muted" fontSize="sm" opacity={0.8}>
-              Preencha as informações básicas do imóvel. Quanto mais completa for a descrição do seu
-              imóvel maiores serão as chances das pessoas se interessarem.
+              Preencha o endereço do imóvel para que possamos localizá-lo.
             </Text>
           </Box>
         </Box>
