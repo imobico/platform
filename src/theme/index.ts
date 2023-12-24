@@ -1,6 +1,10 @@
 import colors from './colors'
+import { baseInput } from './recipes/input'
 
 export const theme = {
+  recipes: {
+    baseInput: baseInput
+  },
   tokens: {
     colors,
     fonts: {
