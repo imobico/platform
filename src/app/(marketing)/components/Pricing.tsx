@@ -136,11 +136,11 @@ export const PricingCard = ({
         <br />A partir de {minimumUsers} usuários
       </Text>
 
-      {features.map((feature) => (
-        <>
+      {features.map((feature, index) => (
+        <Box key={`plan-${id}-feature-${index}`}>
           <Divider my="4" />
           <Text fontWeight={feature.featured ? 700 : 500}>{feature.label}</Text>
-        </>
+        </Box>
       ))}
       <Divider mt="4" mb="8" />
       <Box width="100%" px="8">
@@ -216,7 +216,12 @@ export const Pricing = () => {
             px={{ base: 6, lg: 0 }}
           >
             {pricingOptions.map((pricingOption) => {
-              return pricingOption ? <PricingCard {...(pricingOption as PricingCardProps)} /> : null
+              return pricingOption ? (
+                <PricingCard
+                  key={`homepage-pricing-${pricingOption.id}`}
+                  {...(pricingOption as PricingCardProps)}
+                />
+              ) : null
             })}
           </Grid>
         </Box>

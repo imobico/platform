@@ -31,7 +31,6 @@ export const PageHeaderLayout = (props: PageHeaderLayoutProps) => {
         right="50%"
         transform="translate(88%,-58%)"
         pointerEvents="none"
-        opacity={0.8}
       >
         <Image
           priority

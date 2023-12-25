@@ -20,6 +20,8 @@ export default function CadastrarImovel() {
 
   console.log(errors, isSubmitting)
 
+  // const { data, error } = await supabase.rpc('echo', { say: '👋' })
+
   return (
     <>
       <PageHeaderLayout>
