@@ -1,11 +1,17 @@
 import type { Metadata } from 'next'
-import { Outfit, Plus_Jakarta_Sans } from 'next/font/google'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 
 import { CrispChat } from '@/components'
 
 import './globals.css'
 
-export const Heading = Outfit({
+// export const Heading = Outfit({
+//   display: 'swap',
+//   subsets: ['latin'],
+//   variable: '--font-heading'
+// })
+
+export const Heading = Plus_Jakarta_Sans({
   display: 'swap',
   subsets: ['latin'],
   variable: '--font-heading'

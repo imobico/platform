@@ -24,7 +24,7 @@ export default function Home() {
           <H1
             fontSize={{ base: '4xl', md: '5xl' }}
             textAlign="center"
-            lineHeight={1.2}
+            lineHeight={1.4}
             mb={{ base: 4, md: 8 }}
             width="100vw"
             maxWidth="880px"

@@ -2,7 +2,7 @@ import { defineRecipe } from '@pandacss/dev'
 
 export const baseInput = defineRecipe({
   className: 'baseInput',
-  jsx: ['Input'],
+  jsx: ['Input', 'BaseInput'],
   base: {
     appearance: 'none',
     background: 'none',
