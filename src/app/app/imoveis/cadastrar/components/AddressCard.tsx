@@ -15,7 +15,7 @@ export const AddressCard = ({ onAddressChange }: AddressCardProps) => {
   return (
     <Card py={8} mb={12} boxShadow="2xl">
       <Flex width="100%">
-        <Box maxWidth="280px">
+        <Box maxWidth="300px">
           <Flex alignItems="center" mb={2}>
             <Center width="3.6rem" height="3.6rem" bg="trusty.3" borderRadius="full" mr={4}>
               <MapLocationIcon isActive />

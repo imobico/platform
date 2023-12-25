@@ -33,14 +33,7 @@ export default function SignupPage() {
             <H1 animationName="fadeIn" fontSize="3xl">
               Faça um teste grátis
             </H1>
-            <H2
-              animationName="fadeIn"
-              fontSize="xl"
-              fontWeight={500}
-              color="trusty.5"
-              mt="-2"
-              mb="2"
-            >
+            <H2 animationName="fadeIn" fontSize="xl" fontWeight={500} color="trusty.5" mb="2">
               (O cadastro leva menos de 1 minuto!)
             </H2>
             <Text

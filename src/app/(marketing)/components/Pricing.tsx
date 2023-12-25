@@ -168,11 +168,11 @@ export const Pricing = () => {
       >
         <Box width="100%" maxWidth="1220px">
           <Center justifyContent="space-between" width="100%" mb={{ base: 16, lg: 0 }}>
-            <Box px={{ base: 8 }} flex="1">
+            <Box pl={{ base: 8 }} flex="1">
               <H1
                 fontSize="4xl"
                 color="white"
-                maxWidth="540px"
+                maxWidth="620px"
                 mb="4"
                 textAlign={{ base: 'center', lg: 'left' }}
               >
@@ -187,7 +187,7 @@ export const Pricing = () => {
               <Text
                 color="trusty.3"
                 fontSize="xl"
-                maxWidth="680px"
+                maxWidth="720px"
                 textAlign={{ base: 'center', lg: 'left' }}
               >
                 <Strong>A nossa promessa para você</Strong>: Nós <Strong>sempre</Strong>{' '}
@@ -195,7 +195,7 @@ export const Pricing = () => {
               </Text>
             </Box>
             <Box
-              width={{ base: '100%', md: '380px', lg: '420px' }}
+              width={{ base: '100%', md: '340px', lg: '380px' }}
               display={{ base: 'none', md: 'block' }}
             >
               <Image
