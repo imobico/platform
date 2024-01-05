@@ -51,13 +51,13 @@ export const IconWrapper = ({
   const background = isActive
     ? activeBackgroundColor
     : isHover
-    ? hoverBackgroundColor
-    : backgroundColor
+      ? hoverBackgroundColor
+      : backgroundColor
   const altBackground = isActive
     ? activeAltBackgroundColor
     : isHover
-    ? hoverAltBackgroundColor
-    : altBackgroundColor
+      ? hoverAltBackgroundColor
+      : altBackgroundColor
   const accent = isActive ? activeAccentColor : isHover ? hoverAccentColor : accentColor
 
   return (
