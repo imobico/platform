@@ -58,8 +58,8 @@ export const SidebarNavigationItem = ({
             color: isActive
               ? token('colors.trusty.10')
               : isItemHovered
-              ? token('colors.slate.12')
-              : token('colors.slate.11')
+                ? token('colors.slate.12')
+                : token('colors.slate.11')
           }}
         >
           {label}
