@@ -106,7 +106,7 @@ export default function SetPasswordPage(props: SetPasswordPageProps) {
                   />
                 </Label>
               </Box>
-              <Button type="submit" size="xl" width="100%" mt={4} onClick={handleSignup}>
+              <Button type="submit" size="xl" width="100%" mt={4}>
                 Confirmar e criar minha conta
               </Button>
             </VStack>
