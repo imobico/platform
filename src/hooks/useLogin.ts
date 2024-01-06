@@ -3,19 +3,15 @@ import Cookies from 'js-cookie'
 import { axiosClient } from '@/utils'
 
 export const useLogin = () => {
-  const handleLogin = async (credentials: { email: string; password: string }) => {
-    const user = await axiosClient
+  const handleLogin = (credentials: { email: string; password: string }) => {
+    return axiosClient
       .post('/signin', {
         email: credentials.email,
         password: credentials.password
       })
       .then((res) => {
-        console.log(res)
-        Cookies.set('token', res.data.token)
-        return res.data.user
+        Cookies.set('auth_token', res.data.data.access_token)
       })
-
-    return user
   }
 
   return handleLogin
