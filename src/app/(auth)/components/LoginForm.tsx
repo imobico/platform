@@ -2,32 +2,28 @@
 
 import { useState } from 'react'
 
-import { browserClient } from '@/supabase'
+import { useLogin } from '@/hooks'
+// import { browserClient } from '@/supabase'
 import { Box, Button, Input, Label, Text, VStack } from '@/ui'
 
 export const LoginForm = () => {
   const [email, setEmail] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [password, setPassword] = useState('')
+  const login = useLogin()
 
   const handleLogin = async () => {
     if (password.length === 0 || email.length === 0) {
       return alert('Email e senha não podem estar em branco')
     } else {
       setIsSubmitting(true)
-      browserClient.auth
-        .signInWithPassword({
-          email,
-          password
-        })
-        .then((res) => {
-          setIsSubmitting(false)
-          if (res.error) {
-            alert('Usuário ou senha inválidos.')
-          } else {
-            window.location.href = '/app'
-          }
-        })
+      login({
+        email,
+        password
+      }).then((res) => {
+        console.log(res)
+        setIsSubmitting(false)
+      })
     }
   }
 
