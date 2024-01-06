@@ -4,7 +4,7 @@ import { Lock } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 
-import { browserClient } from '@/supabase'
+import { useCreateAccount } from '@/hooks'
 import { Box, Button, Center, Flex, H1, H3, Input, Label, Text, VStack } from '@/ui'
 
 interface SetPasswordPageProps {
@@ -14,6 +14,7 @@ interface SetPasswordPageProps {
 export default function SetPasswordPage(props: SetPasswordPageProps) {
   const [password, setPassword] = useState('')
   const [passwordConfirmation, setPasswordConfirmation] = useState('')
+  const createAccount = useCreateAccount()
   // const [isSignupSuccessful, setIsSignupSuccessful] = useState(false)
 
   const handleSignup = async () => {
@@ -24,27 +25,21 @@ export default function SetPasswordPage(props: SetPasswordPageProps) {
     } else if (password !== passwordConfirmation) {
       alert('A confirmação de senha deve ser idêntica ao campo senha.')
     } else {
-      await browserClient.auth
-        .signUp({
-          email: decodeURIComponent(props.searchParams?.email),
-          password: password
-          // options: {
-          //   emailRedirectTo: `${window.location.origin}/conta-confirmada?email=${encodeURIComponent(
-          //     props.searchParams?.email
-          //   )}`
-          // }
-        })
-        .then((result) => {
-          if (result.error) {
-            alert(
-              result.error.message === 'User already registered'
-                ? 'Já existe uma conta cadastrada com este e-mail'
-                : 'Tivemos um problema ao criar a sua conta! Por favor, entre em contato com o nosso suporte'
-            )
-          } else {
-            window.location.href = '/onboarding'
-          }
-        })
+      await createAccount({
+        email: decodeURIComponent(props.searchParams?.email),
+        password: password
+      }).then((res) => {
+        console.log(res)
+        // if (result.error) {
+        //   alert(
+        //     result.error.message === 'User already registered'
+        //       ? 'Já existe uma conta cadastrada com este e-mail'
+        //       : 'Tivemos um problema ao criar a sua conta! Por favor, entre em contato com o nosso suporte'
+        //   )
+        // } else {
+        //   window.location.href = '/onboarding'
+        // }
+      })
     }
   }
 
