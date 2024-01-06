@@ -16,6 +16,6 @@ export const TextLink = styled(Link, {
 
 export const Strong = styled('strong', {
   base: {
-    fontWeight: 900
+    fontWeight: 700
   }
 })

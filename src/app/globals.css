@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  font-family: var(--font-global), Arial, Helvetica, sans-serif;
 }
 
 h1,
@@ -16,7 +16,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading), var(--font-body), Arial, Helvetica, sans-serif;
+  font-family: var(--font-global), var(--font-global), Arial, Helvetica, sans-serif;
 }
 
 svg,

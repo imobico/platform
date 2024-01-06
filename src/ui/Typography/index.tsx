@@ -2,9 +2,9 @@ import { styled } from '@/styled'
 
 export const H1 = styled('h1', {
   base: {
-    fontWeight: 900,
+    fontWeight: 700,
     color: 'trusty.11',
-    fontFamily: 'var(--font-heading)'
+    fontFamily: 'var(--font-global)'
   },
   variants: {
     size: {
@@ -29,9 +29,9 @@ export const H1 = styled('h1', {
 
 export const H2 = styled('h2', {
   base: {
-    fontWeight: 900,
+    fontWeight: 700,
     color: 'trusty.11',
-    fontFamily: 'var(--font-heading)',
+    fontFamily: 'var(--font-global)',
     fontSize: '2.4rem'
   },
   variants: {
@@ -57,9 +57,9 @@ export const H2 = styled('h2', {
 
 export const H3 = styled('h3', {
   base: {
-    fontWeight: 900,
+    fontWeight: 700,
     color: 'trusty.11',
-    fontFamily: 'var(--font-heading)',
+    fontFamily: 'var(--font-global)',
     fontSize: '2rem'
   },
   variants: {
@@ -85,9 +85,9 @@ export const H3 = styled('h3', {
 
 export const H4 = styled('h4', {
   base: {
-    fontWeight: 900,
+    fontWeight: 700,
     color: 'trusty.11',
-    fontFamily: 'var(--font-heading)',
+    fontFamily: 'var(--font-global)',
     fontSize: '1.8rem'
   },
   variants: {
@@ -113,10 +113,10 @@ export const H4 = styled('h4', {
 
 export const H5 = styled('h5', {
   base: {
-    fontWeight: 900,
+    fontWeight: 700,
     color: 'trusty.11',
-    fontFamily: 'var(--font-heading)',
-    fontSize: '1.8rem'
+    fontFamily: 'var(--font-global)',
+    fontSize: '1.4rem'
   },
   variants: {
     size: {

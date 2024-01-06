@@ -23,11 +23,11 @@ export const MarketingFooter = () => {
               </Box>
               <Grid flex="1" gap={{ base: 4, md: 6, lg: 12 }} columns={{ base: 1, md: 2 }}>
                 <Box flex="1">
-                  <H3>Atendimento</H3>
+                  <H3 fontSize="lg">Atendimento</H3>
                   <Text>Nosso atendimento funciona de segunda a sábado das 9 as 18:00</Text>
                 </Box>
                 <Box flex="1">
-                  <H3>Localização</H3>
+                  <H3 fontSize="lg">Localização</H3>
                   <Text>
                     Rua José Fava, 185
                     <br />

@@ -22,13 +22,12 @@ export default function Home() {
       <Center width="100vw" flexDirection="column" overflow="hidden">
         <Center mt={{ base: 8, md: '20' }} flexDirection="column" px={{ base: 4, md: 12 }}>
           <H1
-            fontSize={{ base: '4xl', md: '5xl' }}
+            fontSize={{ base: '5xl', md: '6xl' }}
             textAlign="center"
-            lineHeight={1.4}
             mb={{ base: 4, md: 8 }}
             width="100vw"
-            maxWidth="880px"
-            px={{ base: 8, md: 12 }}
+            maxWidth="960px"
+            px={{ base: 2, md: 4 }}
           >
             <Strong
               style={{
@@ -63,8 +62,6 @@ export default function Home() {
             >
               imobiliárias.
             </Strong>
-            <br />
-            Disponível hoje.
           </H1>
           <Text
             textAlign="center"

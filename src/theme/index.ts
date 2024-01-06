@@ -8,8 +8,8 @@ export const theme = {
   tokens: {
     colors,
     fonts: {
-      heading: { value: 'var(--font-heading), Menlo, monospace' },
-      body: { value: 'var(--font-body), sans-serif' }
+      heading: { value: 'var(--font-global), Menlo, monospace' },
+      body: { value: 'var(--font-global), sans-serif' }
     }
   },
   semanticTokens: {
